@@ -12,6 +12,7 @@
     "extract:types": "node pipeline/extract-types.mjs",
     "fetch:kit": "node pipeline/fetch-kit.mjs",
     "build:references": "node pipeline/build-references.mjs",
+    "build:kwcag": "node pipeline/build-kwcag-map.mjs",
     "crawl:site": "node pipeline/crawl-site.mjs",
     "transform:rn": "node pipeline/transform-rn-tokens.mjs",
     "validate": "node pipeline/validate-skills.mjs"
