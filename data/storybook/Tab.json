@@ -1,0 +1,67 @@
+{
+  "component": "Tab",
+  "title": "Components/Tab",
+  "description": "탭은 버튼을 눌러 상호배타적인 여러 개의 콘텐츠 섹션을 전환할 수 있는 컴포넌트이다. 콘텐츠 섹션은 동일한 영역 내에서 전환되기 때문에 정보를 탐색하는 맥락을 유지할 수 있고 작은 공간에 많은 양의 콘텐츠를 효과적으로 표현할 수 있다.",
+  "argTypes": null,
+  "stories": [
+    {
+      "id": "components-tab--default",
+      "name": "Default",
+      "originalSource": "{\n  args: {},\n  render: _args => <Tab variant=\"line\" size=\"full\" defaultValue=\"tab1\">\n      <TabList>\n        <TabTrigger value=\"tab1\">타이틀 1</TabTrigger>\n        <TabTrigger value=\"tab2\">타이틀 2</TabTrigger>\n        <TabTrigger value=\"tab3\">타이틀 3</TabTrigger>\n      </TabList>\n      <TabContent>\n        <TabPanel value=\"tab1\">\n          <div>탭 1 영역</div>\n        </TabPanel>\n        <TabPanel value=\"tab2\">\n          <div>탭 2 영역</div>\n        </TabPanel>\n        <TabPanel value=\"tab3\">\n          <div>탭 3 영역</div>\n        </TabPanel>\n      </TabContent>\n    </Tab>\n}"
+    },
+    {
+      "id": "components-tab--line-type",
+      "name": "Line 타입",
+      "originalSource": "{\n  name: 'Line 타입',\n  args: {},\n  render: _args => <Tab variant=\"line\" size=\"normal\" defaultValue=\"overview\">\n      <TabList>\n        <TabTrigger value=\"overview\">개요</TabTrigger>\n        <TabTrigger value=\"features\">기능</TabTrigger>\n        <TabTrigger value=\"usage\">사용법</TabTrigger>\n      </TabList>\n      <TabContent>\n        <TabPanel value=\"overview\">\n          <div>\n            <h4>프로젝트 개요</h4>\n            <p>이 프로젝트는 KRDS 디자인 시스템을 구현한 React 컴포넌트 라이브러리입니다.</p>\n          </div>\n        </TabPanel>\n        <TabPanel value=\"features\">\n          <div>\n            <h4>주요 기능</h4>\n            <p>다양한 UI 컴포넌트와 유틸리티를 제공합니다.</p>\n          </div>\n        </TabPanel>\n        <TabPanel value=\"usage\">\n          <div>\n            <h4>사용법</h4>\n            <p>npm 또는 yarn을 통해 설치하고 사용할 수 있습니다.</p>\n          </div>\n        </TabPanel>\n      </TabContent>\n    </Tab>\n}"
+    },
+    {
+      "id": "components-tab--fill-type",
+      "name": "Fill 타입",
+      "originalSource": "{\n  name: 'Fill 타입',\n  args: {},\n  render: _args => <Tab variant=\"fill\" size=\"normal\" defaultValue=\"home\">\n      <TabList>\n        <TabTrigger value=\"home\">홈</TabTrigger>\n        <TabTrigger value=\"about\">소개</TabTrigger>\n        <TabTrigger value=\"contact\">연락처</TabTrigger>\n      </TabList>\n      <TabContent>\n        <TabPanel value=\"home\">\n          <div>홈 페이지 내용입니다.</div>\n        </TabPanel>\n        <TabPanel value=\"about\">\n          <div>소개 페이지 내용입니다.</div>\n        </TabPanel>\n        <TabPanel value=\"contact\">\n          <div>연락처 정보입니다.</div>\n        </TabPanel>\n      </TabContent>\n    </Tab>\n}"
+    },
+    {
+      "id": "components-tab--line-type-full",
+      "name": "Line 타입 (풀사이즈)",
+      "originalSource": "{\n  name: 'Line 타입 (풀사이즈)',\n  args: {},\n  render: _args => <Tab variant=\"line\" size=\"full\" defaultValue=\"dashboard\">\n      <TabList>\n        <TabTrigger value=\"dashboard\">대시보드</TabTrigger>\n        <TabTrigger value=\"analytics\">분석</TabTrigger>\n        <TabTrigger value=\"reports\">보고서</TabTrigger>\n      </TabList>\n      <TabContent>\n        <TabPanel value=\"dashboard\">\n          <div>대시보드 내용</div>\n        </TabPanel>\n        <TabPanel value=\"analytics\">\n          <div>분석 내용</div>\n        </TabPanel>\n        <TabPanel value=\"reports\">\n          <div>보고서 내용</div>\n        </TabPanel>\n      </TabContent>\n    </Tab>,\n  parameters: {\n    layout: 'fullscreen',\n    docs: {\n      story: {\n        inline: false,\n        height: '400px'\n      }\n    }\n  }\n}"
+    },
+    {
+      "id": "components-tab--fill-type-full",
+      "name": "Fill 타입 (풀사이즈)",
+      "originalSource": "{\n  name: 'Fill 타입 (풀사이즈)',\n  args: {},\n  render: _args => <Tab variant=\"fill\" size=\"full\" defaultValue=\"settings\">\n      <TabList>\n        <TabTrigger value=\"settings\">설정</TabTrigger>\n        <TabTrigger value=\"profile\">프로필</TabTrigger>\n        <TabTrigger value=\"security\">보안</TabTrigger>\n      </TabList>\n      <TabContent>\n        <TabPanel value=\"settings\">\n          <div>설정 페이지</div>\n        </TabPanel>\n        <TabPanel value=\"profile\">\n          <div>프로필 페이지</div>\n        </TabPanel>\n        <TabPanel value=\"security\">\n          <div>보안 설정</div>\n        </TabPanel>\n      </TabContent>\n    </Tab>,\n  parameters: {\n    layout: 'fullscreen',\n    docs: {\n      story: {\n        inline: false,\n        height: '400px'\n      }\n    }\n  }\n}"
+    },
+    {
+      "id": "components-tab--with-rich-content",
+      "name": "풍부한 콘텐츠",
+      "originalSource": "{\n  name: '풍부한 콘텐츠',\n  args: {},\n  render: _args => <Tab variant=\"line\" size=\"normal\" defaultValue=\"overview\">\n      <TabList>\n        <TabTrigger value=\"overview\">개요</TabTrigger>\n        <TabTrigger value=\"features\">주요 기능</TabTrigger>\n        <TabTrigger value=\"usage\">사용법</TabTrigger>\n      </TabList>\n      <TabContent>\n        <TabPanel value=\"overview\">\n          <div>\n            <h4>프로젝트 개요</h4>\n            <p>이 프로젝트는 KRDS 디자인 시스템을 구현한 React 컴포넌트 라이브러리입니다.</p>\n            <ul>\n              <li>재사용 가능한 컴포넌트</li>\n              <li>접근성 준수</li>\n              <li>TypeScript 지원</li>\n            </ul>\n          </div>\n        </TabPanel>\n        <TabPanel value=\"features\">\n          <div>\n            <h4>주요 기능</h4>\n            <p>다양한 UI 컴포넌트와 유틸리티를 제공합니다.</p>\n            <ol>\n              <li>Button, Input, Select 등 기본 컴포넌트</li>\n              <li>Table, Accordion 등 복합 컴포넌트</li>\n              <li>다크모드 및 고대비 모드 지원</li>\n            </ol>\n          </div>\n        </TabPanel>\n        <TabPanel value=\"usage\">\n          <div>\n            <h4>사용법</h4>\n            <p>npm 또는 yarn을 통해 설치하고 사용할 수 있습니다.</p>\n            <pre style={{\n            backgroundColor: '#f5f5f5',\n            padding: '1rem',\n            borderRadius: '4px'\n          }}>\n              {`npm install @krds/react\nimport { Tab, TabList, TabTrigger, TabPanel } from '@krds/react';`}\n            </pre>\n          </div>\n        </TabPanel>\n      </TabContent>\n    </Tab>,\n  parameters: {\n    layout: 'fullscreen',\n    docs: {\n      story: {\n        inline: false,\n        height: '500px'\n      }\n    }\n  }\n}"
+    },
+    {
+      "id": "components-tab--with-disabled-tabs",
+      "name": "비활성 탭 포함",
+      "originalSource": "{\n  name: '비활성 탭 포함',\n  args: {},\n  render: _args => <Tab variant=\"fill\" size=\"normal\" defaultValue=\"enabled1\">\n      <TabList>\n        <TabTrigger value=\"enabled1\">활성 탭 1</TabTrigger>\n        <TabTrigger value=\"disabled1\" disabled>\n          비활성 탭\n        </TabTrigger>\n        <TabTrigger value=\"enabled2\">활성 탭 2</TabTrigger>\n      </TabList>\n      <TabContent>\n        <TabPanel value=\"enabled1\">\n          <div>첫 번째 활성 탭 내용</div>\n        </TabPanel>\n        <TabPanel value=\"disabled1\">\n          <div>비활성 탭 내용</div>\n        </TabPanel>\n        <TabPanel value=\"enabled2\">\n          <div>두 번째 활성 탭 내용</div>\n        </TabPanel>\n      </TabContent>\n    </Tab>\n}"
+    },
+    {
+      "id": "components-tab--controlled",
+      "name": "제어 모드",
+      "originalSource": "{\n  name: '제어 모드',\n  args: {},\n  render: _args => <ControlledTabExample />,\n  parameters: {\n    docs: {\n      description: {\n        story: '외부 상태로 탭을 제어하는 예제입니다. 버튼을 클릭하여 탭을 변경할 수 있습니다.'\n      },\n      source: {\n        language: 'tsx',\n        code: `\nconst ControlledTabExample = () => {\n  const [activeTab, setActiveTab] = useState('tab2');\n\n  return (\n    <div style={{ width: '600px' }}>\n      <div style={{ marginBottom: '1rem' }}>\n        <p>\n          현재 활성 탭: <strong>{activeTab}</strong>\n        </p>\n        <button onClick={() => setActiveTab('tab1')} style={{ marginRight: '0.5rem' }}>\n          탭 1로 변경\n        </button>\n        <button onClick={() => setActiveTab('tab2')} style={{ marginRight: '0.5rem' }}>\n          탭 2로 변경\n        </button>\n        <button onClick={() => setActiveTab('tab3')}>탭 3으로 변경</button>\n      </div>\n      <Tab value={activeTab} onValueChange={setActiveTab} variant=\"line\" size=\"normal\">\n        <TabList>\n          <TabTrigger value=\"tab1\">타이틀 1</TabTrigger>\n          <TabTrigger value=\"tab2\">타이틀 2</TabTrigger>\n          <TabTrigger value=\"tab3\">타이틀 3</TabTrigger>\n        </TabList>\n        <TabContent>\n          <TabPanel value=\"tab1\">\n            <div>탭 1 영역</div>\n          </TabPanel>\n          <TabPanel value=\"tab2\">\n            <div>탭 2 영역</div>\n          </TabPanel>\n          <TabPanel value=\"tab3\">\n            <div>탭 3 영역</div>\n          </TabPanel>\n        </TabContent>\n      </Tab>\n    </div>\n  );\n};`\n      }\n    }\n  }\n}"
+    },
+    {
+      "id": "components-tab--uncontrolled",
+      "name": "비제어 모드",
+      "originalSource": "{\n  name: '비제어 모드',\n  args: {},\n  render: _args => <Tab variant=\"line\" size=\"normal\" defaultValue=\"tab2\">\n      <TabList>\n        <TabTrigger value=\"tab1\">타이틀 1</TabTrigger>\n        <TabTrigger value=\"tab2\">타이틀 2</TabTrigger>\n        <TabTrigger value=\"tab3\">타이틀 3</TabTrigger>\n      </TabList>\n      <TabContent>\n        <TabPanel value=\"tab1\">\n          <div>탭 1 영역</div>\n        </TabPanel>\n        <TabPanel value=\"tab2\">\n          <div>탭 2 영역</div>\n        </TabPanel>\n        <TabPanel value=\"tab3\">\n          <div>탭 3 영역</div>\n        </TabPanel>\n      </TabContent>\n    </Tab>,\n  parameters: {\n    docs: {\n      description: {\n        story: '내부 상태로 관리되는 탭입니다. defaultValue로 초기 활성 탭을 설정할 수 있습니다.'\n      }\n    }\n  }\n}"
+    },
+    {
+      "id": "components-tab--keyboard-navigation",
+      "name": "키보드 내비게이션",
+      "originalSource": "{\n  name: '키보드 내비게이션',\n  args: {},\n  render: _args => <Tab variant=\"line\" size=\"normal\" defaultValue=\"nav1\">\n      <TabList>\n        <TabTrigger value=\"nav1\">내비게이션 1</TabTrigger>\n        <TabTrigger value=\"nav2\">내비게이션 2</TabTrigger>\n        <TabTrigger value=\"nav3\">내비게이션 3</TabTrigger>\n      </TabList>\n      <TabContent>\n        <TabPanel value=\"nav1\">\n          <div>내비게이션 1 내용</div>\n        </TabPanel>\n        <TabPanel value=\"nav2\">\n          <div>내비게이션 2 내용</div>\n        </TabPanel>\n        <TabPanel value=\"nav3\">\n          <div>내비게이션 3 내용</div>\n        </TabPanel>\n      </TabContent>\n    </Tab>,\n  parameters: {\n    docs: {\n      description: {\n        story: `\n키보드로 탭을 조작할 수 있습니다:\n- **Arrow Left/Right**: 이전/다음 탭으로 포커스 이동\n- **Home**: 첫 번째 탭으로 포커스 이동\n- **End**: 마지막 탭으로 포커스 이동\n- **Enter/Space**: 포커스된 탭 활성화\n        `\n      }\n    }\n  }\n}"
+    },
+    {
+      "id": "components-tab--compound-pattern-example",
+      "name": "Compound Pattern 예제",
+      "originalSource": "{\n  name: 'Compound Pattern 예제',\n  args: {},\n  render: _args => <Tab variant=\"line\" size=\"normal\" defaultValue=\"component\">\n      <TabList>\n        <TabTrigger value=\"component\">컴포넌트</TabTrigger>\n        <TabTrigger value=\"usage\">사용법</TabTrigger>\n        <TabTrigger value=\"api\">API</TabTrigger>\n      </TabList>\n      <TabContent>\n        <TabPanel value=\"component\">\n          <div>\n            <h4>Compound Pattern</h4>\n            <p>Tab 컴포넌트는 다음과 같이 구성됩니다:</p>\n            <ul>\n              <li>\n                <code>&lt;Tab&gt;</code> - 루트 컨테이너\n              </li>\n              <li>\n                <code>&lt;TabList&gt;</code> - 탭 버튼들의 컨테이너\n              </li>\n              <li>\n                <code>&lt;TabTrigger&gt;</code> - 개별 탭 버튼\n              </li>\n              <li>\n                <code>&lt;TabPanel&gt;</code> - 탭 콘텐츠\n              </li>\n            </ul>\n          </div>\n        </TabPanel>\n        <TabPanel value=\"usage\">\n          <div>\n            <h4>기본 사용법</h4>\n            <pre style={{\n            backgroundColor: '#f5f5f5',\n            padding: '1rem',\n            borderRadius: '4px'\n          }}>\n              {`<Tab defaultValue=\"tab1\">\n  <TabList>\n    <TabTrigger value=\"tab1\">탭 1</TabTrigger>\n    <TabTrigger value=\"tab2\">탭 2</TabTrigger>\n  </TabList>\n  <TabPanel value=\"tab1\">콘텐츠 1</TabPanel>\n  <TabPanel value=\"tab2\">콘텐츠 2</TabPanel>\n</Tab>`}\n            </pre>\n          </div>\n        </TabPanel>\n        <TabPanel value=\"api\">\n          <div>\n            <h4>API 참조</h4>\n            <p>각 컴포넌트의 props와 사용법을 확인하세요.</p>\n          </div>\n        </TabPanel>\n      </TabContent>\n    </Tab>,\n  parameters: {\n    docs: {\n      description: {\n        story: 'Compound Pattern의 사용법을 보여주는 예제입니다.'\n      }\n    }\n  }\n}"
+    }
+  ],
+  "extractedFrom": {
+    "chunk": "Tab.stories-D919rUHl.js",
+    "storybookVersion": "9.1.17"
+  }
+}

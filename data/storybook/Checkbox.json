@@ -1,0 +1,57 @@
+{
+  "component": "Checkbox",
+  "title": "Components/Checkbox",
+  "description": "체크박스는 사용자가 여러 개의 옵션 중 한 개 이상의 값을 선택할 수 있도록 하는 경우에 사용한다. 즉, 체크박스 옵션의 선택은 상호배타적이므로 한 개의 옵션을 선택하는 것은 다른 옵션의 선택에 영향을 미치지 않는다.",
+  "argTypes": null,
+  "stories": [
+    {
+      "id": "components-checkbox--default",
+      "name": "Default",
+      "originalSource": "{\n  args: {\n    id: 'checkbox-1',\n    children: '기본',\n    size: 'medium',\n    disabled: false\n  }\n}"
+    },
+    {
+      "id": "components-checkbox--checked",
+      "name": "Checked",
+      "originalSource": "{\n  args: {\n    id: 'checkbox-2',\n    children: '선택됨',\n    size: 'medium',\n    disabled: false,\n    defaultValue: true\n  }\n}"
+    },
+    {
+      "id": "components-checkbox--disabled",
+      "name": "Disabled",
+      "originalSource": "{\n  args: {\n    id: 'checkbox-3',\n    children: '비활성화',\n    size: 'medium',\n    disabled: true\n  }\n}"
+    },
+    {
+      "id": "components-checkbox--checked-disabled",
+      "name": "Checked Disabled",
+      "originalSource": "{\n  args: {\n    id: 'checkbox-4',\n    children: '선택된 비활성화',\n    size: 'medium',\n    disabled: true,\n    defaultValue: true\n  }\n}"
+    },
+    {
+      "id": "components-checkbox--with-description",
+      "name": "With Description",
+      "originalSource": "{\n  args: {\n    id: 'checkbox-5',\n    children: '체크박스',\n    size: 'medium',\n    disabled: false,\n    description: '부가적인 설명이 들어갑니다.',\n    defaultValue: true\n  }\n}"
+    },
+    {
+      "id": "components-checkbox--size",
+      "name": "Size",
+      "originalSource": "{\n  args: {},\n  render: _args => {\n    return <div className=\"fieldset\">\n        <div className=\"form-group\">\n          <div className=\"form-conts\">\n            <CheckboxGroup>\n              <Checkbox id=\"checkbox-medium\" size=\"medium\">\n                사이즈 : medium\n              </Checkbox>\n              <Checkbox id=\"checkbox-large\" size=\"large\">\n                사이즈 : large\n              </Checkbox>\n            </CheckboxGroup>\n          </div>\n        </div>\n      </div>;\n  }\n}"
+    },
+    {
+      "id": "components-checkbox--group",
+      "name": "Group",
+      "originalSource": "{\n  args: {},\n  render: _args => {\n    return <div className=\"fieldset\">\n        <div className=\"form-group\">\n          <div className=\"form-conts\">\n            <CheckboxGroup>\n              <Checkbox id=\"group-1\" defaultValue={false}>\n                기본\n              </Checkbox>\n              <Checkbox id=\"group-2\" defaultValue={true}>\n                선택됨\n              </Checkbox>\n              <Checkbox id=\"group-3\" disabled>\n                비활성화\n              </Checkbox>\n              <Checkbox id=\"group-4\" disabled defaultValue={true}>\n                선택된 비활성화\n              </Checkbox>\n            </CheckboxGroup>\n          </div>\n        </div>\n      </div>;\n  }\n}"
+    },
+    {
+      "id": "components-checkbox--group-column",
+      "name": "Group Column",
+      "originalSource": "{\n  args: {},\n  render: _args => {\n    return <div className=\"fieldset\">\n        <div className=\"form-group\">\n          <div className=\"form-conts\">\n            <CheckboxGroup column>\n              <Checkbox id=\"column-1\" defaultValue={true} description=\"부가적인 설명이 들어갑니다.\">\n                체크박스\n              </Checkbox>\n              <Checkbox id=\"column-2\" defaultValue={false} description=\"부가적인 설명이 들어갑니다.\">\n                체크박스\n              </Checkbox>\n            </CheckboxGroup>\n          </div>\n        </div>\n      </div>;\n  }\n}"
+    },
+    {
+      "id": "components-checkbox--chip-variant",
+      "name": "Chip Variant",
+      "originalSource": "{\n  args: {},\n  render: _args => {\n    return <div className=\"krds-check-area\">\n        <CheckboxChip id=\"chip-1\" defaultValue={false}>\n          chip 상태 : default\n        </CheckboxChip>\n        <CheckboxChip id=\"chip-2\" defaultValue={true}>\n          chip 상태 : checked\n        </CheckboxChip>\n        <CheckboxChip id=\"chip-3\" disabled>\n          chip 상태 : disabled\n        </CheckboxChip>\n      </div>;\n  }\n}"
+    }
+  ],
+  "extractedFrom": {
+    "chunk": "Checkbox.stories-Bs9M1H97.js",
+    "storybookVersion": "9.1.17"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "component": "ToggleSwitch",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/ToggleSwitch/ToggleSwitch.d.ts",
+    "dist/components/ToggleSwitch/ToggleSwitch.types.d.ts"
+  ],
+  "primaryTypeName": "ToggleSwitchProps",
+  "props": [
+    {
+      "name": "size",
+      "type": "ToggleSwitchSize",
+      "optional": true,
+      "doc": "토글 스위치 크기"
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "optional": true,
+      "doc": "토글 스위치 라벨 텍스트"
+    },
+    {
+      "name": "onChange",
+      "type": "(checked: boolean, event: React.ChangeEvent<HTMLInputElement>) => void",
+      "optional": true,
+      "doc": "값 변경 핸들러"
+    }
+  ],
+  "extends": [
+    "Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'type' | 'onChange'>"
+  ],
+  "polymorphic": false,
+  "exportedTypes": {
+    "ToggleSwitchSize": [
+      "medium",
+      "large"
+    ]
+  },
+  "subComponents": {},
+  "auxiliaryTypes": {},
+  "otherTypes": {},
+  "rawDts": "import { InputHTMLAttributes } from 'react';\nexport type ToggleSwitchSize = 'medium' | 'large';\nexport interface ToggleSwitchProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'type' | 'onChange'> {\n    /**\n     * 토글 스위치 크기\n     */\n    size?: ToggleSwitchSize;\n    /**\n     * 토글 스위치 라벨 텍스트\n     */\n    label?: string;\n    /**\n     * 값 변경 핸들러\n     */\n    onChange?: (checked: boolean, event: React.ChangeEvent<HTMLInputElement>) => void;\n}\n//# sourceMappingURL=ToggleSwitch.types.d.ts.map"
+}

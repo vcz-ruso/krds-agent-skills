@@ -1,0 +1,42 @@
+{
+  "component": "Tooltip",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/Tooltip/Tooltip.d.ts",
+    "dist/components/Tooltip/Tooltip.types.d.ts"
+  ],
+  "primaryTypeName": "TooltipProps",
+  "props": [
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "optional": false,
+      "doc": null
+    },
+    {
+      "name": "text",
+      "type": "string",
+      "optional": false,
+      "doc": null
+    },
+    {
+      "name": "variant",
+      "type": "'horizontal' | 'vertical' | 'box'",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "optional": true,
+      "doc": null
+    }
+  ],
+  "extends": [],
+  "polymorphic": false,
+  "exportedTypes": {},
+  "subComponents": {},
+  "auxiliaryTypes": {},
+  "otherTypes": {},
+  "rawDts": "import { ReactNode } from 'react';\nexport interface TooltipProps {\n    children: ReactNode;\n    text: string;\n    variant?: 'horizontal' | 'vertical' | 'box';\n    className?: string;\n}\n//# sourceMappingURL=Tooltip.types.d.ts.map"
+}

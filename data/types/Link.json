@@ -1,0 +1,92 @@
+{
+  "component": "Link",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/Link/Link.d.ts",
+    "dist/components/Link/Link.types.d.ts"
+  ],
+  "primaryTypeName": "LinkProps",
+  "props": [
+    {
+      "name": "variant",
+      "type": "LinkVariant",
+      "optional": true,
+      "doc": "링크 스타일 타입 ('default' | 'basic')"
+    },
+    {
+      "name": "underline",
+      "type": "LinkUnderline",
+      "optional": true,
+      "doc": "밑줄 표시 여부 ('always' | 'hover' | 'none')"
+    },
+    {
+      "name": "preserveColorOnHover",
+      "type": "boolean",
+      "optional": true,
+      "doc": "hover 시 컬러 유지 여부 (pure 클래스)"
+    },
+    {
+      "name": "icon",
+      "type": "ReactNode",
+      "optional": true,
+      "doc": "외부 링크 아이콘 또는 커스텀 아이콘"
+    },
+    {
+      "name": "external",
+      "type": "boolean",
+      "optional": true,
+      "doc": "외부 링크 여부 (rel, target 자동 설정)"
+    },
+    {
+      "name": "size",
+      "type": "LinkSize",
+      "optional": true,
+      "doc": "링크 크기 ('xsmall' | 'small' | 'medium' | 'large' | 'xlarge')"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "optional": true,
+      "doc": "비활성화 여부"
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "optional": true,
+      "doc": "링크 텍스트 내용"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "optional": true,
+      "doc": "사용자 정의 클래스명"
+    }
+  ],
+  "extends": [
+    "Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'size'>"
+  ],
+  "polymorphic": false,
+  "exportedTypes": {
+    "LinkVariant": [
+      "default",
+      "basic",
+      "unstyled"
+    ],
+    "LinkUnderline": [
+      "always",
+      "hover",
+      "none"
+    ],
+    "LinkSize": [
+      "xsmall",
+      "small",
+      "medium",
+      "large",
+      "xlarge"
+    ]
+  },
+  "subComponents": {},
+  "auxiliaryTypes": {},
+  "otherTypes": {},
+  "rawDts": "import { AnchorHTMLAttributes, ReactNode } from 'react';\nexport type LinkVariant = 'default' | 'basic' | 'unstyled';\nexport type LinkUnderline = 'always' | 'hover' | 'none';\nexport type LinkSize = 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';\nexport interface LinkProps extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'size'> {\n    /** 링크 스타일 타입 ('default' | 'basic') */\n    variant?: LinkVariant;\n    /** 밑줄 표시 여부 ('always' | 'hover' | 'none') */\n    underline?: LinkUnderline;\n    /** hover 시 컬러 유지 여부 (pure 클래스) */\n    preserveColorOnHover?: boolean;\n    /** 외부 링크 아이콘 또는 커스텀 아이콘 */\n    icon?: ReactNode;\n    /** 외부 링크 여부 (rel, target 자동 설정) */\n    external?: boolean;\n    /** 링크 크기 ('xsmall' | 'small' | 'medium' | 'large' | 'xlarge') */\n    size?: LinkSize;\n    /** 비활성화 여부 */\n    disabled?: boolean;\n    /** 링크 텍스트 내용 */\n    children?: ReactNode;\n    /** 사용자 정의 클래스명 */\n    className?: string;\n}\n//# sourceMappingURL=Link.types.d.ts.map"
+}

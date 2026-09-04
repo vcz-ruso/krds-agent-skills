@@ -1,0 +1,32 @@
+{
+  "component": "Masthead",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/Masthead/Masthead.d.ts",
+    "dist/components/Masthead/Masthead.types.d.ts"
+  ],
+  "primaryTypeName": "MastheadProps",
+  "props": [
+    {
+      "name": "text",
+      "type": "string",
+      "optional": false,
+      "doc": null
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "optional": true,
+      "doc": null
+    }
+  ],
+  "extends": [
+    "Omit<HTMLAttributes<HTMLDivElement>, 'children'>"
+  ],
+  "polymorphic": false,
+  "exportedTypes": {},
+  "subComponents": {},
+  "auxiliaryTypes": {},
+  "otherTypes": {},
+  "rawDts": "import { HTMLAttributes } from 'react';\nexport interface MastheadProps extends Omit<HTMLAttributes<HTMLDivElement>, 'children'> {\n    text: string;\n    className?: string;\n}\n//# sourceMappingURL=Masthead.types.d.ts.map"
+}

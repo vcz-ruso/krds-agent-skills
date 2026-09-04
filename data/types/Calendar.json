@@ -1,0 +1,481 @@
+{
+  "component": "Calendar",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/Calendar/Calendar.d.ts",
+    "dist/components/Calendar/Calendar.types.d.ts"
+  ],
+  "primaryTypeName": "CalendarProps",
+  "props": [
+    {
+      "name": "mode",
+      "type": "CalendarMode",
+      "optional": true,
+      "doc": "달력 모드 ('single' | 'range')"
+    },
+    {
+      "name": "position",
+      "type": "CalendarPosition",
+      "optional": true,
+      "doc": "달력 위치 ('top' | 'bottom')"
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "optional": true,
+      "doc": "현재 선택된 날짜 (단일 선택 모드)"
+    },
+    {
+      "name": "defaultValue",
+      "type": "string",
+      "optional": true,
+      "doc": "기본 선택된 날짜 (단일 선택 모드)"
+    },
+    {
+      "name": "startDate",
+      "type": "string",
+      "optional": true,
+      "doc": "범위 선택 시작 날짜"
+    },
+    {
+      "name": "endDate",
+      "type": "string",
+      "optional": true,
+      "doc": "범위 선택 종료 날짜"
+    },
+    {
+      "name": "defaultStartDate",
+      "type": "string",
+      "optional": true,
+      "doc": "기본 범위 선택 시작 날짜"
+    },
+    {
+      "name": "defaultEndDate",
+      "type": "string",
+      "optional": true,
+      "doc": "기본 범위 선택 종료 날짜"
+    },
+    {
+      "name": "disabledDates",
+      "type": "string[]",
+      "optional": true,
+      "doc": "비활성화할 날짜 배열 (YYYY.MM.DD 형식)"
+    },
+    {
+      "name": "eventDates",
+      "type": "string[]",
+      "optional": true,
+      "doc": "이벤트가 있는 날짜 배열 (YYYY.MM.DD 형식)"
+    },
+    {
+      "name": "isOpen",
+      "type": "boolean",
+      "optional": true,
+      "doc": "달력이 열려있는지 여부"
+    },
+    {
+      "name": "defaultIsOpen",
+      "type": "boolean",
+      "optional": true,
+      "doc": "기본 달력 열림 상태"
+    },
+    {
+      "name": "onOpenChange",
+      "type": "(isOpen: boolean) => void",
+      "optional": true,
+      "doc": "달력 열림/닫힘 상태 변경 콜백"
+    },
+    {
+      "name": "onChange",
+      "type": "(value: string) => void",
+      "optional": true,
+      "doc": "날짜 선택 변경 콜백 (단일 선택)"
+    },
+    {
+      "name": "onRangeChange",
+      "type": "(startDate: string, endDate: string) => void",
+      "optional": true,
+      "doc": "범위 선택 변경 콜백"
+    },
+    {
+      "name": "onYearChange",
+      "type": "(year: number) => void",
+      "optional": true,
+      "doc": "년도 변경 콜백"
+    },
+    {
+      "name": "onMonthChange",
+      "type": "(month: number) => void",
+      "optional": true,
+      "doc": "월 변경 콜백"
+    },
+    {
+      "name": "onTodayClick",
+      "type": "() => void",
+      "optional": true,
+      "doc": "오늘 버튼 클릭 콜백"
+    },
+    {
+      "name": "onConfirm",
+      "type": "() => void",
+      "optional": true,
+      "doc": "확인 버튼 클릭 콜백"
+    },
+    {
+      "name": "onCancel",
+      "type": "() => void",
+      "optional": true,
+      "doc": "취소 버튼 클릭 콜백"
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "optional": true,
+      "doc": "입력 필드 레이블"
+    },
+    {
+      "name": "inputId",
+      "type": "string",
+      "optional": true,
+      "doc": "입력 필드 ID"
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "optional": true,
+      "doc": "입력 필드 placeholder (단일 선택)"
+    },
+    {
+      "name": "startPlaceholder",
+      "type": "string",
+      "optional": true,
+      "doc": "시작 날짜 입력 필드 placeholder"
+    },
+    {
+      "name": "endPlaceholder",
+      "type": "string",
+      "optional": true,
+      "doc": "종료 날짜 입력 필드 placeholder"
+    },
+    {
+      "name": "startTitle",
+      "type": "string",
+      "optional": true,
+      "doc": "시작 날짜 입력 필드 title"
+    },
+    {
+      "name": "endTitle",
+      "type": "string",
+      "optional": true,
+      "doc": "종료 날짜 입력 필드 title"
+    },
+    {
+      "name": "openButtonLabel",
+      "type": "string",
+      "optional": true,
+      "doc": "달력 열기 버튼 aria-label"
+    },
+    {
+      "name": "prevButtonLabel",
+      "type": "string",
+      "optional": true,
+      "doc": "이전 달 버튼 aria-label"
+    },
+    {
+      "name": "nextButtonLabel",
+      "type": "string",
+      "optional": true,
+      "doc": "다음 달 버튼 aria-label"
+    },
+    {
+      "name": "yearSelectLabel",
+      "type": "string",
+      "optional": true,
+      "doc": "년도 선택 버튼 aria-label"
+    },
+    {
+      "name": "monthSelectLabel",
+      "type": "string",
+      "optional": true,
+      "doc": "월 선택 버튼 aria-label"
+    },
+    {
+      "name": "todayButtonText",
+      "type": "string",
+      "optional": true,
+      "doc": "오늘 버튼 텍스트"
+    },
+    {
+      "name": "cancelButtonText",
+      "type": "string",
+      "optional": true,
+      "doc": "취소 버튼 텍스트"
+    },
+    {
+      "name": "confirmButtonText",
+      "type": "string",
+      "optional": true,
+      "doc": "확인 버튼 텍스트"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "optional": true,
+      "doc": "비활성화 여부"
+    },
+    {
+      "name": "readOnly",
+      "type": "boolean",
+      "optional": true,
+      "doc": "읽기 전용 여부"
+    }
+  ],
+  "extends": [
+    "Omit<HTMLAttributes<HTMLDivElement>, 'onChange'>"
+  ],
+  "polymorphic": false,
+  "exportedTypes": {
+    "CalendarMode": [
+      "single",
+      "range"
+    ],
+    "CalendarPosition": [
+      "top",
+      "bottom"
+    ]
+  },
+  "subComponents": {
+    "CalendarInput": {
+      "typeName": "CalendarInputProps",
+      "props": [
+        {
+          "name": "mode",
+          "type": "CalendarMode",
+          "optional": true,
+          "doc": "달력 모드"
+        },
+        {
+          "name": "onChange",
+          "type": "(value: string) => void",
+          "optional": true,
+          "doc": "입력값 변경 콜백"
+        }
+      ],
+      "extends": [
+        "Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'>"
+      ]
+    },
+    "CalendarButton": {
+      "typeName": "CalendarButtonProps",
+      "props": [
+        {
+          "name": "variant",
+          "type": "'icon' | 'move' | 'switch' | 'date' | 'action'",
+          "optional": true,
+          "doc": "버튼 variant"
+        },
+        {
+          "name": "isActive",
+          "type": "boolean",
+          "optional": true,
+          "doc": "활성 상태"
+        },
+        {
+          "name": "isSelected",
+          "type": "boolean",
+          "optional": true,
+          "doc": "선택 상태"
+        }
+      ],
+      "extends": [
+        "ButtonHTMLAttributes<HTMLButtonElement>"
+      ]
+    },
+    "CalendarDropdown": {
+      "typeName": "CalendarDropdownProps",
+      "props": [
+        {
+          "name": "isOpen",
+          "type": "boolean",
+          "optional": true,
+          "doc": "드롭다운 열림 상태"
+        },
+        {
+          "name": "items",
+          "type": "CalendarYearMonth[]",
+          "optional": true,
+          "doc": "드롭다운 항목들"
+        },
+        {
+          "name": "onItemSelect",
+          "type": "(item: CalendarYearMonth) => void",
+          "optional": true,
+          "doc": "항목 선택 콜백"
+        },
+        {
+          "name": "onToggle",
+          "type": "() => void",
+          "optional": true,
+          "doc": "드롭다운 토글 콜백"
+        }
+      ],
+      "extends": [
+        "HTMLAttributes<HTMLDivElement>"
+      ]
+    },
+    "CalendarTable": {
+      "typeName": "CalendarTableProps",
+      "props": [
+        {
+          "name": "dates",
+          "type": "CalendarDate[]",
+          "optional": true,
+          "doc": "달력 데이터"
+        },
+        {
+          "name": "mode",
+          "type": "CalendarMode",
+          "optional": true,
+          "doc": "달력 모드"
+        },
+        {
+          "name": "currentYear",
+          "type": "number",
+          "optional": true,
+          "doc": "현재 년도"
+        },
+        {
+          "name": "currentMonth",
+          "type": "number",
+          "optional": true,
+          "doc": "현재 월"
+        },
+        {
+          "name": "onDateClick",
+          "type": "(date: CalendarDate) => void",
+          "optional": true,
+          "doc": "날짜 클릭 콜백"
+        }
+      ],
+      "extends": [
+        "HTMLAttributes<HTMLTableElement>"
+      ]
+    }
+  },
+  "auxiliaryTypes": {
+    "CalendarDate": {
+      "props": [
+        {
+          "name": "year",
+          "type": "number",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "month",
+          "type": "number",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "day",
+          "type": "number",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "isToday",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "isDisabled",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "isOld",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "isNew",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "isDayOff",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "hasEvent",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "isSelected",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "isStart",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "isEnd",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "isPeriod",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "CalendarYearMonth": {
+      "props": [
+        {
+          "name": "value",
+          "type": "number",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "isActive",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "isDisabled",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": []
+    }
+  },
+  "otherTypes": {},
+  "rawDts": "import { HTMLAttributes, ButtonHTMLAttributes, InputHTMLAttributes } from 'react';\nexport type CalendarMode = 'single' | 'range';\nexport type CalendarPosition = 'top' | 'bottom';\nexport interface CalendarDate {\n    year: number;\n    month: number;\n    day: number;\n    isToday?: boolean;\n    isDisabled?: boolean;\n    isOld?: boolean;\n    isNew?: boolean;\n    isDayOff?: boolean;\n    hasEvent?: boolean;\n    isSelected?: boolean;\n    isStart?: boolean;\n    isEnd?: boolean;\n    isPeriod?: boolean;\n}\nexport interface CalendarYearMonth {\n    value: number;\n    label: string;\n    isActive?: boolean;\n    isDisabled?: boolean;\n}\nexport interface CalendarProps extends Omit<HTMLAttributes<HTMLDivElement>, 'onChange'> {\n    /**\n     * 달력 모드 ('single' | 'range')\n     */\n    mode?: CalendarMode;\n    /**\n     * 달력 위치 ('top' | 'bottom')\n     */\n    position?: CalendarPosition;\n    /**\n     * 현재 선택된 날짜 (단일 선택 모드)\n     */\n    value?: string;\n    /**\n     * 기본 선택된 날짜 (단일 선택 모드)\n     */\n    defaultValue?: string;\n    /**\n     * 범위 선택 시작 날짜\n     */\n    startDate?: string;\n    /**\n     * 범위 선택 종료 날짜\n     */\n    endDate?: string;\n    /**\n     * 기본 범위 선택 시작 날짜\n     */\n    defaultStartDate?: string;\n    /**\n     * 기본 범위 선택 종료 날짜\n     */\n    defaultEndDate?: string;\n    /**\n     * 비활성화할 날짜 배열 (YYYY.MM.DD 형식)\n     */\n    disabledDates?: string[];\n    /**\n     * 이벤트가 있는 날짜 배열 (YYYY.MM.DD 형식)\n     */\n    eventDates?: string[];\n    /**\n     * 달력이 열려있는지 여부\n     */\n    isOpen?: boolean;\n    /**\n     * 기본 달력 열림 상태\n     */\n    defaultIsOpen?: boolean;\n    /**\n     * 달력 열림/닫힘 상태 변경 콜백\n     */\n    onOpenChange?: (isOpen: boolean) => void;\n    /**\n     * 날짜 선택 변경 콜백 (단일 선택)\n     */\n    onChange?: (value: string) => void;\n    /**\n     * 범위 선택 변경 콜백\n     */\n    onRangeChange?: (startDate: string, endDate: string) => void;\n    /**\n     * 년도 변경 콜백\n     */\n    onYearChange?: (year: number) => void;\n    /**\n     * 월 변경 콜백\n     */\n    onMonthChange?: (month: number) => void;\n    /**\n     * 오늘 버튼 클릭 콜백\n     */\n    onTodayClick?: () => void;\n    /**\n     * 확인 버튼 클릭 콜백\n     */\n    onConfirm?: () => void;\n    /**\n     * 취소 버튼 클릭 콜백\n     */\n    onCancel?: () => void;\n    /**\n     * 입력 필드 레이블\n     */\n    label?: string;\n    /**\n     * 입력 필드 ID\n     */\n    inputId?: string;\n    /**\n     * 입력 필드 placeholder (단일 선택)\n     */\n    placeholder?: string;\n    /**\n     * 시작 날짜 입력 필드 placeholder\n     */\n    startPlaceholder?: string;\n    /**\n     * 종료 날짜 입력 필드 placeholder\n     */\n    endPlaceholder?: string;\n    /**\n     * 시작 날짜 입력 필드 title\n     */\n    startTitle?: string;\n    /**\n     * 종료 날짜 입력 필드 title\n     */\n    endTitle?: string;\n    /**\n     * 달력 열기 버튼 aria-label\n     */\n    openButtonLabel?: string;\n    /**\n     * 이전 달 버튼 aria-label\n     */\n    prevButtonLabel?: string;\n    /**\n     * 다음 달 버튼 aria-label\n     */\n    nextButtonLabel?: string;\n    /**\n     * 년도 선택 버튼 aria-label\n     */\n    yearSelectLabel?: string;\n    /**\n     * 월 선택 버튼 aria-label\n     */\n    monthSelectLabel?: string;\n    /**\n     * 오늘 버튼 텍스트\n     */\n    todayButtonText?: string;\n    /**\n     * 취소 버튼 텍스트\n     */\n    cancelButtonText?: string;\n    /**\n     * 확인 버튼 텍스트\n     */\n    confirmButtonText?: string;\n    /**\n     * 비활성화 여부\n     */\n    disabled?: boolean;\n    /**\n     * 읽기 전용 여부\n     */\n    readOnly?: boolean;\n}\nexport interface CalendarInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'> {\n    /**\n     * 달력 모드\n     */\n    mode?: CalendarMode;\n    /**\n     * 입력값 변경 콜백\n     */\n    onChange?: (value: string) => void;\n}\nexport interface CalendarButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {\n    /**\n     * 버튼 variant\n     */\n    variant?: 'icon' | 'move' | 'switch' | 'date' | 'action';\n    /**\n     * 활성 상태\n     */\n    isActive?: boolean;\n    /**\n     * 선택 상태\n     */\n    isSelected?: boolean;\n}\nexport interface CalendarDropdownProps extends HTMLAttributes<HTMLDivElement> {\n    /**\n     * 드롭다운 열림 상태\n     */\n    isOpen?: boolean;\n    /**\n     * 드롭다운 항목들\n     */\n    items?: CalendarYearMonth[];\n    /**\n     * 항목 선택 콜백\n     */\n    onItemSelect?: (item: CalendarYearMonth) => void;\n    /**\n     * 드롭다운 토글 콜백\n     */\n    onToggle?: () => void;\n}\nexport interface CalendarTableProps extends HTMLAttributes<HTMLTableElement> {\n    /**\n     * 달력 데이터\n     */\n    dates?: CalendarDate[];\n    /**\n     * 달력 모드\n     */\n    mode?: CalendarMode;\n    /**\n     * 현재 년도\n     */\n    currentYear?: number;\n    /**\n     * 현재 월\n     */\n    currentMonth?: number;\n    /**\n     * 날짜 클릭 콜백\n     */\n    onDateClick?: (date: CalendarDate) => void;\n}\n//# sourceMappingURL=Calendar.types.d.ts.map"
+}

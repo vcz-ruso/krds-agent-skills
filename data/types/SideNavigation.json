@@ -1,0 +1,349 @@
+{
+  "component": "SideNavigation",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/SideNavigation/SideNavigation.d.ts",
+    "dist/components/SideNavigation/SideNavigation.types.d.ts"
+  ],
+  "primaryTypeName": "SideNavigationProps",
+  "props": [
+    {
+      "name": "children",
+      "type": "React.ReactNode",
+      "optional": false,
+      "doc": "자식 요소들"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "optional": true,
+      "doc": "추가 CSS 클래스"
+    }
+  ],
+  "extends": [
+    "HTMLAttributes<HTMLElement>"
+  ],
+  "polymorphic": false,
+  "exportedTypes": {},
+  "subComponents": {
+    "SideNavigationTitle": {
+      "typeName": "SideNavigationTitleProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "optional": false,
+          "doc": "제목 텍스트"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "optional": true,
+          "doc": "추가 CSS 클래스"
+        }
+      ],
+      "extends": [
+        "HTMLAttributes<HTMLHeadingElement>"
+      ]
+    },
+    "SideNavigationMenu": {
+      "typeName": "SideNavigationMenuProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "optional": false,
+          "doc": "자식 메뉴 아이템들"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "optional": true,
+          "doc": "추가 CSS 클래스"
+        }
+      ],
+      "extends": [
+        "HTMLAttributes<HTMLUListElement>"
+      ]
+    },
+    "SideNavigationItem": {
+      "typeName": "SideNavigationItemProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "optional": false,
+          "doc": "자식 요소들 (버튼, 링크, 서브메뉴 등)"
+        },
+        {
+          "name": "active",
+          "type": "boolean",
+          "optional": true,
+          "doc": "활성화 상태"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "optional": true,
+          "doc": "추가 CSS 클래스"
+        }
+      ],
+      "extends": [
+        "HTMLAttributes<HTMLLIElement>"
+      ]
+    },
+    "SideNavigationSubItem": {
+      "typeName": "SideNavigationSubItemProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "optional": false,
+          "doc": "자식 요소들"
+        },
+        {
+          "name": "active",
+          "type": "boolean",
+          "optional": true,
+          "doc": "활성화 상태"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "optional": true,
+          "doc": "추가 CSS 클래스"
+        }
+      ],
+      "extends": [
+        "HTMLAttributes<HTMLLIElement>"
+      ]
+    },
+    "SideNavigationToggle": {
+      "typeName": "SideNavigationToggleProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "optional": false,
+          "doc": "버튼 텍스트"
+        },
+        {
+          "name": "active",
+          "type": "boolean",
+          "optional": true,
+          "doc": "활성화 상태"
+        },
+        {
+          "name": "expanded",
+          "type": "boolean",
+          "optional": true,
+          "doc": "확장된 상태"
+        },
+        {
+          "name": "onClick",
+          "type": "() => void",
+          "optional": true,
+          "doc": "클릭 핸들러"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "optional": true,
+          "doc": "추가 CSS 클래스"
+        },
+        {
+          "name": "'aria-controls'",
+          "type": "string",
+          "optional": true,
+          "doc": "ARIA controls 속성"
+        }
+      ],
+      "extends": [
+        "Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onClick'>"
+      ]
+    },
+    "SideNavigationSubMenu": {
+      "typeName": "SideNavigationSubMenuProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "optional": false,
+          "doc": "서브메뉴 아이템들"
+        },
+        {
+          "name": "id",
+          "type": "string",
+          "optional": true,
+          "doc": "메뉴 ID"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "optional": true,
+          "doc": "추가 CSS 클래스"
+        }
+      ],
+      "extends": [
+        "HTMLAttributes<HTMLDivElement>"
+      ]
+    },
+    "SideNavigationLink": {
+      "typeName": "SideNavigationLinkProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "optional": false,
+          "doc": "링크 텍스트"
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "optional": true,
+          "doc": "링크 URL"
+        },
+        {
+          "name": "current",
+          "type": "boolean",
+          "optional": true,
+          "doc": "현재 페이지 여부"
+        },
+        {
+          "name": "onClick",
+          "type": "() => void",
+          "optional": true,
+          "doc": "클릭 핸들러"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "optional": true,
+          "doc": "추가 CSS 클래스"
+        }
+      ],
+      "extends": [
+        "Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'onClick'>"
+      ]
+    },
+    "SideNavigationPopupToggle": {
+      "typeName": "SideNavigationPopupToggleProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "optional": false,
+          "doc": "버튼 텍스트"
+        },
+        {
+          "name": "expanded",
+          "type": "boolean",
+          "optional": true,
+          "doc": "확장된 상태"
+        },
+        {
+          "name": "onClick",
+          "type": "(event: React.MouseEvent<HTMLButtonElement>) => void",
+          "optional": true,
+          "doc": "클릭 핸들러"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "optional": true,
+          "doc": "추가 CSS 클래스"
+        },
+        {
+          "name": "'aria-controls'",
+          "type": "string",
+          "optional": true,
+          "doc": "ARIA controls 속성"
+        }
+      ],
+      "extends": [
+        "Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onClick'>"
+      ]
+    },
+    "SideNavigationPopup": {
+      "typeName": "SideNavigationPopupProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "optional": false,
+          "doc": "팝업 내용"
+        },
+        {
+          "name": "active",
+          "type": "boolean",
+          "optional": true,
+          "doc": "활성화 상태"
+        },
+        {
+          "name": "id",
+          "type": "string",
+          "optional": true,
+          "doc": "메뉴 ID"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "optional": true,
+          "doc": "추가 CSS 클래스"
+        }
+      ],
+      "extends": [
+        "HTMLAttributes<HTMLDivElement>"
+      ]
+    },
+    "SideNavigationPopupTitle": {
+      "typeName": "SideNavigationPopupTitleProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "optional": false,
+          "doc": "제목 텍스트"
+        },
+        {
+          "name": "onClick",
+          "type": "(event: React.MouseEvent<HTMLButtonElement>) => void",
+          "optional": true,
+          "doc": "클릭 핸들러"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "optional": true,
+          "doc": "추가 CSS 클래스"
+        }
+      ],
+      "extends": [
+        "Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onClick'>"
+      ]
+    },
+    "SideNavigationPopupMenu": {
+      "typeName": "SideNavigationPopupMenuProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "optional": false,
+          "doc": "4depth 메뉴 아이템들"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "optional": true,
+          "doc": "추가 CSS 클래스"
+        }
+      ],
+      "extends": [
+        "HTMLAttributes<HTMLUListElement>"
+      ]
+    }
+  },
+  "auxiliaryTypes": {},
+  "otherTypes": {},
+  "rawDts": "import { AnchorHTMLAttributes, ButtonHTMLAttributes, HTMLAttributes } from 'react';\nexport interface SideNavigationProps extends HTMLAttributes<HTMLElement> {\n    /** 자식 요소들 */\n    children: React.ReactNode;\n    /** 추가 CSS 클래스 */\n    className?: string;\n}\nexport interface SideNavigationTitleProps extends HTMLAttributes<HTMLHeadingElement> {\n    /** 제목 텍스트 */\n    children: React.ReactNode;\n    /** 추가 CSS 클래스 */\n    className?: string;\n}\nexport interface SideNavigationMenuProps extends HTMLAttributes<HTMLUListElement> {\n    /** 자식 메뉴 아이템들 */\n    children: React.ReactNode;\n    /** 추가 CSS 클래스 */\n    className?: string;\n}\nexport interface SideNavigationItemProps extends HTMLAttributes<HTMLLIElement> {\n    /** 자식 요소들 (버튼, 링크, 서브메뉴 등) */\n    children: React.ReactNode;\n    /** 활성화 상태 */\n    active?: boolean;\n    /** 추가 CSS 클래스 */\n    className?: string;\n}\nexport interface SideNavigationSubItemProps extends HTMLAttributes<HTMLLIElement> {\n    /** 자식 요소들 */\n    children: React.ReactNode;\n    /** 활성화 상태 */\n    active?: boolean;\n    /** 추가 CSS 클래스 */\n    className?: string;\n}\nexport interface SideNavigationToggleProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onClick'> {\n    /** 버튼 텍스트 */\n    children: React.ReactNode;\n    /** 활성화 상태 */\n    active?: boolean;\n    /** 확장된 상태 */\n    expanded?: boolean;\n    /** 클릭 핸들러 */\n    onClick?: () => void;\n    /** 추가 CSS 클래스 */\n    className?: string;\n    /** ARIA controls 속성 */\n    'aria-controls'?: string;\n}\nexport interface SideNavigationSubMenuProps extends HTMLAttributes<HTMLDivElement> {\n    /** 서브메뉴 아이템들 */\n    children: React.ReactNode;\n    /** 메뉴 ID */\n    id?: string;\n    /** 추가 CSS 클래스 */\n    className?: string;\n}\nexport interface SideNavigationLinkProps extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'onClick'> {\n    /** 링크 텍스트 */\n    children: React.ReactNode;\n    /** 링크 URL */\n    href?: string;\n    /** 현재 페이지 여부 */\n    current?: boolean;\n    /** 클릭 핸들러 */\n    onClick?: () => void;\n    /** 추가 CSS 클래스 */\n    className?: string;\n}\nexport interface SideNavigationPopupToggleProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onClick'> {\n    /** 버튼 텍스트 */\n    children: React.ReactNode;\n    /** 확장된 상태 */\n    expanded?: boolean;\n    /** 클릭 핸들러 */\n    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;\n    /** 추가 CSS 클래스 */\n    className?: string;\n    /** ARIA controls 속성 */\n    'aria-controls'?: string;\n}\nexport interface SideNavigationPopupProps extends HTMLAttributes<HTMLDivElement> {\n    /** 팝업 내용 */\n    children: React.ReactNode;\n    /** 활성화 상태 */\n    active?: boolean;\n    /** 메뉴 ID */\n    id?: string;\n    /** 추가 CSS 클래스 */\n    className?: string;\n}\nexport interface SideNavigationPopupTitleProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onClick'> {\n    /** 제목 텍스트 */\n    children: React.ReactNode;\n    /** 클릭 핸들러 */\n    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;\n    /** 추가 CSS 클래스 */\n    className?: string;\n}\nexport interface SideNavigationPopupMenuProps extends HTMLAttributes<HTMLUListElement> {\n    /** 4depth 메뉴 아이템들 */\n    children: React.ReactNode;\n    /** 추가 CSS 클래스 */\n    className?: string;\n}\n//# sourceMappingURL=SideNavigation.types.d.ts.map"
+}

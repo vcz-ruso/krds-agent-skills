@@ -1,0 +1,58 @@
+{
+  "component": "InPageNavigation",
+  "title": "Components/InPageNavigation",
+  "description": "콘텐츠 내 탐색은 사용자가 본문의 구조를 훑어보고 원하는 콘텐츠로 빠르게 이동할 수 있도록 하는 탐색 수단이다. 화면을 스크롤 할 때 특정 위치에 고정되어 콘텐츠의 목차 역할을 하는 동시에 사용자가 페이지 내 탐색에서 특정 항목을 클릭하면 연결된 섹션으로 스크롤 된다.",
+  "argTypes": {
+    "caption": {
+      "control": "text",
+      "options": null,
+      "description": "페이지 구성 설명 텍스트"
+    },
+    "title": {
+      "control": "text",
+      "options": null,
+      "description": "페이지 제목"
+    },
+    "actionText": {
+      "control": "text",
+      "options": null,
+      "description": "액션 버튼 텍스트"
+    },
+    "infoText": {
+      "control": "text",
+      "options": null,
+      "description": "추가 정보 텍스트 (HTML 태그 지원)"
+    },
+    "scrollDown": {
+      "control": "boolean",
+      "options": null,
+      "description": "스크롤 시 상단 위치 조정 여부"
+    }
+  },
+  "stories": [
+    {
+      "id": "components-inpagenavigation--default",
+      "name": "Default",
+      "originalSource": "{\n  args: {\n    caption: '이 페이지의 구성',\n    title: '장애아동수당',\n    items: defaultItems,\n    actionText: '온라인 신청하기',\n    infoText: <>\n        장애아동수당 외 <strong>1건</strong>\n      </>,\n    style: {\n      position: 'static',\n      margin: '0 auto'\n    }\n  },\n  parameters: {\n    docs: {\n      description: {\n        story: '모든 요소가 포함된 기본 사용 예제입니다. infoText에 HTML 태그가 포함되어 있습니다. position: static 은 스토리북에서 테스트를 위해 추가된 속성입니다.'\n      }\n    },\n    layout: 'centered'\n  }\n}"
+    },
+    {
+      "id": "components-inpagenavigation--without-action",
+      "name": "Without Action",
+      "originalSource": "{\n  args: {\n    caption: '이 페이지의 구성',\n    title: '서비스 안내',\n    items: defaultItems,\n    style: {\n      position: 'static',\n      margin: '0 auto'\n    }\n  },\n  parameters: {\n    docs: {\n      description: {\n        story: '액션 버튼이 없는 경우의 예제입니다. position: static 은 스토리북에서 테스트를 위해 추가된 속성입니다.'\n      }\n    },\n    layout: 'centered'\n  }\n}"
+    },
+    {
+      "id": "components-inpagenavigation--long-items",
+      "name": "Long Items",
+      "originalSource": "{\n  args: {\n    caption: '이 페이지의 구성',\n    title: '긴 텍스트 네비게이션',\n    items: [{\n      href: '#section_01',\n      label: '매우 긴 네비게이션 아이템 텍스트가 있는 경우',\n      active: true\n    }, {\n      href: '#section_02',\n      label: '두 번째 긴 텍스트 아이템'\n    }, {\n      href: '#section_03',\n      label: '세 번째 긴 텍스트 아이템'\n    }, {\n      href: '#section_04',\n      label: '네 번째 긴 텍스트 아이템'\n    }],\n    actionText: '온라인 신청하기',\n    infoText: <>\n        추가 정보가 있는 경우 <strong>중요한 정보</strong>\n      </>,\n    style: {\n      position: 'static',\n      margin: '0 auto'\n    }\n  },\n  parameters: {\n    docs: {\n      description: {\n        story: '긴 텍스트가 포함된 네비게이션 아이템의 레이아웃 테스트 예제입니다. position: static 은 스토리북에서 테스트를 위해 추가된 속성입니다.'\n      }\n    },\n    layout: 'centered'\n  }\n}"
+    },
+    {
+      "id": "components-inpagenavigation--with-scroll-functionality",
+      "name": "With Scroll Functionality",
+      "originalSource": "{\n  args: {},\n  render: _args => <WithScrollContainer />,\n  parameters: {\n    docs: {\n      description: {\n        story: '스크롤 기능이 포함된 예제입니다. 스크롤하면 해당 섹션에 맞는 네비게이션 아이템이 자동으로 active 상태가 됩니다. 네비게이션은 오른쪽에 고정되어 있어 스크롤해도 위치가 변하지 않습니다.'\n      },\n      source: {\n        language: 'tsx',\n        code: `\nconst WithScrollContainer = () => {\n  const scrollContainerRef = useRef<HTMLDivElement>(null);\n  return (\n    <div>\n      {/* 네비게이션 영역 */}\n      <InPageNavigation\n        caption=\"이 페이지의 구성\"\n        title=\"스크롤 기능 테스트\"\n        items={[\n          { href: '#section_01', label: '서비스 개요' },\n          { href: '#section_02', label: '서비스 상세' },\n          { href: '#section_03', label: '신청 방법 및 절차' },\n          { href: '#section_04', label: '제출 서류' },\n          { href: '#section_05', label: '함께 신청할 수 있는 서비스' },\n          { href: '#section_06', label: '부가정보' },\n          { href: '#section_07', label: '정보 변경 내역' },\n        ]}\n        actionText=\"온라인 신청하기\"\n        infoText={\n          <>\n            장애아동수당 외 <strong>1건</strong>\n          </>\n        }\n        scrollContainerRef={scrollContainerRef}\n      />\n\n      {/* 컨텐츠 영역 */}\n      <div\n        style={{\n          backgroundColor: 'var(--krds-light-color-surface-white-subtle)',\n          border:\n            'var(--krds-light-border-width-variable-regular) solid var(--krds-light-color-border-gray)',\n          borderRadius: 'var(--krds-radius-xlarge2)',\n          padding: '5.6rem 0',\n          margin: '2rem',\n          minHeight: '700px',\n          position: 'relative',\n          display: 'flex',\n          alignItems: 'center',\n          justifyContent: 'center',\n        }}\n      >\n        <div\n          ref={scrollContainerRef}\n          style={{\n            position: 'relative',\n            margin: '0 auto',\n            backgroundColor: 'white',\n            minHeight: '500px',\n            padding: '2rem',\n            overflow: 'auto',\n            maxHeight: '400px',\n          }}\n        >\n          <div>\n            <div style={{ marginBottom: '2rem' }}>\n              <h1>페이지 제목</h1>\n              <p>페이지 내용이 여기에 표시됩니다...</p>\n            </div>\n\n            <div\n              id=\"section_01\"\n              style={{\n                height: '200px',\n                marginBottom: '2rem',\n                padding: '2rem',\n                backgroundColor: '#f0f0f0',\n              }}\n            >\n              <h2>서비스 개요</h2>\n              <p>서비스 개요 내용...</p>\n            </div>\n            <div\n              id=\"section_02\"\n              style={{\n                height: '200px',\n                marginBottom: '2rem',\n                padding: '2rem',\n                backgroundColor: '#f0f0f0',\n              }}\n            >\n              <h2>서비스 상세</h2>\n              <p>서비스 상세 내용...</p>\n            </div>\n            <div\n              id=\"section_03\"\n              style={{\n                height: '200px',\n                marginBottom: '2rem',\n                padding: '2rem',\n                backgroundColor: '#f0f0f0',\n              }}\n            >\n              <h2>신청 방법 및 절차</h2>\n              <p>신청 방법 및 절차 내용...</p>\n            </div>\n            <div\n              id=\"section_04\"\n              style={{\n                height: '200px',\n                marginBottom: '2rem',\n                padding: '2rem',\n                backgroundColor: '#f0f0f0',\n              }}\n            >\n              <h2>제출 서류</h2>\n              <p>제출 서류 내용...</p>\n            </div>\n            <div\n              id=\"section_05\"\n              style={{\n                height: '200px',\n                marginBottom: '2rem',\n                padding: '2rem',\n                backgroundColor: '#f0f0f0',\n              }}\n            >\n              <h2>함께 신청할 수 있는 서비스</h2>\n              <p>함께 신청할 수 있는 서비스 내용...</p>\n            </div>\n            <div\n              id=\"section_06\"\n              style={{\n                height: '200px',\n                marginBottom: '2rem',\n                padding: '2rem',\n                backgroundColor: '#f0f0f0',\n              }}\n            >\n              <h2>부가정보</h2>\n              <p>부가정보 내용...</p>\n            </div>\n            <div\n              id=\"section_07\"\n              style={{\n                height: '200px',\n                marginBottom: '20rem',\n                padding: '2rem',\n                backgroundColor: '#f0f0f0',\n              }}\n            >\n              <h2>정보 변경 내역</h2>\n              <p>정보 변경 내역 내용...</p>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n};\n        `\n      }\n    },\n    layout: 'fullscreen'\n  }\n}"
+    }
+  ],
+  "extractedFrom": {
+    "chunk": "InPageNavigation.stories-D9BLdOdD.js",
+    "storybookVersion": "9.1.17"
+  }
+}

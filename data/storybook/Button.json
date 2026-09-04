@@ -1,0 +1,75 @@
+{
+  "component": "Button",
+  "title": "Components/Button",
+  "description": "버튼은 어떤 기능이나 동작을 실행하거나 기능을 사용하기 위한 상태로 변경하는 요소이다. 사용자가 서비스를 이용하는 과정에서 어떤 행동이 중요한지에 따라 관련된 버튼이 다양한 스타일로 표현된다.",
+  "argTypes": {
+    "variant": {
+      "control": "select",
+      "options": [
+        "primary",
+        "secondary",
+        "tertiary",
+        "text",
+        "link"
+      ],
+      "description": "버튼의 시각적 스타일을 결정합니다."
+    },
+    "size": {
+      "control": "select",
+      "options": [
+        "xsmall",
+        "small",
+        "medium",
+        "large",
+        "xlarge"
+      ],
+      "description": "버튼의 크기를 결정합니다."
+    },
+    "disabled": {
+      "control": "boolean",
+      "options": null,
+      "description": "버튼을 비활성화합니다."
+    }
+  },
+  "stories": [
+    {
+      "id": "components-button--primary",
+      "name": "Primary",
+      "originalSource": "{\n  args: {\n    children: '버튼',\n    variant: undefined,\n    size: undefined\n  }\n}"
+    },
+    {
+      "id": "components-button--secondary",
+      "name": "Secondary",
+      "originalSource": "{\n  args: {\n    children: '버튼',\n    variant: 'secondary',\n    size: 'large'\n  }\n}"
+    },
+    {
+      "id": "components-button--tertiary",
+      "name": "Tertiary",
+      "originalSource": "{\n  args: {\n    children: '버튼',\n    variant: 'tertiary',\n    size: 'large'\n  }\n}"
+    },
+    {
+      "id": "components-button--text",
+      "name": "Text",
+      "originalSource": "{\n  args: {\n    children: '버튼',\n    variant: 'text',\n    size: 'large'\n  }\n}"
+    },
+    {
+      "id": "components-button--sizes",
+      "name": "Sizes",
+      "originalSource": "{\n  args: {},\n  render: _args => <div style={{\n    display: 'flex',\n    gap: '1rem',\n    alignItems: 'center'\n  }}>\n      <Button variant=\"primary\" size=\"xsmall\">\n        X-Small\n      </Button>\n      <Button variant=\"primary\" size=\"small\">\n        Small\n      </Button>\n      <Button variant=\"primary\" size=\"medium\">\n        Medium\n      </Button>\n      <Button variant=\"primary\" size=\"large\">\n        Large\n      </Button>\n      <Button variant=\"primary\" size=\"xlarge\">\n        X-Large\n      </Button>\n    </div>\n}"
+    },
+    {
+      "id": "components-button--disabled",
+      "name": "Disabled",
+      "originalSource": "{\n  args: {},\n  render: _args => <Button variant=\"primary\" disabled>\n      Diabled 버튼\n    </Button>\n}"
+    },
+    {
+      "id": "components-button--icon",
+      "name": "Icon",
+      "originalSource": "{\n  args: {},\n  render: _args => <div style={{\n    display: 'flex',\n    gap: '1rem',\n    alignItems: 'center'\n  }}>\n      <Button variant=\"icon\" size=\"medium\">\n        <i className=\"svg-icon ico-delete-fill\" />\n      </Button>\n      <Button variant=\"icon\" size=\"large\">\n        <i className=\"svg-icon ico-sch\" />\n      </Button>\n    </div>\n}"
+    }
+  ],
+  "extractedFrom": {
+    "chunk": "Button.stories-BZ9JDUS5.js",
+    "storybookVersion": "9.1.17"
+  }
+}

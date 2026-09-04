@@ -1,0 +1,53 @@
+{
+  "component": "StepIndicator",
+  "title": "Components/StepIndicator",
+  "description": "단계 표시기는 서비스 이용을 위해 사용자가 거쳐야 하는 일련의 단계를 시각화하여 표현한 것으로 진행 상태에 대한 피드백을 사용자에게 전달한다.",
+  "argTypes": {
+    "currentStep": {
+      "control": "number",
+      "options": null,
+      "description": "현재 활성 단계 인덱스 (0부터 시작, -1은 모든 단계가 대기 상태)"
+    },
+    "currentStepText": {
+      "control": "text",
+      "options": null,
+      "description": "스크린 리더용 현재 단계 텍스트"
+    },
+    "pageTitle": {
+      "control": "text",
+      "options": null,
+      "description": "페이지 타이틀 텍스트"
+    },
+    "steps": {
+      "control": "!1",
+      "options": null,
+      "description": "단계 목록 배열"
+    }
+  },
+  "stories": [
+    {
+      "id": "components-stepindicator--default",
+      "name": "Default",
+      "originalSource": "{\n  args: {\n    steps: defaultSteps,\n    currentStep: 3\n  },\n  parameters: {\n    docs: {\n      description: {\n        story: '기본 사용 예제입니다. currentStep=3으로 설정되어 4번째 단계가 활성화되고, 이전 단계들은 완료 상태로 표시됩니다.'\n      }\n    }\n  }\n}"
+    },
+    {
+      "id": "components-stepindicator--all-completed",
+      "name": "All Completed",
+      "originalSource": "{\n  args: {\n    steps: defaultSteps,\n    currentStep: 5\n  }\n}"
+    },
+    {
+      "id": "components-stepindicator--all-default",
+      "name": "All Default",
+      "originalSource": "{\n  args: {\n    steps: defaultSteps\n  }\n}"
+    },
+    {
+      "id": "components-stepindicator--with-page-title",
+      "name": "With Page Title",
+      "originalSource": "{\n  args: {\n    steps: applicationSteps,\n    currentStep: 2,\n    pageTitle: '타이틀'\n  },\n  parameters: {\n    docs: {\n      description: {\n        story: '페이지 타이틀과 함께 사용되는 예제입니다. 실제 업무에서 사용되는 단계들로 구성되어 있습니다.'\n      }\n    }\n  }\n}"
+    }
+  ],
+  "extractedFrom": {
+    "chunk": "StepIndicator.stories-CQ9S0aS7.js",
+    "storybookVersion": "9.1.17"
+  }
+}

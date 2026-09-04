@@ -1,0 +1,140 @@
+{
+  "component": "Accordion",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/Accordion/Accordion.d.ts",
+    "dist/components/Accordion/Accordion.types.d.ts"
+  ],
+  "primaryTypeName": "AccordionProps",
+  "props": [
+    {
+      "name": "variant",
+      "type": "AccordionVariant",
+      "optional": true,
+      "doc": "아코디언 스타일 변형"
+    },
+    {
+      "name": "allowMultiple",
+      "type": "boolean",
+      "optional": true,
+      "doc": "다중 선택 허용 여부 (false일 경우 한 번에 하나만 열림)"
+    },
+    {
+      "name": "value",
+      "type": "string[]",
+      "optional": true,
+      "doc": "열린 아이템 값 배열 (제어 상태)"
+    },
+    {
+      "name": "onChange",
+      "type": "(values: string[]) => void",
+      "optional": true,
+      "doc": "열린 아이템 변경 핸들러"
+    },
+    {
+      "name": "defaultValue",
+      "type": "string[]",
+      "optional": true,
+      "doc": "초기 열린 아이템 값 배열 (비제어 상태)"
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "optional": false,
+      "doc": "자식 컴포넌트들"
+    }
+  ],
+  "extends": [
+    "Omit<HTMLAttributes<HTMLDivElement>, 'onChange'>"
+  ],
+  "polymorphic": false,
+  "exportedTypes": {
+    "AccordionVariant": [
+      "default",
+      "line"
+    ]
+  },
+  "subComponents": {
+    "AccordionItem": {
+      "typeName": "AccordionItemProps",
+      "props": [
+        {
+          "name": "value",
+          "type": "string",
+          "optional": false,
+          "doc": "아이템 값 (고유 식별자)"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "optional": false,
+          "doc": "자식 컴포넌트들 (Header와 Panel)"
+        }
+      ],
+      "extends": [
+        "Omit<HTMLAttributes<HTMLDivElement>, 'title'>"
+      ]
+    },
+    "AccordionHeader": {
+      "typeName": "AccordionHeaderProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "optional": false,
+          "doc": "헤더 제목"
+        },
+        {
+          "name": "onClick",
+          "type": "() => void",
+          "optional": true,
+          "doc": "커스텀 클릭 핸들러"
+        }
+      ],
+      "extends": [
+        "Omit<HTMLAttributes<HTMLElement>, 'onClick'>"
+      ]
+    },
+    "AccordionPanel": {
+      "typeName": "AccordionPanelProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "optional": false,
+          "doc": "패널 내용"
+        }
+      ],
+      "extends": [
+        "HTMLAttributes<HTMLDivElement>"
+      ]
+    }
+  },
+  "auxiliaryTypes": {
+    "AccordionContextValue": {
+      "props": [
+        {
+          "name": "expandedValues",
+          "type": "string[]",
+          "optional": false,
+          "doc": "현재 열린 아이템들의 값 배열"
+        },
+        {
+          "name": "onToggle",
+          "type": "(value: string) => void",
+          "optional": false,
+          "doc": "아이템 토글 핸들러"
+        },
+        {
+          "name": "variant",
+          "type": "AccordionVariant",
+          "optional": false,
+          "doc": "아코디언 스타일 변형"
+        }
+      ],
+      "extends": []
+    }
+  },
+  "otherTypes": {},
+  "rawDts": "import { HTMLAttributes, ReactNode } from 'react';\nexport type AccordionVariant = 'default' | 'line';\nexport interface AccordionContextValue {\n    /** 현재 열린 아이템들의 값 배열 */\n    expandedValues: string[];\n    /** 아이템 토글 핸들러 */\n    onToggle: (value: string) => void;\n    /** 아코디언 스타일 변형 */\n    variant: AccordionVariant;\n}\nexport interface AccordionProps extends Omit<HTMLAttributes<HTMLDivElement>, 'onChange'> {\n    /** 아코디언 스타일 변형 */\n    variant?: AccordionVariant;\n    /** 다중 선택 허용 여부 (false일 경우 한 번에 하나만 열림) */\n    allowMultiple?: boolean;\n    /** 열린 아이템 값 배열 (제어 상태) */\n    value?: string[];\n    /** 열린 아이템 변경 핸들러 */\n    onChange?: (values: string[]) => void;\n    /** 초기 열린 아이템 값 배열 (비제어 상태) */\n    defaultValue?: string[];\n    /** 자식 컴포넌트들 */\n    children: ReactNode;\n}\nexport interface AccordionItemProps extends Omit<HTMLAttributes<HTMLDivElement>, 'title'> {\n    /** 아이템 값 (고유 식별자) */\n    value: string;\n    /** 자식 컴포넌트들 (Header와 Panel) */\n    children: ReactNode;\n}\nexport interface AccordionHeaderProps extends Omit<HTMLAttributes<HTMLElement>, 'onClick'> {\n    /** 헤더 제목 */\n    children: ReactNode;\n    /** 커스텀 클릭 핸들러 */\n    onClick?: () => void;\n}\nexport interface AccordionPanelProps extends HTMLAttributes<HTMLDivElement> {\n    /** 패널 내용 */\n    children: ReactNode;\n}\n//# sourceMappingURL=Accordion.types.d.ts.map"
+}

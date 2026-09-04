@@ -1,0 +1,42 @@
+{
+  "component": "Portal",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/Portal/Portal.d.ts",
+    "dist/components/Portal/Portal.types.d.ts"
+  ],
+  "primaryTypeName": "PortalProps",
+  "props": [
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "optional": false,
+      "doc": null
+    },
+    {
+      "name": "enabled",
+      "type": "boolean",
+      "optional": true,
+      "doc": "Portal 사용 여부 (기본값: true)"
+    },
+    {
+      "name": "container",
+      "type": "string | HTMLElement",
+      "optional": true,
+      "doc": "Portal 컨테이너 ID 또는 HTMLElement"
+    },
+    {
+      "name": "containerClassName",
+      "type": "string",
+      "optional": true,
+      "doc": "자동 생성시 컨테이너에 추가할 className"
+    }
+  ],
+  "extends": [],
+  "polymorphic": false,
+  "exportedTypes": {},
+  "subComponents": {},
+  "auxiliaryTypes": {},
+  "otherTypes": {},
+  "rawDts": "import { ReactNode } from 'react';\nexport interface PortalProps {\n    children: ReactNode;\n    /**\n     * Portal 사용 여부 (기본값: true)\n     */\n    enabled?: boolean;\n    /**\n     * Portal 컨테이너 ID 또는 HTMLElement\n     */\n    container?: string | HTMLElement;\n    /**\n     * 자동 생성시 컨테이너에 추가할 className\n     */\n    containerClassName?: string;\n}\n//# sourceMappingURL=Portal.types.d.ts.map"
+}

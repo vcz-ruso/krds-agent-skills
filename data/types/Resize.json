@@ -1,0 +1,101 @@
+{
+  "component": "Resize",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/Resize/Resize.d.ts",
+    "dist/components/Resize/Resize.types.d.ts"
+  ],
+  "primaryTypeName": "ResizeProps",
+  "props": [
+    {
+      "name": "value",
+      "type": "ResizeScale",
+      "optional": true,
+      "doc": "현재 선택된 크기"
+    },
+    {
+      "name": "defaultValue",
+      "type": "ResizeScale",
+      "optional": true,
+      "doc": "기본 선택된 크기"
+    },
+    {
+      "name": "onChange",
+      "type": "(scale: ResizeScale) => void",
+      "optional": true,
+      "doc": "크기 변경 시 호출되는 콜백 함수"
+    },
+    {
+      "name": "buttonText",
+      "type": "string",
+      "optional": true,
+      "doc": "드롭다운 버튼 텍스트"
+    },
+    {
+      "name": "resetText",
+      "type": "string",
+      "optional": true,
+      "doc": "초기화 버튼 텍스트"
+    },
+    {
+      "name": "labels",
+      "type": "{ sm: string; md: string; lg: string; xlg: string; xxlg: string; }",
+      "optional": true,
+      "doc": "각 크기 옵션의 라벨"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "optional": true,
+      "doc": "사용자 정의 클래스명"
+    }
+  ],
+  "extends": [
+    "Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onClick' | 'onChange'>"
+  ],
+  "polymorphic": false,
+  "exportedTypes": {
+    "ResizeScale": [
+      "sm",
+      "md",
+      "lg",
+      "xlg",
+      "xxlg"
+    ]
+  },
+  "subComponents": {
+    "ResizeItem": {
+      "typeName": "ResizeItemProps",
+      "props": [
+        {
+          "name": "scale",
+          "type": "ResizeScale",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "isActive",
+          "type": "boolean",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "onClick",
+          "type": "(scale: ResizeScale) => void",
+          "optional": false,
+          "doc": null
+        }
+      ],
+      "extends": []
+    }
+  },
+  "auxiliaryTypes": {},
+  "otherTypes": {},
+  "rawDts": "import { ButtonHTMLAttributes } from 'react';\nexport type ResizeScale = 'sm' | 'md' | 'lg' | 'xlg' | 'xxlg';\nexport interface ResizeProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onClick' | 'onChange'> {\n    /**\n     * 현재 선택된 크기\n     */\n    value?: ResizeScale;\n    /**\n     * 기본 선택된 크기\n     */\n    defaultValue?: ResizeScale;\n    /**\n     * 크기 변경 시 호출되는 콜백 함수\n     */\n    onChange?: (scale: ResizeScale) => void;\n    /**\n     * 드롭다운 버튼 텍스트\n     */\n    buttonText?: string;\n    /**\n     * 초기화 버튼 텍스트\n     */\n    resetText?: string;\n    /**\n     * 각 크기 옵션의 라벨\n     */\n    labels?: {\n        sm: string;\n        md: string;\n        lg: string;\n        xlg: string;\n        xxlg: string;\n    };\n    /**\n     * 사용자 정의 클래스명\n     */\n    className?: string;\n}\nexport interface ResizeItemProps {\n    scale: ResizeScale;\n    label: string;\n    isActive: boolean;\n    onClick: (scale: ResizeScale) => void;\n}\n//# sourceMappingURL=Resize.types.d.ts.map"
+}

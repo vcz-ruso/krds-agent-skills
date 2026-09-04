@@ -1,0 +1,88 @@
+{
+  "component": "Pagination",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/Pagination/Pagination.d.ts",
+    "dist/components/Pagination/Pagination.types.d.ts"
+  ],
+  "primaryTypeName": "PaginationProps",
+  "props": [
+    {
+      "name": "totalPages",
+      "type": "number",
+      "optional": false,
+      "doc": "전체 페이지 수"
+    },
+    {
+      "name": "currentPage",
+      "type": "number",
+      "optional": true,
+      "doc": "현재 페이지 (제어 상태)"
+    },
+    {
+      "name": "defaultPage",
+      "type": "number",
+      "optional": true,
+      "doc": "초기 페이지 (비제어 상태)"
+    },
+    {
+      "name": "onChange",
+      "type": "(page: number) => void",
+      "optional": true,
+      "doc": "페이지 변경 핸들러"
+    },
+    {
+      "name": "prevLabel",
+      "type": "string",
+      "optional": true,
+      "doc": "이전 버튼 레이블"
+    },
+    {
+      "name": "nextLabel",
+      "type": "string",
+      "optional": true,
+      "doc": "다음 버튼 레이블"
+    },
+    {
+      "name": "boundaryCount",
+      "type": "0 | 1 | 2 | 3",
+      "optional": true,
+      "doc": "경계 영역에 항상 표시할 페이지 수 (앞/뒤)"
+    },
+    {
+      "name": "siblingCount",
+      "type": "0 | 1 | 2 | 3",
+      "optional": true,
+      "doc": "현재 페이지 주변에 표시할 형제 페이지 수"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "optional": true,
+      "doc": "비활성 상태"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "optional": true,
+      "doc": "커스텀 클래스명"
+    }
+  ],
+  "extends": [
+    "Omit<HTMLAttributes<HTMLDivElement>, 'onChange'>"
+  ],
+  "polymorphic": false,
+  "exportedTypes": {},
+  "subComponents": {},
+  "auxiliaryTypes": {
+    "PaginationItem": {
+      "props": [],
+      "extends": [
+        "number",
+        "'dots'"
+      ]
+    }
+  },
+  "otherTypes": {},
+  "rawDts": "import { HTMLAttributes } from 'react';\nexport type PaginationItem = number | 'dots';\nexport interface PaginationProps extends Omit<HTMLAttributes<HTMLDivElement>, 'onChange'> {\n    /** 전체 페이지 수 */\n    totalPages: number;\n    /** 현재 페이지 (제어 상태) */\n    currentPage?: number;\n    /** 초기 페이지 (비제어 상태) */\n    defaultPage?: number;\n    /** 페이지 변경 핸들러 */\n    onChange?: (page: number) => void;\n    /** 이전 버튼 레이블 */\n    prevLabel?: string;\n    /** 다음 버튼 레이블 */\n    nextLabel?: string;\n    /** 경계 영역에 항상 표시할 페이지 수 (앞/뒤) */\n    boundaryCount?: 0 | 1 | 2 | 3;\n    /** 현재 페이지 주변에 표시할 형제 페이지 수 */\n    siblingCount?: 0 | 1 | 2 | 3;\n    /** 비활성 상태 */\n    disabled?: boolean;\n    /** 커스텀 클래스명 */\n    className?: string;\n}\n//# sourceMappingURL=Pagination.types.d.ts.map"
+}

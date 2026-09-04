@@ -1,0 +1,447 @@
+{
+  "component": "Header",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/Header/Header.d.ts",
+    "dist/components/Header/Header.types.d.ts"
+  ],
+  "primaryTypeName": "HeaderProps",
+  "props": [
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "optional": true,
+      "doc": "자식 컴포넌트들"
+    },
+    {
+      "name": "mobileMenuTriggerPortalId",
+      "type": "string",
+      "optional": true,
+      "doc": "모바일 메뉴 트리거 Portal ID"
+    },
+    {
+      "name": "desktopMenuPortalId",
+      "type": "string",
+      "optional": true,
+      "doc": "데스크톱 메뉴 Portal ID"
+    },
+    {
+      "name": "mobileMenuPortalId",
+      "type": "string",
+      "optional": true,
+      "doc": "모바일 메뉴 Portal ID"
+    }
+  ],
+  "extends": [
+    "ComponentPropsWithRef<'header'>"
+  ],
+  "polymorphic": false,
+  "exportedTypes": {},
+  "subComponents": {
+    "HeaderUtilities": {
+      "typeName": "HeaderUtilitiesProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "optional": true,
+          "doc": "유틸리티 아이템들"
+        }
+      ],
+      "extends": [
+        "ComponentPropsWithoutRef<'div'>"
+      ]
+    },
+    "HeaderUtility": {
+      "typeName": "HeaderUtilityProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "optional": true,
+          "doc": "자식 컴포넌트"
+        }
+      ],
+      "extends": [
+        "ComponentPropsWithoutRef<'li'>"
+      ]
+    },
+    "HeaderUtilityDropdown": {
+      "typeName": "HeaderUtilityDropdownProps",
+      "props": [
+        {
+          "name": "id",
+          "type": "string",
+          "optional": true,
+          "doc": "드롭다운 고유 ID"
+        },
+        {
+          "name": "label",
+          "type": "ReactNode",
+          "optional": true,
+          "doc": "드롭다운 버튼 레이블"
+        },
+        {
+          "name": "buttonText",
+          "type": "ReactNode",
+          "optional": true,
+          "doc": "드롭다운 버튼 텍스트 (label 별칭)"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "optional": false,
+          "doc": "드롭다운 아이템들"
+        },
+        {
+          "name": "dropdownClassName",
+          "type": "string",
+          "optional": true,
+          "doc": "드롭다운 컨테이너 커스텀 클래스"
+        },
+        {
+          "name": "itemClassName",
+          "type": "string",
+          "optional": true,
+          "doc": "드롭다운 아이템 커스텀 클래스"
+        }
+      ],
+      "extends": [
+        "Omit<DropdownProps, 'buttonText' | 'children' | 'className'>"
+      ]
+    },
+    "HeaderBranding": {
+      "typeName": "HeaderBrandingProps",
+      "props": [
+        {
+          "name": "logoHref",
+          "type": "string",
+          "optional": true,
+          "doc": "로고 링크 URL"
+        },
+        {
+          "name": "onLogoClick",
+          "type": "() => void",
+          "optional": true,
+          "doc": "로고 클릭 핸들러"
+        },
+        {
+          "name": "logoAltText",
+          "type": "string",
+          "optional": true,
+          "doc": "로고 이미지 대체 텍스트"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "optional": true,
+          "doc": "자식 컴포넌트들 (주로 Navi)"
+        }
+      ],
+      "extends": [
+        "ComponentPropsWithoutRef<'div'>"
+      ]
+    },
+    "HeaderNavi": {
+      "typeName": "HeaderNaviProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "optional": true,
+          "doc": "NaviButton 컴포넌트들"
+        }
+      ],
+      "extends": [
+        "ComponentPropsWithoutRef<'div'>"
+      ]
+    },
+    "HeaderNaviButtonSearch": {
+      "typeName": "HeaderNaviButtonSearchProps",
+      "props": [
+        {
+          "name": "label",
+          "type": "ReactNode",
+          "optional": true,
+          "doc": "검색 버튼 레이블"
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "optional": true,
+          "doc": "검색 버튼 title 속성"
+        }
+      ],
+      "extends": [
+        "Omit<ComponentPropsWithoutRef<'button'>, 'children'>"
+      ]
+    },
+    "HeaderNaviButtonLogin": {
+      "typeName": "HeaderNaviButtonLoginProps",
+      "props": [
+        {
+          "name": "href",
+          "type": "string | undefined",
+          "optional": true,
+          "doc": "로그인 링크 URL (지정 시 <a> 태그로 렌더링)"
+        },
+        {
+          "name": "label",
+          "type": "ReactNode",
+          "optional": true,
+          "doc": "로그인 버튼 레이블"
+        }
+      ],
+      "extends": [
+        "AnchorHTMLAttributes<HTMLAnchorElement>",
+        "ButtonHTMLAttributes<HTMLButtonElement>"
+      ]
+    },
+    "HeaderNaviButtonJoin": {
+      "typeName": "HeaderNaviButtonJoinProps",
+      "props": [
+        {
+          "name": "label",
+          "type": "ReactNode",
+          "optional": true,
+          "doc": "회원가입 버튼 레이블"
+        }
+      ],
+      "extends": [
+        "ButtonHTMLAttributes<HTMLButtonElement>"
+      ]
+    },
+    "HeaderMyGov": {
+      "typeName": "HeaderMyGovProps",
+      "props": [
+        {
+          "name": "label",
+          "type": "ReactNode",
+          "optional": true,
+          "doc": "마이GOV 버튼 레이블"
+        },
+        {
+          "name": "name",
+          "type": "ReactNode",
+          "optional": false,
+          "doc": "사용자 이름"
+        },
+        {
+          "name": "remainingTime",
+          "type": "ReactNode",
+          "optional": true,
+          "doc": "남은 시간 표시 (예: \"29:30\")"
+        },
+        {
+          "name": "remainingTimeLabel",
+          "type": "ReactNode",
+          "optional": true,
+          "doc": "남은 시간 레이블"
+        },
+        {
+          "name": "extendTimeLabel",
+          "type": "ReactNode",
+          "optional": true,
+          "doc": "시간 연장 버튼 레이블"
+        },
+        {
+          "name": "onExtendTime",
+          "type": "() => void",
+          "optional": true,
+          "doc": "시간 연장 버튼 클릭 핸들러"
+        },
+        {
+          "name": "items",
+          "type": "HeaderMyGovMenuItem[]",
+          "optional": true,
+          "doc": "드롭다운 메뉴 아이템들"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "optional": true,
+          "doc": "컨테이너 커스텀 클래스"
+        },
+        {
+          "name": "buttonClassName",
+          "type": "string",
+          "optional": true,
+          "doc": "버튼 커스텀 클래스"
+        },
+        {
+          "name": "dropdownId",
+          "type": "string",
+          "optional": true,
+          "doc": "드롭다운 고유 ID"
+        }
+      ],
+      "extends": [
+        "Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'children' | 'className' | 'name'>"
+      ]
+    },
+    "HeaderNaviButtonLogout": {
+      "typeName": "HeaderNaviButtonLogoutProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "optional": true,
+          "doc": "로그아웃 버튼 내용"
+        }
+      ],
+      "extends": [
+        "ButtonHTMLAttributes<HTMLButtonElement>"
+      ]
+    },
+    "HeaderMainMenu": {
+      "typeName": "HeaderMainMenuProps",
+      "props": [
+        {
+          "name": "mobileTrigger",
+          "type": "ReactNode",
+          "optional": true,
+          "doc": "커스텀 모바일 트리거"
+        },
+        {
+          "name": "mobileTriggerProps",
+          "type": "MobileTriggerProps",
+          "optional": true,
+          "doc": "모바일 트리거 props"
+        },
+        {
+          "name": "allMenuButtonLabel",
+          "type": "string",
+          "optional": true,
+          "doc": "전체 메뉴 버튼 레이블"
+        }
+      ],
+      "extends": [
+        "Omit<MainMenuProps, 'mobileTrigger' | 'mobileTriggerPortalId' | 'desktopPortalId' | 'mobilePortalId' | 'mobileTriggerContainerElement'>"
+      ]
+    }
+  },
+  "auxiliaryTypes": {
+    "HeaderContextType": {
+      "props": [
+        {
+          "name": "openDropdownId",
+          "type": "string | null",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "setDropdown",
+          "type": "(dropdownId: string | null) => void",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "closeDropdowns",
+          "type": "() => void",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "mobileTriggerPortalId",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "desktopMenuPortalId",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "mobileMenuPortalId",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "HeaderMyGovMenuItem": {
+      "props": [
+        {
+          "name": "key",
+          "type": "Key",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "label",
+          "type": "ReactNode",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "href",
+          "type": "string | undefined",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": [
+        "Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'children' | 'className' | 'href'>",
+        "Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'children' | 'className'>"
+      ]
+    },
+    "HeaderComponentSubmodules": {
+      "props": [
+        {
+          "name": "Container",
+          "type": "ForwardRefExoticComponent<ComponentPropsWithoutRef<'div'> & RefAttributes<HTMLDivElement>>",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "Utilities",
+          "type": "ComponentType<HeaderUtilitiesProps>",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "Utility",
+          "type": "ForwardRefExoticComponent<HeaderUtilityProps & RefAttributes<HTMLLIElement>> & { Dropdown: ComponentType<HeaderUtilityDropdownProps>; DropdownItem: ComponentType<DropdownItemProps>; }",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "Branding",
+          "type": "ComponentType<HeaderBrandingProps>",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "Navi",
+          "type": "ComponentType<HeaderNaviProps>",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "NaviButton",
+          "type": "{ Search: ForwardRefExoticComponent<HeaderNaviButtonSearchProps & RefAttributes<HTMLButtonElement>>; Login: ForwardRefExoticComponent<HeaderNaviButtonLoginProps & RefAttributes<HTMLAnchorElement | HTMLButtonElement>>; Join: ForwardRefExoticComponent<HeaderNaviButtonJoinProps & RefAttributes<HTMLButtonElement>>; MyGov: ForwardRefExoticComponent<HeaderMyGovProps & RefAttributes<HTMLButtonElement>>; Logout: ForwardRefExoticComponent<HeaderNaviButtonLogoutProps & RefAttributes<HTMLButtonElement>>; }",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "MainMenu",
+          "type": "ForwardRefExoticComponent<HeaderMainMenuProps & RefAttributes<HTMLElement>>",
+          "optional": false,
+          "doc": null
+        }
+      ],
+      "extends": []
+    }
+  },
+  "otherTypes": {},
+  "rawDts": "import { AnchorHTMLAttributes, ButtonHTMLAttributes, ComponentPropsWithRef, ComponentPropsWithoutRef, ComponentType, ForwardRefExoticComponent, Key, ReactNode, RefAttributes } from 'react';\nimport { DropdownProps } from '../Dropdown';\nimport { MainMenuProps, MobileTriggerProps } from '../MainMenu/MainMenu.types';\nimport { DropdownItemProps } from '../Dropdown/Dropdown.types';\nexport interface HeaderProps extends ComponentPropsWithRef<'header'> {\n    /** 자식 컴포넌트들 */\n    children?: ReactNode;\n    /** 모바일 메뉴 트리거 Portal ID */\n    mobileMenuTriggerPortalId?: string;\n    /** 데스크톱 메뉴 Portal ID */\n    desktopMenuPortalId?: string;\n    /** 모바일 메뉴 Portal ID */\n    mobileMenuPortalId?: string;\n}\nexport interface HeaderContextType {\n    openDropdownId: string | null;\n    setDropdown: (dropdownId: string | null) => void;\n    closeDropdowns: () => void;\n    mobileTriggerPortalId: string;\n    desktopMenuPortalId: string;\n    mobileMenuPortalId: string;\n}\nexport type HeaderUtilitiesProps = ComponentPropsWithoutRef<'div'> & {\n    /** 유틸리티 아이템들 */\n    children?: ReactNode;\n};\nexport interface HeaderUtilityProps extends ComponentPropsWithoutRef<'li'> {\n    /** 자식 컴포넌트 */\n    children?: ReactNode;\n}\nexport interface HeaderUtilityDropdownProps extends Omit<DropdownProps, 'buttonText' | 'children' | 'className'> {\n    /** 드롭다운 고유 ID */\n    id?: string;\n    /** 드롭다운 버튼 레이블 */\n    label?: ReactNode;\n    /** 드롭다운 버튼 텍스트 (label 별칭) */\n    buttonText?: ReactNode;\n    /** 드롭다운 아이템들 */\n    children: ReactNode;\n    /** 드롭다운 컨테이너 커스텀 클래스 */\n    dropdownClassName?: string;\n    /** 드롭다운 아이템 커스텀 클래스 */\n    itemClassName?: string;\n}\nexport interface HeaderBrandingProps extends ComponentPropsWithoutRef<'div'> {\n    /** 로고 링크 URL */\n    logoHref?: string;\n    /** 로고 클릭 핸들러 */\n    onLogoClick?: () => void;\n    /** 로고 이미지 대체 텍스트 */\n    logoAltText?: string;\n    /** 자식 컴포넌트들 (주로 Navi) */\n    children?: ReactNode;\n}\nexport interface HeaderNaviProps extends ComponentPropsWithoutRef<'div'> {\n    /** NaviButton 컴포넌트들 */\n    children?: ReactNode;\n}\nexport interface HeaderNaviButtonSearchProps extends Omit<ComponentPropsWithoutRef<'button'>, 'children'> {\n    /** 검색 버튼 레이블 */\n    label?: ReactNode;\n    /** 검색 버튼 title 속성 */\n    title?: string;\n}\nexport type HeaderNaviButtonLoginProps = ({\n    /** 로그인 링크 URL (지정 시 <a> 태그로 렌더링) */\n    href: string;\n    /** 로그인 버튼 레이블 */\n    label?: ReactNode;\n} & AnchorHTMLAttributes<HTMLAnchorElement>) | ({\n    href?: undefined;\n    /** 로그인 버튼 레이블 */\n    label?: ReactNode;\n} & ButtonHTMLAttributes<HTMLButtonElement>);\nexport type HeaderNaviButtonJoinProps = ButtonHTMLAttributes<HTMLButtonElement> & {\n    /** 회원가입 버튼 레이블 */\n    label?: ReactNode;\n};\ntype HeaderMyGovMenuItemBase = {\n    key?: Key;\n    label: ReactNode;\n    className?: string;\n};\nexport type HeaderMyGovMenuItem = (HeaderMyGovMenuItemBase & {\n    href: string;\n} & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'children' | 'className' | 'href'>) | (HeaderMyGovMenuItemBase & {\n    href?: undefined;\n} & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'children' | 'className'>);\nexport interface HeaderMyGovProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'children' | 'className' | 'name'> {\n    /** 마이GOV 버튼 레이블 */\n    label?: ReactNode;\n    /** 사용자 이름 */\n    name: ReactNode;\n    /** 남은 시간 표시 (예: \"29:30\") */\n    remainingTime?: ReactNode;\n    /** 남은 시간 레이블 */\n    remainingTimeLabel?: ReactNode;\n    /** 시간 연장 버튼 레이블 */\n    extendTimeLabel?: ReactNode;\n    /** 시간 연장 버튼 클릭 핸들러 */\n    onExtendTime?: () => void;\n    /** 드롭다운 메뉴 아이템들 */\n    items?: HeaderMyGovMenuItem[];\n    /** 컨테이너 커스텀 클래스 */\n    className?: string;\n    /** 버튼 커스텀 클래스 */\n    buttonClassName?: string;\n    /** 드롭다운 고유 ID */\n    dropdownId?: string;\n}\nexport interface HeaderNaviButtonLogoutProps extends ButtonHTMLAttributes<HTMLButtonElement> {\n    /** 로그아웃 버튼 내용 */\n    children?: ReactNode;\n}\nexport interface HeaderMainMenuProps extends Omit<MainMenuProps, 'mobileTrigger' | 'mobileTriggerPortalId' | 'desktopPortalId' | 'mobilePortalId' | 'mobileTriggerContainerElement'> {\n    /** 커스텀 모바일 트리거 */\n    mobileTrigger?: ReactNode;\n    /** 모바일 트리거 props */\n    mobileTriggerProps?: MobileTriggerProps;\n    /** 전체 메뉴 버튼 레이블 */\n    allMenuButtonLabel?: string;\n}\nexport interface HeaderComponentSubmodules {\n    Container: ForwardRefExoticComponent<ComponentPropsWithoutRef<'div'> & RefAttributes<HTMLDivElement>>;\n    Utilities: ComponentType<HeaderUtilitiesProps>;\n    Utility: ForwardRefExoticComponent<HeaderUtilityProps & RefAttributes<HTMLLIElement>> & {\n        Dropdown: ComponentType<HeaderUtilityDropdownProps>;\n        DropdownItem: ComponentType<DropdownItemProps>;\n    };\n    Branding: ComponentType<HeaderBrandingProps>;\n    Navi: ComponentType<HeaderNaviProps>;\n    NaviButton: {\n        Search: ForwardRefExoticComponent<HeaderNaviButtonSearchProps & RefAttributes<HTMLButtonElement>>;\n        Login: ForwardRefExoticComponent<HeaderNaviButtonLoginProps & RefAttributes<HTMLAnchorElement | HTMLButtonElement>>;\n        Join: ForwardRefExoticComponent<HeaderNaviButtonJoinProps & RefAttributes<HTMLButtonElement>>;\n        MyGov: ForwardRefExoticComponent<HeaderMyGovProps & RefAttributes<HTMLButtonElement>>;\n        Logout: ForwardRefExoticComponent<HeaderNaviButtonLogoutProps & RefAttributes<HTMLButtonElement>>;\n    };\n    MainMenu: ForwardRefExoticComponent<HeaderMainMenuProps & RefAttributes<HTMLElement>>;\n}\nexport {};\n//# sourceMappingURL=Header.types.d.ts.map"
+}

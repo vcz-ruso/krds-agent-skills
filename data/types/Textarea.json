@@ -1,0 +1,56 @@
+{
+  "component": "Textarea",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/Textarea/Textarea.d.ts",
+    "dist/components/Textarea/Textarea.types.d.ts"
+  ],
+  "primaryTypeName": "TextareaProps",
+  "props": [
+    {
+      "name": "onChange",
+      "type": "(value: string) => void",
+      "optional": true,
+      "doc": "입력 값이 변경될 때 호출되는 콜백"
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "optional": true,
+      "doc": "레이블"
+    },
+    {
+      "name": "showCount",
+      "type": "boolean",
+      "optional": true,
+      "doc": "글자수 카운터 표시 여부"
+    },
+    {
+      "name": "countTotal",
+      "type": "number",
+      "optional": true,
+      "doc": "글자수 총합 표시값"
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "optional": true,
+      "doc": "제어 상태일 때 입력된 값"
+    },
+    {
+      "name": "defaultValue",
+      "type": "string",
+      "optional": true,
+      "doc": "비제어 상태일 때의 초기 값"
+    }
+  ],
+  "extends": [
+    "Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, 'onChange' | 'value' | 'defaultValue'>"
+  ],
+  "polymorphic": false,
+  "exportedTypes": {},
+  "subComponents": {},
+  "auxiliaryTypes": {},
+  "otherTypes": {},
+  "rawDts": "import { TextareaHTMLAttributes } from 'react';\nexport interface TextareaProps extends Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, 'onChange' | 'value' | 'defaultValue'> {\n    /** 입력 값이 변경될 때 호출되는 콜백 */\n    onChange?: (value: string) => void;\n    /** 레이블 */\n    label?: string;\n    /** 글자수 카운터 표시 여부 */\n    showCount?: boolean;\n    /** 글자수 총합 표시값 */\n    countTotal?: number;\n    /** 제어 상태일 때 입력된 값 */\n    value?: string;\n    /** 비제어 상태일 때의 초기 값 */\n    defaultValue?: string;\n}\n//# sourceMappingURL=Textarea.types.d.ts.map"
+}

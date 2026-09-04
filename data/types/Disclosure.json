@@ -1,0 +1,56 @@
+{
+  "component": "Disclosure",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/Disclosure/Disclosure.d.ts",
+    "dist/components/Disclosure/Disclosure.types.d.ts"
+  ],
+  "primaryTypeName": "DisclosureProps",
+  "props": [
+    {
+      "name": "buttonText",
+      "type": "string",
+      "optional": false,
+      "doc": "토글 버튼 텍스트"
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "optional": false,
+      "doc": "확장 가능한 콘텐츠"
+    },
+    {
+      "name": "defaultExpanded",
+      "type": "boolean",
+      "optional": true,
+      "doc": "초기 확장 상태"
+    },
+    {
+      "name": "expanded",
+      "type": "boolean",
+      "optional": true,
+      "doc": "제어된 확장 상태"
+    },
+    {
+      "name": "onToggle",
+      "type": "(expanded: boolean) => void",
+      "optional": true,
+      "doc": "확장 상태 변경 시 호출되는 콜백"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "optional": true,
+      "doc": "커스텀 클래스명"
+    }
+  ],
+  "extends": [
+    "Omit<ComponentPropsWithRef<'div'>, 'children' | 'className' | 'onToggle'>"
+  ],
+  "polymorphic": false,
+  "exportedTypes": {},
+  "subComponents": {},
+  "auxiliaryTypes": {},
+  "otherTypes": {},
+  "rawDts": "import { ComponentPropsWithRef, ReactNode } from 'react';\nexport type DisclosureProps = {\n    /** 토글 버튼 텍스트 */\n    buttonText: string;\n    /** 확장 가능한 콘텐츠 */\n    children: ReactNode;\n    /** 초기 확장 상태 */\n    defaultExpanded?: boolean;\n    /** 제어된 확장 상태 */\n    expanded?: boolean;\n    /** 확장 상태 변경 시 호출되는 콜백 */\n    onToggle?: (expanded: boolean) => void;\n    /** 커스텀 클래스명 */\n    className?: string;\n} & Omit<ComponentPropsWithRef<'div'>, 'children' | 'className' | 'onToggle'>;\n//# sourceMappingURL=Disclosure.types.d.ts.map"
+}

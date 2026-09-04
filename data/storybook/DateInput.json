@@ -1,0 +1,180 @@
+{
+  "component": "DateInput",
+  "title": "Components/DateInput",
+  "description": "날짜 입력 필드는 사용자가 특정 날짜 또는 기간을 입력하거나 선택하는 데 사용되는 요소이다.",
+  "argTypes": {
+    "label": {
+      "control": "text",
+      "options": null,
+      "description": "레이블"
+    },
+    "size": {
+      "control": "radio",
+      "options": [
+        "small",
+        "medium",
+        "large"
+      ],
+      "description": "입력 필드 크기"
+    },
+    "placeholder": {
+      "control": "text",
+      "options": null,
+      "description": "입력 필드 placeholder"
+    },
+    "hint": {
+      "control": "text",
+      "options": null,
+      "description": "도움말 텍스트"
+    },
+    "error": {
+      "control": "text",
+      "options": null,
+      "description": "에러 메시지"
+    },
+    "success": {
+      "control": "text",
+      "options": null,
+      "description": "성공 메시지"
+    },
+    "information": {
+      "control": "text",
+      "options": null,
+      "description": "정보 메시지"
+    },
+    "disabled": {
+      "control": "boolean",
+      "options": null,
+      "description": "비활성화 여부"
+    },
+    "readOnly": {
+      "control": "boolean",
+      "options": null,
+      "description": "읽기 전용 여부"
+    },
+    "calendarPosition": {
+      "control": "radio",
+      "options": [
+        "top",
+        "bottom"
+      ],
+      "description": "달력 위치"
+    },
+    "isCalendarOpen": {
+      "control": "boolean",
+      "options": null,
+      "description": "달력 열림 상태"
+    },
+    "defaultIsCalendarOpen": {
+      "control": "boolean",
+      "options": null,
+      "description": "기본 달력 열림 상태"
+    },
+    "value": {
+      "control": "text",
+      "options": null,
+      "description": "현재 입력된 값"
+    },
+    "defaultValue": {
+      "control": "text",
+      "options": null,
+      "description": "기본 입력값"
+    },
+    "todayButtonText": {
+      "control": "text",
+      "options": null,
+      "description": "오늘 버튼 텍스트"
+    },
+    "cancelButtonText": {
+      "control": "text",
+      "options": null,
+      "description": "취소 버튼 텍스트"
+    },
+    "confirmButtonText": {
+      "control": "text",
+      "options": null,
+      "description": "확인 버튼 텍스트"
+    },
+    "disabledDates": {
+      "control": "text",
+      "options": null,
+      "description": "비활성화할 날짜 배열"
+    },
+    "eventDates": {
+      "control": "text",
+      "options": null,
+      "description": "이벤트가 있는 날짜 배열"
+    },
+    "onYearChange": {
+      "control": null,
+      "options": null,
+      "description": "년도 변경 콜백"
+    },
+    "onMonthChange": {
+      "control": null,
+      "options": null,
+      "description": "월 변경 콜백"
+    },
+    "onTodayClick": {
+      "control": null,
+      "options": null,
+      "description": "오늘 버튼 클릭 콜백"
+    },
+    "onConfirm": {
+      "control": null,
+      "options": null,
+      "description": "확인 버튼 클릭 콜백"
+    },
+    "onCancel": {
+      "control": null,
+      "options": null,
+      "description": "취소 버튼 클릭 콜백"
+    },
+    "openButtonLabel": {
+      "control": "text",
+      "options": null,
+      "description": "달력 열기 버튼 aria-label"
+    },
+    "prevButtonLabel": {
+      "control": "text",
+      "options": null,
+      "description": "이전 달 버튼 aria-label"
+    },
+    "nextButtonLabel": {
+      "control": "text",
+      "options": null,
+      "description": "다음 달 버튼 aria-label"
+    }
+  },
+  "stories": [
+    {
+      "id": "components-dateinput--default",
+      "name": "Default",
+      "originalSource": "{\n  args: {\n    label: '레이블'\n  },\n  parameters: {\n    docs: {\n      description: {\n        story: '기본 DateInput 컴포넌트입니다.'\n      }\n    }\n  }\n}"
+    },
+    {
+      "id": "components-dateinput--with-hint",
+      "name": "With Hint",
+      "originalSource": "{\n  args: {\n    label: '레이블',\n    hint: '도움말'\n  },\n  parameters: {\n    docs: {\n      description: {\n        story: '도움말이 있는 DateInput입니다.'\n      }\n    }\n  }\n}"
+    },
+    {
+      "id": "components-dateinput--with-default-value",
+      "name": "With Default Value",
+      "originalSource": "{\n  args: {\n    label: '레이블',\n    defaultValue: '2024.12.25'\n  },\n  parameters: {\n    docs: {\n      description: {\n        story: '기본값이 설정된 DateInput입니다.'\n      }\n    }\n  }\n}"
+    },
+    {
+      "id": "components-dateinput--controlled",
+      "name": "Controlled",
+      "originalSource": "{\n  args: {\n    label: '레이블',\n    value: '2024.12.25',\n    isCalendarOpen: false\n  },\n  render: function ControlledDateInput(args) {\n    const [value, setValue] = React.useState(args.value || '');\n    const [isOpen, setIsOpen] = React.useState(args.isCalendarOpen || false);\n    return <div>\n        <DateInput {...args} value={value} isCalendarOpen={isOpen} onChange={setValue} onCalendarOpenChange={setIsOpen} />\n        <div style={{\n        marginTop: '1rem',\n        padding: '1rem',\n        backgroundColor: '#f5f5f5',\n        borderRadius: '4px'\n      }}>\n          <strong>입력된 날짜:</strong> {value || '없음'}\n        </div>\n      </div>;\n  },\n  parameters: {\n    docs: {\n      description: {\n        story: '제어된 DateInput입니다.'\n      }\n    }\n  }\n}"
+    },
+    {
+      "id": "components-dateinput--all-states",
+      "name": "All States",
+      "originalSource": "{\n  args: {},\n  render: _args => <div style={{\n    display: 'flex',\n    flexDirection: 'column',\n    gap: '2rem'\n  }}>\n      <DateInput label=\"기본\" />\n      <DateInput label=\"도움말\" hint=\"날짜를 선택해주세요.\" />\n      <DateInput label=\"에러\" error=\"올바른 날짜를 입력해주세요.\" />\n      <DateInput label=\"성공\" success=\"올바른 날짜입니다.\" defaultValue=\"2024.12.25\" />\n      <DateInput label=\"정보\" information=\"YYYY.MM.DD 형식으로 입력해주세요.\" />\n      <DateInput label=\"비활성화\" disabled defaultValue=\"2024.12.25\" />\n      <DateInput label=\"읽기 전용\" readOnly defaultValue=\"2024.12.25\" />\n    </div>\n}"
+    }
+  ],
+  "extractedFrom": {
+    "chunk": "DateInput.stories-Cpo6-xst.js",
+    "storybookVersion": "9.1.17"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "component": "ContextualHelp",
+  "title": "Components/ContextualHelp",
+  "description": "컴포넌트 주변에 배치되어 해당 컴포넌트의 상태나 관련된 상세 정보를 제공하는 컴포넌트입니다. 맥락적 도움말은 정보 아이콘이나 도움 아이콘 버튼을 통해 사용자가 요청하는 경우에만 화면에 표시됩니다.",
+  "argTypes": {
+    "label": {
+      "control": "text",
+      "options": null,
+      "description": "도움말 라벨 텍스트"
+    },
+    "title": {
+      "control": "text",
+      "options": null,
+      "description": "팝오버 제목"
+    },
+    "children": {
+      "control": "text",
+      "options": null,
+      "description": "팝오버 내용"
+    },
+    "position": {
+      "control": "select",
+      "options": null,
+      "description": "팝오버 위치"
+    },
+    "alignment": {
+      "control": "select",
+      "options": null,
+      "description": "팝오버 정렬"
+    },
+    "open": {
+      "control": "boolean",
+      "options": null,
+      "description": "팝오버 열림/닫힘 상태 (제어모드)"
+    },
+    "defaultOpen": {
+      "control": "boolean",
+      "options": null,
+      "description": "기본 팝오버 열림/닫힘 상태 (비제어모드)"
+    },
+    "onOpenChange": {
+      "control": null,
+      "options": null,
+      "description": "팝오버 상태 변경 핸들러"
+    },
+    "className": {
+      "control": "text",
+      "options": null,
+      "description": "사용자 정의 클래스명"
+    }
+  },
+  "stories": [
+    {
+      "id": "components-contextualhelp--default",
+      "name": "Default",
+      "originalSource": "{\n  args: {\n    label: '도움말 라벨',\n    title: '도움말 제목',\n    defaultOpen: false,\n    onOpenChange: undefined,\n    className: undefined,\n    position: 'top',\n    alignment: 'left',\n    open: false,\n    children: <p>도움말 내용</p>\n  },\n  render: args => {\n    return <ContextualHelp label={args.label} title={args.title} position={args.position} alignment={args.alignment} defaultOpen={args.defaultOpen} onOpenChange={args.onOpenChange} className={args.className} open={args.open}>\n        {args.children}\n      </ContextualHelp>;\n  }\n}"
+    },
+    {
+      "id": "components-contextualhelp--list",
+      "name": "List",
+      "originalSource": "{\n  args: {},\n  render: _args => {\n    const position = ['top', 'bottom'] as const;\n    const alignment = ['left', 'center', 'right'] as const;\n    return <div style={{\n      display: 'flex',\n      flexDirection: 'column',\n      gap: '1rem',\n      alignItems: 'center',\n      justifyItems: 'center'\n    }}>\n        {position.map(position => <Fragment key={position}>\n            {alignment.map(alignment => <ContextualHelp label={`예시이미지(${position} ${alignment})`} title=\"도움말 제목\" key={alignment} position={position} alignment={alignment}>\n                <p>\n                  컴포넌트 주변에 배치되어 해당 컴포넌트의 상태나 관련된 상세 정보를 제공하는\n                  컴포넌트이다. 맥락적 도움말은 정보 아이콘이나 도움 아이콘 버튼을 통해 사용자가\n                  요청하는 경우에만 화면에 표시된다.\n                </p>\n                <div className=\"btn-wrap\">\n                  <Link href=\"#!\" icon={<i className=\"svg-icon ico-angle right\" />} underline=\"none\" variant=\"basic\" size=\"small\">\n                    바로가기\n                  </Link>\n                </div>\n              </ContextualHelp>)}\n          </Fragment>)}\n      </div>;\n  }\n}"
+    }
+  ],
+  "extractedFrom": {
+    "chunk": "ContextualHelp.stories-D2OyO_ws.js",
+    "storybookVersion": "9.1.17"
+  }
+}

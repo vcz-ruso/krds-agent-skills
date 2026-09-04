@@ -1,0 +1,106 @@
+{
+  "component": "Radio",
+  "title": "Components/Radio",
+  "description": "라디오 버튼은 사용자가 여러 개의 옵션 중 한 개의 값을 선택할 수 있도록 하는 경우에 사용한다. 사용자가 옵션 목록에서 새로운 옵션을 선택했을 때, 기존에 선택되었던 옵션은 자동으로 선택이 해제되어야 한다.",
+  "argTypes": {
+    "size": {
+      "control": "select",
+      "options": [
+        "medium",
+        "large"
+      ],
+      "description": null
+    },
+    "disabled": {
+      "control": "boolean",
+      "options": null,
+      "description": null
+    },
+    "checked": {
+      "control": "boolean",
+      "options": null,
+      "description": null
+    },
+    "defaultChecked": {
+      "control": "boolean",
+      "options": null,
+      "description": null
+    },
+    "name": {
+      "control": "text",
+      "options": null,
+      "description": null
+    },
+    "description": {
+      "control": "text",
+      "options": null,
+      "description": null
+    }
+  },
+  "stories": [
+    {
+      "id": "components-radio--default",
+      "name": "Default",
+      "originalSource": "{\n  args: {\n    children: '라디오 버튼',\n    name: 'radio-group'\n  }\n}"
+    },
+    {
+      "id": "components-radio--with-description",
+      "name": "With Description",
+      "originalSource": "{\n  args: {\n    children: '라디오 버튼',\n    description: '부가적인 설명이 들어갑니다.',\n    name: 'radio-group'\n  }\n}"
+    },
+    {
+      "id": "components-radio--size",
+      "name": "Size",
+      "originalSource": "{\n  args: {},\n  render: _args => <RadioGroup name=\"example-group-size\" defaultValue=\"option1\">\n      <Radio value=\"option1\" size=\"medium\">\n        사이즈 : medium\n      </Radio>\n      <Radio value=\"option2\" size=\"large\">\n        사이즈 : large\n      </Radio>\n    </RadioGroup>\n}"
+    },
+    {
+      "id": "components-radio--disabled",
+      "name": "Disabled",
+      "originalSource": "{\n  args: {\n    children: '비활성화',\n    disabled: true,\n    name: 'radio-group'\n  }\n}"
+    },
+    {
+      "id": "components-radio--checked-disabled",
+      "name": "Checked Disabled",
+      "originalSource": "{\n  args: {\n    children: '선택된 비활성화',\n    checked: true,\n    disabled: true,\n    name: 'radio-group'\n  }\n}"
+    },
+    {
+      "id": "components-radio--radio-group-example",
+      "name": "Radio Group Example",
+      "originalSource": "{\n  args: {},\n  render: _args => <RadioGroup name=\"example-group\" defaultValue=\"option4\">\n      <Radio value=\"option1\">기본</Radio>\n      <Radio value=\"option2\">선택됨</Radio>\n      <Radio value=\"option3\" disabled>\n        비활성화\n      </Radio>\n      <Radio value=\"option4\" disabled>\n        선택된 비활성화\n      </Radio>\n    </RadioGroup>\n}"
+    },
+    {
+      "id": "components-radio--radio-group-column",
+      "name": "Radio Group Column",
+      "originalSource": "{\n  args: {},\n  render: _args => <RadioGroup name=\"example-group-column\" column defaultValue=\"option1\">\n      <Radio value=\"option1\" description=\"부가적인 설명이 들어갑니다.\">\n        라디오버튼\n      </Radio>\n      <Radio value=\"option2\" description=\"부가적인 설명이 들어갑니다.\">\n        라디오버튼\n      </Radio>\n    </RadioGroup>\n}"
+    },
+    {
+      "id": "components-radio--radio-group-column-controlled",
+      "name": "Radio Group Column Controlled",
+      "originalSource": "{\n  args: {},\n  render: _args => {\n    return <Temp />;\n  },\n  parameters: {\n    docs: {\n      source: {\n        code: `\nconst RadioGroupColumnControlled = () => {\n  const [value, setValue] = useState('option1');\n\n  return (\n    <RadioGroup\n      name=\"example-group-column\"\n      column\n      value={value}\n      onChange={value => setValue(value)}\n    >\n      <Radio value=\"option1\" description=\"부가적인 설명이 들어갑니다.\">\n        라디오버튼\n      </Radio>\n      <Radio value=\"option2\" description=\"부가적인 설명이 들어갑니다.\">\n        라디오버튼\n      </Radio>\n    </RadioGroup>\n  );\n};\n        `\n      }\n    }\n  }\n}"
+    },
+    {
+      "id": "components-radio--chip-variant",
+      "name": "Chip Variant",
+      "originalSource": "{\n  args: {},\n  render: _args => {\n    return <div className=\"krds-check-area\">\n        <RadioChip id=\"chip-1\" name=\"radio-chip-group\">\n          chip 상태 : default\n        </RadioChip>\n        <RadioChip id=\"chip-2\" name=\"radio-chip-group\" defaultChecked>\n          chip 상태 : checked\n        </RadioChip>\n        <RadioChip id=\"chip-3\" name=\"radio-chip-group\" disabled>\n          chip 상태 : disabled\n        </RadioChip>\n      </div>;\n  }\n}"
+    },
+    {
+      "id": "components-radio--chip-sizes",
+      "name": "Chip Sizes",
+      "originalSource": "{\n  args: {},\n  render: _args => {\n    return <div className=\"krds-check-area\">\n        <RadioChip id=\"chip-small\" name=\"radio-chip-sizes\" size=\"small\">\n          chip 상태 : small\n        </RadioChip>\n        <RadioChip id=\"chip-medium\" name=\"radio-chip-sizes\" size=\"medium\">\n          chip 상태 : medium\n        </RadioChip>\n        <RadioChip id=\"chip-large\" name=\"radio-chip-sizes\" size=\"large\">\n          chip 상태 : large\n        </RadioChip>\n      </div>;\n  }\n}"
+    },
+    {
+      "id": "components-radio--chip-group",
+      "name": "Chip Group",
+      "originalSource": "{\n  args: {},\n  render: _args => {\n    return <RadioGroup name=\"chip-example-group\" defaultValue=\"chip1\">\n        <RadioChip value=\"chip1\">chip 상태 : default</RadioChip>\n        <RadioChip value=\"chip2\">chip 상태 : checked</RadioChip>\n        <RadioChip value=\"chip3\" disabled>\n          chip 상태 : disabled\n        </RadioChip>\n      </RadioGroup>;\n  }\n}"
+    },
+    {
+      "id": "components-radio--chip-group-controlled",
+      "name": "Chip Group Controlled",
+      "originalSource": "{\n  args: {},\n  render: _args => {\n    return <ChipTemp />;\n  },\n  parameters: {\n    docs: {\n      source: {\n        code: `\nconst ChipGroupControlled = () => {\n  const [value, setValue] = useState('chip1');\n\n  return (\n    <RadioGroup name=\"chip-example-group\" value={value} onChange={setValue}>\n      <RadioChip value=\"chip1\">chip 상태 : default</RadioChip>\n      <RadioChip value=\"chip2\">chip 상태 : checked</RadioChip>\n      <RadioChip value=\"chip3\" disabled>\n        chip 상태 : disabled\n      </RadioChip>\n    </RadioGroup>\n  );\n};\n        `\n      }\n    }\n  }\n}"
+    }
+  ],
+  "extractedFrom": {
+    "chunk": "Radio.stories-DWXTpBz2.js",
+    "storybookVersion": "9.1.17"
+  }
+}

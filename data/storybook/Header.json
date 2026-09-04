@@ -1,0 +1,22 @@
+{
+  "component": "Header",
+  "title": "Components/Header",
+  "description": "헤더는 사용자가 웹사이트에 접속하자마자 마주하게 되는 화면의 최상단 영역으로 디지털 정부 서비스의 브랜드 이미지를 전달하는 핵심 영역이다. 모든 화면에 일관성 있게 배치되며 통합검색, 메인 메뉴 등 서비스 정보를 탐색하고 이동할 수 있는 핵심 탐색 수단을 제공한다.",
+  "argTypes": null,
+  "stories": [
+    {
+      "id": "components-header--default",
+      "name": "Default",
+      "originalSource": "{\n  args: {},\n  render: _args => <Header>\n      <Header.Container>\n        <Header.Utilities>\n          <Header.Utility>\n            <a href=\"#\" className=\"krds-btn small text\" target=\"_blank\" title=\"새 창 열림\">\n              KRDS 소개 <i className=\"svg-icon ico-go\" />\n            </a>\n          </Header.Utility>\n          <Header.Utility>\n            <Resize buttonText=\"화면크기조절\" />\n          </Header.Utility>\n          <Header.Utility.Dropdown label=\"사용자 지원\">\n            <Header.Utility.DropdownItem>인증센터</Header.Utility.DropdownItem>\n            <Header.Utility.DropdownItem>도움말</Header.Utility.DropdownItem>\n          </Header.Utility.Dropdown>\n        </Header.Utilities>\n        <Header.Branding logoHref=\"#\">\n          <Header.Navi>\n            <Header.NaviButton.Search onClick={() => console.log('search click')} />\n            <Header.NaviButton.Login href=\"#login\" onClick={() => console.log('login click')} />\n            <Header.NaviButton.Join onClick={() => console.log('join click')} />\n          </Header.Navi>\n        </Header.Branding>\n      </Header.Container>\n      <Header.MainMenu desktop={desktopMenu} mobile={mobileMenu} />\n    </Header>\n}"
+    },
+    {
+      "id": "components-header--logged-in",
+      "name": "Logged In",
+      "originalSource": "{\n  args: {},\n  render: _args => <Header>\n      <Header.Container>\n        <Header.Utilities>\n          <Header.Utility>\n            <a href=\"#\" className=\"krds-btn small text\" target=\"_blank\" title=\"새 창 열림\">\n              KRDS 소개 <i className=\"svg-icon ico-go\" />\n            </a>\n          </Header.Utility>\n          <Header.Utility>\n            <Resize buttonText=\"화면크기조절\" />\n          </Header.Utility>\n          <Header.Utility.Dropdown label=\"사용자 지원\">\n            <Header.Utility.DropdownItem>인증센터</Header.Utility.DropdownItem>\n            <Header.Utility.DropdownItem>도움말</Header.Utility.DropdownItem>\n          </Header.Utility.Dropdown>\n        </Header.Utilities>\n        <Header.Branding logoHref=\"#\">\n          <Header.Navi>\n            <Header.NaviButton.Search onClick={() => console.log('search click')} />\n            <Header.NaviButton.MyGov name=\"홍길동님\" remainingTime=\"29:30\" onExtendTime={() => console.log('시간 연장')} items={[{\n            label: '내 정보',\n            href: '#my'\n          }, {\n            label: '설정',\n            href: '#settings'\n          }]} />\n          </Header.Navi>\n        </Header.Branding>\n      </Header.Container>\n      <Header.MainMenu desktop={desktopMenu} mobile={{\n      ...mobileMenu,\n      header: {\n        ...mobileMenu.header,\n        login: {\n          isLoggedIn: true,\n          userName: '홍길동',\n          logoutText: '로그아웃',\n          onLogout: () => console.log('logout')\n        }\n      }\n    }} />\n    </Header>\n}"
+    }
+  ],
+  "extractedFrom": {
+    "chunk": "Header.stories-DeNfSPuk.js",
+    "storybookVersion": "9.1.17"
+  }
+}

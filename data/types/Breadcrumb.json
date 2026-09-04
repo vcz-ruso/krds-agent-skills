@@ -1,0 +1,62 @@
+{
+  "component": "Breadcrumb",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/Breadcrumb/Breadcrumb.d.ts",
+    "dist/components/Breadcrumb/Breadcrumb.types.d.ts"
+  ],
+  "primaryTypeName": "BreadcrumbProps",
+  "props": [
+    {
+      "name": "items",
+      "type": "BreadcrumbItem[]",
+      "optional": false,
+      "doc": "브레드크럼 아이템 목록"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "optional": true,
+      "doc": "추가 클래스명"
+    },
+    {
+      "name": "ariaLabel",
+      "type": "string",
+      "optional": true,
+      "doc": "접근성 레이블"
+    }
+  ],
+  "extends": [
+    "HTMLAttributes<HTMLElement>"
+  ],
+  "polymorphic": false,
+  "exportedTypes": {},
+  "subComponents": {},
+  "auxiliaryTypes": {
+    "BreadcrumbItem": {
+      "props": [
+        {
+          "name": "text",
+          "type": "string",
+          "optional": false,
+          "doc": "링크 텍스트"
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "optional": false,
+          "doc": "링크 URL"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "optional": true,
+          "doc": "비활성화 여부"
+        }
+      ],
+      "extends": []
+    }
+  },
+  "otherTypes": {},
+  "rawDts": "import { HTMLAttributes } from 'react';\nexport interface BreadcrumbItem {\n    /** 링크 텍스트 */\n    text: string;\n    /** 링크 URL */\n    href: string;\n    /** 비활성화 여부 */\n    disabled?: boolean;\n}\nexport interface BreadcrumbProps extends HTMLAttributes<HTMLElement> {\n    /** 브레드크럼 아이템 목록 */\n    items: BreadcrumbItem[];\n    /** 추가 클래스명 */\n    className?: string;\n    /** 접근성 레이블 */\n    ariaLabel?: string;\n}\n//# sourceMappingURL=Breadcrumb.types.d.ts.map"
+}

@@ -1,0 +1,58 @@
+{
+  "component": "MainMenu",
+  "title": "Components/MainMenu",
+  "description": "메인 메뉴는 사용자가 서비스의 정보 구조를 탐색할 때, 가장 많이 사용하는 유형의 메뉴이다. 일반적으로 헤더와 함께 거의 모든 화면에 제공되며, 사용자가 자주 방문하거나 중요도가 높은 화면으로 이동할 수 있는 링크가 포함되어 있다. 빈번하게 활용되는 사용자의 일차적인 이동 수단이기 때문에 사용하기 쉽게 설계해야 한다.",
+  "argTypes": {
+    "mobileTrigger": {
+      "control": null,
+      "options": null,
+      "description": "모바일 트리거 컴포넌트"
+    },
+    "mobileTriggerPortalId": {
+      "control": null,
+      "options": null,
+      "description": "모바일 트리거 포탈 ID"
+    },
+    "mobileTriggerContainerElement": {
+      "control": null,
+      "options": null,
+      "description": "모바일 트리거 컨테이너 요소"
+    },
+    "desktop": {
+      "control": null,
+      "options": null,
+      "description": "데스크톱 메뉴 설정"
+    },
+    "mobile": {
+      "control": null,
+      "options": null,
+      "description": "모바일 메뉴 설정"
+    },
+    "onMobileMenuOpen": {
+      "control": null,
+      "options": null,
+      "description": "모바일 메뉴 열기 핸들러"
+    },
+    "onMobileMenuClose": {
+      "control": null,
+      "options": null,
+      "description": "모바일 메뉴 닫기 핸들러"
+    },
+    "MobileTrigger.label": {
+      "control": null,
+      "options": null,
+      "description": "모바일 트리거 라벨"
+    }
+  },
+  "stories": [
+    {
+      "id": "components-mainmenu--default",
+      "name": "Default",
+      "originalSource": "{\n  render: () => <MainMenu desktop={desktopConfig} mobile={mobileConfig} mobileTrigger={<MainMenu.MobileTrigger label=\"전체메뉴\" />} mobileTriggerPortalId=\"mobile-nav\" />,\n  parameters: {\n    docs: {\n      story: {\n        inline: false,\n        height: 900\n      },\n      source: {\n        code: `\n        \nconst desktopConfig: DesktopMenuConfig = {\n  items: [\n    {\n      type: 'dropdown',\n      label: '정책정보',\n      sections: [\n        {\n          type: 'menu',\n          label: '정책소개',\n          quickLinkHref: '#',\n          items: [\n            { label: '개요', href: '#' },\n            { label: '연혁', href: '#' },\n            { label: 'FAQ', href: '#', description: '정책 소개 FAQ' },\n          ],\n          banner: {\n            badgeText: '신규 서비스',\n            buttonText: '메뉴명',\n            onButtonClick: () => console.log('배너 클릭'),\n            children: <p>새로운 정책이 시작되었습니다!</p>,\n          },\n        },\n        {\n          type: 'menu',\n          label: '정책자료',\n          layout: 'between',\n          items: [\n            { label: '정책문서1', href: '#' },\n            { label: '정책문서2', href: '#' },\n            { label: '정책문서3', href: '#' },\n            { label: '정책문서4', href: '#' },\n          ],\n        },\n        {\n          type: 'link',\n          label: '외부 정책 포털',\n          href: '#',\n          isExternal: true,\n        },\n      ],\n    },\n    {\n      type: 'dropdown',\n      label: '서비스',\n      sections: [\n        {\n          type: 'menu',\n          label: '전자 서비스',\n          items: [\n            { label: '민원 서비스', href: '#' },\n            { label: '예약 서비스', href: '#' },\n            { label: '증명 발급', href: '#' },\n          ],\n        },\n        {\n          type: 'menu',\n          label: '안내 자료',\n          items: [\n            { label: '이용 가이드', href: '#' },\n            { label: '정책 요약', href: '#' },\n            { label: '보도 자료', href: '#' },\n          ],\n        },\n      ],\n    },\n    {\n      type: 'link',\n      label: '공지사항',\n      href: '#',\n    },\n  ],\n};\n\nconst mobileConfig: MobileMenuConfig = {\n  id: 'mobile-nav-demo',\n  header: {\n    utilities: [{ label: '즐겨찾기' }, { label: '사이트맵' }],\n    login: {\n      isLoggedIn: false,\n      loginText: '로그인을 해주세요',\n      onLogin: () => console.log('로그인 클릭'),\n    },\n    services: [\n      { label: '서비스1', href: '#' },\n      { label: '서비스2', href: '#' },\n      { label: '서비스3', href: '#' },\n    ],\n    search: {\n      placeholder: '찾고자 하는 메뉴명을 입력해 주세요',\n      onSearch: query => console.log('검색:', query),\n    },\n  },\n  body: {\n    mainItems: [\n      {\n        label: '정책정보',\n        panels: [\n          {\n            label: '정책정보',\n            items: [\n              { type: 'link', label: '정책소개', href: '#' },\n              {\n                type: 'depth3',\n                label: '정책자료',\n                items: [\n                  { type: 'link', label: '문서1', href: '#' },\n                  { type: 'link', label: '문서2', href: '#' },\n                  {\n                    type: 'depth4',\n                    label: '심화자료',\n                    title: '세부 정책 자료',\n                    items: [\n                      { label: '심화1', href: '#' },\n                      { label: '심화2', href: '#' },\n                      { label: '심화3', href: '#' },\n                    ],\n                  },\n                ],\n              },\n            ],\n          },\n        ],\n      },\n      {\n        label: '공지사항',\n        panels: [\n          {\n            label: '공지사항',\n            items: [\n              { type: 'link', label: '최근 공지', href: '#' },\n              { type: 'link', label: '정책 공지', href: '#' },\n              { type: 'link', label: '공지 보관함', href: '#' },\n            ],\n          },\n        ],\n      },\n      {\n        label: '대민 서비스',\n        panels: [\n          {\n            label: '대민 서비스',\n            items: [\n              {\n                type: 'depth3',\n                label: '신청 서비스',\n                items: [\n                  { type: 'link', label: '민원 신청', href: '#' },\n                  { type: 'link', label: '발급 신청', href: '#' },\n                  {\n                    type: 'depth4',\n                    label: '상세 신청',\n                    title: '세부 신청',\n                    items: [\n                      { label: '신청 A', href: '#' },\n                      { label: '신청 B', href: '#' },\n                      { label: '신청 C', href: '#' },\n                    ],\n                  },\n                ],\n              },\n              { type: 'link', label: '상담 예약', href: '#' },\n              { type: 'link', label: '서비스 가이드', href: '#' },\n            ],\n          },\n        ],\n      },\n    ],\n  },\n  bottomLinks: [\n    { label: '개인정보처리방침', href: '#' },\n    { label: '이용약관', href: '#' },\n    { label: '외부사이트', href: '#', isExternal: true },\n  ],\n};\n\n<MainMenu\n  desktop={desktopConfig}\n  mobile={mobileConfig}\n  mobileTrigger={<MainMenu.MobileTrigger label=\"전체메뉴\" />}\n  mobileTriggerPortalId=\"mobile-nav\"\n/>\n        `\n      }\n    }\n  }\n}"
+    }
+  ],
+  "extractedFrom": {
+    "chunk": "MainMenu.stories-C35WrB-l.js",
+    "storybookVersion": "9.1.17"
+  }
+}

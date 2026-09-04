@@ -1,0 +1,178 @@
+{
+  "component": "Tag",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/Tag/Tag.d.ts",
+    "dist/components/Tag/Tag.types.d.ts"
+  ],
+  "primaryTypeName": "TagProps",
+  "props": [
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "optional": false,
+      "doc": "태그 텍스트"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "optional": true,
+      "doc": "커스텀 클래스명"
+    },
+    {
+      "name": "variant",
+      "type": "'deletable' | 'link'",
+      "optional": true,
+      "doc": "태그 타입"
+    },
+    {
+      "name": "onDelete",
+      "type": "() => void",
+      "optional": true,
+      "doc": "삭제 버튼 클릭 핸들러"
+    },
+    {
+      "name": "deleteDisabled",
+      "type": "boolean",
+      "optional": true,
+      "doc": "삭제 버튼 비활성화"
+    },
+    {
+      "name": "href",
+      "type": "string",
+      "optional": false,
+      "doc": "링크 URL"
+    }
+  ],
+  "extends": [
+    "Omit<HTMLAttributes<HTMLSpanElement>, 'children'>",
+    "Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'children'>"
+  ],
+  "polymorphic": false,
+  "exportedTypes": {
+    "TagSize": [
+      "small",
+      "medium",
+      "large"
+    ]
+  },
+  "subComponents": {
+    "BaseTag": {
+      "typeName": "BaseTagProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "optional": false,
+          "doc": "태그 텍스트"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "optional": true,
+          "doc": "커스텀 클래스명"
+        }
+      ],
+      "extends": []
+    },
+    "DeletableTag": {
+      "typeName": "DeletableTagProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "optional": false,
+          "doc": "태그 텍스트"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "optional": true,
+          "doc": "커스텀 클래스명"
+        },
+        {
+          "name": "variant",
+          "type": "'deletable'",
+          "optional": true,
+          "doc": "태그 타입"
+        },
+        {
+          "name": "onDelete",
+          "type": "() => void",
+          "optional": true,
+          "doc": "삭제 버튼 클릭 핸들러"
+        },
+        {
+          "name": "deleteDisabled",
+          "type": "boolean",
+          "optional": true,
+          "doc": "삭제 버튼 비활성화"
+        }
+      ],
+      "extends": [
+        "Omit<HTMLAttributes<HTMLSpanElement>, 'children'>"
+      ]
+    },
+    "LinkTag": {
+      "typeName": "LinkTagProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "optional": false,
+          "doc": "태그 텍스트"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "optional": true,
+          "doc": "커스텀 클래스명"
+        },
+        {
+          "name": "variant",
+          "type": "'link'",
+          "optional": false,
+          "doc": "태그 타입"
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "optional": false,
+          "doc": "링크 URL"
+        }
+      ],
+      "extends": [
+        "Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'children'>"
+      ]
+    },
+    "TagWrap": {
+      "typeName": "TagWrapProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "optional": false,
+          "doc": "태그들"
+        },
+        {
+          "name": "size",
+          "type": "TagSize",
+          "optional": true,
+          "doc": "태그 크기"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "optional": true,
+          "doc": "커스텀 클래스명"
+        }
+      ],
+      "extends": [
+        "HTMLAttributes<HTMLDivElement>"
+      ]
+    }
+  },
+  "auxiliaryTypes": {},
+  "otherTypes": {},
+  "rawDts": "import { AnchorHTMLAttributes, HTMLAttributes, ReactNode } from 'react';\nexport type TagSize = 'small' | 'medium' | 'large';\nexport interface BaseTagProps {\n    /** 태그 텍스트 */\n    children: ReactNode;\n    /** 커스텀 클래스명 */\n    className?: string;\n}\nexport interface DeletableTagProps extends BaseTagProps, Omit<HTMLAttributes<HTMLSpanElement>, 'children'> {\n    /** 태그 타입 */\n    variant?: 'deletable';\n    /** 삭제 버튼 클릭 핸들러 */\n    onDelete?: () => void;\n    /** 삭제 버튼 비활성화 */\n    deleteDisabled?: boolean;\n}\nexport interface LinkTagProps extends BaseTagProps, Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'children'> {\n    /** 태그 타입 */\n    variant: 'link';\n    /** 링크 URL */\n    href: string;\n}\nexport type TagProps = DeletableTagProps | LinkTagProps;\nexport interface TagWrapProps extends HTMLAttributes<HTMLDivElement> {\n    /** 태그들 */\n    children: ReactNode;\n    /** 태그 크기 */\n    size?: TagSize;\n    /** 커스텀 클래스명 */\n    className?: string;\n}\n//# sourceMappingURL=Tag.types.d.ts.map"
+}

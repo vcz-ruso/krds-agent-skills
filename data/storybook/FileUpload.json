@@ -1,0 +1,83 @@
+{
+  "component": "FileUpload",
+  "title": "Components/FileUpload",
+  "description": "파일 업로드는 하나 이상의 디바이스의 로컬 파일을 선택하고 첨부하는 데 사용하는 입력 컴포넌트이다.",
+  "argTypes": {
+    "title": {
+      "control": "text",
+      "options": null,
+      "description": "파일 업로드 제목"
+    },
+    "description": {
+      "control": "text",
+      "options": null,
+      "description": "파일 업로드 설명"
+    },
+    "uploadText": {
+      "control": "text",
+      "options": null,
+      "description": "업로드 영역 텍스트"
+    },
+    "maxFiles": {
+      "control": "number",
+      "options": null,
+      "description": "최대 파일 개수"
+    },
+    "maxFileSize": {
+      "control": "number",
+      "options": null,
+      "description": "최대 파일 크기 (bytes)"
+    },
+    "acceptedFileTypes": {
+      "control": "object",
+      "options": null,
+      "description": "허용된 파일 타입"
+    },
+    "disabled": {
+      "control": "boolean",
+      "options": null,
+      "description": "비활성화 여부"
+    },
+    "allowDelete": {
+      "control": "boolean",
+      "options": null,
+      "description": "파일 삭제 허용 여부"
+    }
+  },
+  "stories": [
+    {
+      "id": "components-fileupload--default",
+      "name": "Default",
+      "originalSource": "{\n  args: {\n    title: '타이틀영역',\n    description: '컨텐츠 영역',\n    uploadText: '첨부할 파일을 여기에 끌어다 놓거나, 파일 선택 버튼을 눌러 파일을 직접 선택해주세요.',\n    maxFiles: 10,\n    maxFileSize: 20 * 1024 * 1024,\n    acceptedFileTypes: ['pdf', 'doc', 'docx', 'hwp', 'jpg', 'png']\n  }\n}"
+    },
+    {
+      "id": "components-fileupload--with-files",
+      "name": "With Files",
+      "originalSource": "{\n  args: {\n    title: '타이틀영역',\n    description: '컨텐츠 영역',\n    files: [{\n      id: '1',\n      name: '위임장(주민등록법 시행령 별지 제15호의2호서식)',\n      size: 17 * 1024,\n      type: 'hwp',\n      status: 'uploading'\n    }, {\n      id: '2',\n      name: '위임장(주민등록법 시행령 별지 제15호의2호서식)',\n      size: 17 * 1024,\n      type: 'hwp',\n      status: 'completed'\n    }, {\n      id: '3',\n      name: '위임장(주민등록법 시행령 별지 제15호의2호서식)',\n      size: 17 * 1024,\n      type: 'hwp',\n      status: 'ready'\n    }, {\n      id: '4',\n      name: '전입재등록신고서 [주민등록법 시행령 : 별지서식 15, 15호의2]',\n      size: 17 * 1024,\n      type: 'hwp',\n      status: 'error',\n      errorMessage: '등록 가능한 파일 용량을 초과하였습니다.\\n20MB 미만의 파일만 등록할 수 있습니다.'\n    }, {\n      id: '5',\n      name: '위임장(주민등록법 시행령 별지 제15호의2호서식)',\n      size: 17 * 1024,\n      type: 'hwp',\n      status: 'ready',\n      onDownload: () => alert('다운로드 기능'),\n      onPreview: () => alert('바로보기 기능')\n    }, {\n      id: '6',\n      name: '업로드 완료된 파일.pdf',\n      size: 25 * 1024,\n      type: 'pdf',\n      status: 'completed'\n    }]\n  }\n}"
+    },
+    {
+      "id": "components-fileupload--disabled",
+      "name": "Disabled",
+      "originalSource": "{\n  args: {\n    title: '파일 업로드',\n    description: '비활성화된 파일 업로드',\n    disabled: true\n  }\n}"
+    },
+    {
+      "id": "components-fileupload--no-delete",
+      "name": "No Delete",
+      "originalSource": "{\n  args: {\n    title: '삭제 불가능한 파일 업로드',\n    description: '파일 삭제가 허용되지 않습니다.',\n    allowDelete: false,\n    files: [{\n      id: '1',\n      name: '중요한 문서.pdf',\n      size: 1024 * 1024,\n      type: 'pdf',\n      status: 'completed'\n    }, {\n      id: '2',\n      name: '필수 파일.docx',\n      size: 2048 * 1024,\n      type: 'docx',\n      status: 'completed'\n    }]\n  }\n}"
+    },
+    {
+      "id": "components-fileupload--restricted-file-types",
+      "name": "Restricted File Types",
+      "originalSource": "{\n  args: {\n    title: '이미지 파일 업로드',\n    description: 'JPG, PNG 파일만 업로드 가능합니다.',\n    uploadText: '이미지 파일을 선택하거나 드래그하여 업로드하세요.',\n    acceptedFileTypes: ['jpg', 'png'],\n    maxFiles: 5\n  }\n}"
+    },
+    {
+      "id": "components-fileupload--interactive",
+      "name": "Interactive",
+      "originalSource": "{\n  args: {},\n  render: function Render(args) {\n    const [files, setFiles] = useState<FileItem[]>([]);\n    const handleFilesChange = (newFiles: FileItem[]) => {\n      setFiles(newFiles);\n    };\n    const handleFileUpload = async (_file: File): Promise<void> => {\n      return new Promise(resolve => {\n        setTimeout(() => {\n          resolve();\n        }, 2000);\n      });\n    };\n    const handleFileDelete = (fileId: string) => {\n      setFiles(files.filter(file => file.id !== fileId));\n    };\n    const handleAllFilesDelete = () => {\n      setFiles([]);\n    };\n    return <FileUpload {...args} files={files} onFilesChange={handleFilesChange} onFileUpload={handleFileUpload} onFileDelete={handleFileDelete} onAllFilesDelete={handleAllFilesDelete} />;\n  },\n  args: {\n    title: '인터랙티브 파일 업로드',\n    description: '실제로 파일을 업로드하고 삭제할 수 있습니다.',\n    uploadText: '파일을 선택하거나 드래그하여 업로드하세요.',\n    maxFiles: 5,\n    maxFileSize: 10 * 1024 * 1024,\n    acceptedFileTypes: ['pdf', 'doc', 'docx', 'hwp', 'jpg', 'png']\n  }\n}"
+    }
+  ],
+  "extractedFrom": {
+    "chunk": "FileUpload.stories-BtgHkTGX.js",
+    "storybookVersion": "9.1.17"
+  }
+}

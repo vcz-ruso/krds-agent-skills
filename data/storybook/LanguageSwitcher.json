@@ -1,0 +1,27 @@
+{
+  "component": "LanguageSwitcher",
+  "title": "Components/LanguageSwitcher",
+  "description": "언어 변경은 서비스의 콘텐츠를 표시할 언어를 변경하거나 별도의 외국어 서비스로 이동하는 데 사용되는 요소이다. 한국어가 익숙하지 않은 사용자가 콘텐츠 표시 언어를 변경할 수 있는 수단을 발견하지 못한다면 서비스를 이용할 수 없게 되므로, 디지털 정부서비스로 직관적이고 일관된 방식으로 언어 변경을 제공하는 것이 매우 중요하다.",
+  "argTypes": null,
+  "stories": [
+    {
+      "id": "components-languageswitcher--default",
+      "name": "Default",
+      "originalSource": "{\n  args: {},\n  render: function DefaultStory() {\n    return <LanguageSwitcher defaultValue=\"ko\" options={[{\n      value: 'ko',\n      label: '한국어'\n    }, {\n      value: 'en',\n      label: 'English'\n    }]} onChange={val => console.log(val)}>\n        <LanguageSwitcher.Trigger label=\"언어 변경\" />\n        <LanguageSwitcher.Menu>\n          <LanguageSwitcher.Current label=\"현재 언어\" />\n          <LanguageSwitcher.OptionList />\n        </LanguageSwitcher.Menu>\n      </LanguageSwitcher>;\n  },\n  parameters: {\n    docs: {\n      description: {\n        story: '기본형 입니다'\n      }\n    },\n    source: {\n      code: `\n<LanguageSwitcher\n  options={[\n    { value: 'ko', label: '한국어' },\n    { value: 'en', label: 'English' },\n  ]}\n  onChange={val => console.log(val)}\n>\n  <LanguageSwitcher.Trigger label=\"언어 변경\" />\n  <LanguageSwitcher.Menu>\n    <LanguageSwitcher.Current label=\"현재 언어\" />\n    <LanguageSwitcher.OptionList />\n  </LanguageSwitcher.Menu>\n</LanguageSwitcher>\n  `\n    }\n  }\n}"
+    },
+    {
+      "id": "components-languageswitcher--simple",
+      "name": "Simple",
+      "originalSource": "{\n  args: {},\n  render: function SimpleStory() {\n    return <LanguageSwitcher defaultValue=\"ko\" options={defaultLanguages} onChange={val => console.log(val)}>\n        <LanguageSwitcher.Trigger label=\"언어 변경\" />\n        <LanguageSwitcher.Menu>\n          <LanguageSwitcher.OptionList />\n        </LanguageSwitcher.Menu>\n      </LanguageSwitcher>;\n  },\n  parameters: {\n    docs: {\n      description: {\n        story: '기본형에서 현재 언어 표시가 제외된 컴포넌트 입니다'\n      }\n    },\n    source: {\n      code: `\n<LanguageSwitcher\n  defaultValue=\"ko\"\n  options={defaultLanguages}\n  onChange={val => console.log(val)}\n>\n  <LanguageSwitcher.Trigger label=\"언어 변경\" />\n  <LanguageSwitcher.Menu>\n    <LanguageSwitcher.OptionList />\n  </LanguageSwitcher.Menu>\n</LanguageSwitcher>\n      `\n    }\n  }\n}"
+    },
+    {
+      "id": "components-languageswitcher--controlled",
+      "name": "Controlled",
+      "originalSource": "{\n  args: {},\n  render: function ControlledStory() {\n    const [isOpen, setIsOpen] = useState(false);\n    const [selectedLanguage, setSelectedLanguage] = useState('ko');\n    const handleOpenChange = (open: boolean) => {\n      setIsOpen(open);\n    };\n    const handleLanguageSelect = (value: string, language: LanguageOption) => {\n      setSelectedLanguage(value);\n      console.log('Selected language:', language);\n    };\n    const currentLabel = {\n      ko: '현재 언어',\n      en: 'Current Language',\n      zh: '当前语言',\n      ja: '現在の言語',\n      fr: 'Langue actuelle'\n    }[selectedLanguage] || '현재 언어';\n    return <LanguageSwitcher value={selectedLanguage} options={defaultLanguages} open={isOpen} onOpenChange={handleOpenChange} onChange={handleLanguageSelect}>\n        <LanguageSwitcher.Trigger label=\"언어 변경\" />\n        <LanguageSwitcher.Menu>\n          <LanguageSwitcher.Current label={currentLabel} />\n          <LanguageSwitcher.OptionList />\n        </LanguageSwitcher.Menu>\n      </LanguageSwitcher>;\n  },\n  parameters: {\n    docs: {\n      description: {\n        story: '제어형 컴포넌트 예시입니다'\n      },\n      source: {\n        code: `\nconst defaultLanguages: LanguageOption[] = [\n  { value: 'ko', label: '한국어', href: '#' },\n  { value: 'en', label: 'English (영어)', href: '#', external: true },\n  { value: 'zh', label: '中文 (중국어)', href: '#', external: true },\n  { value: 'ja', label: '日本語 (일본어)', href: '#', external: true },\n  { value: 'fr', label: 'français (프랑스어)', href: '#', external: true },\n];\n\nfunction ControlledStory() {\n  const [isOpen, setIsOpen] = useState(false);\n  const [selectedLanguage, setSelectedLanguage] = useState('ko');\n\n  const handleOpenChange = (open: boolean) => {\n    setIsOpen(open);\n  };\n\n  const handleLanguageSelect = (value: string, language: LanguageOption) => {\n    setSelectedLanguage(value);\n    console.log('Selected language:', language);\n  };\n\n  const currentLabel =\n    {\n      ko: '현재 언어',\n      en: 'Current Language',\n      zh: '当前语言',\n      ja: '現在の言語',\n      fr: 'Langue actuelle',\n    }[selectedLanguage] || '현재 언어';\n\n  return (\n    <LanguageSwitcher\n      value={selectedLanguage}\n      options={defaultLanguages}\n      open={isOpen}\n      onOpenChange={handleOpenChange}\n      onChange={handleLanguageSelect}\n    >\n      <LanguageSwitcher.Trigger label=\"언어 변경\" />\n      <LanguageSwitcher.Menu>\n        <LanguageSwitcher.Current label={currentLabel} />\n        <LanguageSwitcher.OptionList />\n      </LanguageSwitcher.Menu>\n    </LanguageSwitcher>\n  );\n}\n    `\n      }\n    }\n  }\n}"
+    }
+  ],
+  "extractedFrom": {
+    "chunk": "LanguageSwitcher.stories-BMjgowfm.js",
+    "storybookVersion": "9.1.17"
+  }
+}

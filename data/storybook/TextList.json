@@ -1,0 +1,43 @@
+{
+  "component": "TextList",
+  "title": "Components/TextList",
+  "description": "텍스트 목록은 계층 구조가 있는 텍스트 블록을 읽기 쉽게 구성한 것이다.",
+  "argTypes": {
+    "type": {
+      "control": "select",
+      "options": [
+        "decimal",
+        "dash",
+        "hollow",
+        "ordered"
+      ],
+      "description": "텍스트 목록 타입"
+    }
+  },
+  "stories": [
+    {
+      "id": "components-textlist--default",
+      "name": "Default",
+      "originalSource": "{\n  args: {\n    type: 'decimal',\n    children: <>\n        <TextListItem>텍스트 목록 레벨1</TextListItem>\n        <TextListItem>\n          텍스트 목록 레벨1\n          <TextList type=\"dash\">\n            <TextListItem>텍스트 목록 레벨2</TextListItem>\n            <TextListItem>\n              텍스트 목록 레벨2\n              <TextList type=\"hollow\">\n                <TextListItem>텍스트 목록 레벨3</TextListItem>\n                <TextListItem>텍스트 목록 레벨3</TextListItem>\n              </TextList>\n            </TextListItem>\n            <TextListItem>텍스트 목록 레벨2</TextListItem>\n          </TextList>\n        </TextListItem>\n        <TextListItem>텍스트 목록 레벨1</TextListItem>\n      </>\n  }\n}"
+    },
+    {
+      "id": "components-textlist--mixed",
+      "name": "Mixed",
+      "originalSource": "{\n  args: {\n    type: 'decimal',\n    children: <>\n        <TextListItem>\n          텍스트 목록 레벨1\n          <TextList type=\"dash\">\n            <TextListItem>\n              텍스트 목록 레벨2\n              <TextList type=\"ordered\">\n                <TextListItem number=\"①\">텍스트 목록 레벨3</TextListItem>\n                <TextListItem number=\"②\">텍스트 목록 레벨3</TextListItem>\n              </TextList>\n            </TextListItem>\n          </TextList>\n        </TextListItem>\n        <TextListItem>\n          텍스트 목록 레벨1\n          <TextList type=\"ordered\">\n            <TextListItem number=\"a. \">\n              텍스트 목록 레벨2\n              <TextList type=\"hollow\">\n                <TextListItem>텍스트 목록 레벨3</TextListItem>\n                <TextListItem>텍스트 목록 레벨3</TextListItem>\n              </TextList>\n            </TextListItem>\n          </TextList>\n        </TextListItem>\n      </>\n  }\n}"
+    },
+    {
+      "id": "components-textlist--ordered",
+      "name": "Ordered",
+      "originalSource": "{\n  args: {\n    type: 'ordered',\n    children: <>\n        <TextListItem number=\"1. \">텍스트 목록 레벨1</TextListItem>\n        <TextListItem number=\"2. \">\n          텍스트 목록 레벨1\n          <TextList type=\"ordered\">\n            <TextListItem number=\"a. \">텍스트 목록 레벨2</TextListItem>\n            <TextListItem number=\"b. \">\n              텍스트 목록 레벨2\n              <TextList type=\"ordered\">\n                <TextListItem number=\"①\">텍스트 목록 레벨3</TextListItem>\n                <TextListItem number=\"②\">텍스트 목록 레벨3</TextListItem>\n              </TextList>\n            </TextListItem>\n            <TextListItem number=\"c. \">텍스트 목록 레벨2</TextListItem>\n          </TextList>\n        </TextListItem>\n        <TextListItem number=\"3. \">텍스트 목록 레벨1</TextListItem>\n      </>\n  }\n}"
+    },
+    {
+      "id": "components-textlist--mixed-ordered",
+      "name": "Mixed Ordered",
+      "originalSource": "{\n  args: {\n    type: 'ordered',\n    children: <>\n        <TextListItem number=\"1. \">\n          텍스트 목록 레벨1\n          <TextList type=\"dash\">\n            <TextListItem>\n              텍스트 목록 레벨2\n              <TextList type=\"ordered\">\n                <TextListItem number=\"①\">텍스트 목록 레벨3</TextListItem>\n                <TextListItem number=\"②\">텍스트 목록 레벨3</TextListItem>\n              </TextList>\n            </TextListItem>\n          </TextList>\n        </TextListItem>\n        <TextListItem number=\"2. \">\n          텍스트 목록 레벨1\n          <TextList type=\"ordered\">\n            <TextListItem number=\"a. \">\n              텍스트 목록 레벨2\n              <TextList type=\"hollow\">\n                <TextListItem>텍스트 목록 레벨3</TextListItem>\n                <TextListItem>텍스트 목록 레벨3</TextListItem>\n              </TextList>\n            </TextListItem>\n          </TextList>\n        </TextListItem>\n      </>\n  }\n}"
+    }
+  ],
+  "extractedFrom": {
+    "chunk": "TextList.stories-B7jeo-qH.js",
+    "storybookVersion": "9.1.17"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "component": "Checkbox",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/Checkbox/Checkbox.d.ts",
+    "dist/components/Checkbox/Checkbox.types.d.ts"
+  ],
+  "primaryTypeName": "CheckboxProps",
+  "props": [
+    {
+      "name": "size",
+      "type": "CheckboxSize",
+      "optional": true,
+      "doc": "체크박스 크기"
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "optional": true,
+      "doc": "추가 설명 텍스트"
+    },
+    {
+      "name": "defaultValue",
+      "type": "boolean",
+      "optional": true,
+      "doc": "비제어 상태에서 사용할 초기 체크 상태"
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "optional": true,
+      "doc": "레이블 텍스트 (children이 없을 경우 사용)"
+    }
+  ],
+  "extends": [
+    "Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'defaultValue'>"
+  ],
+  "polymorphic": false,
+  "exportedTypes": {
+    "CheckboxSize": [
+      "medium",
+      "large"
+    ],
+    "CheckboxChipSize": [
+      "small",
+      "medium",
+      "large"
+    ]
+  },
+  "subComponents": {
+    "CheckboxChip": {
+      "typeName": "CheckboxChipProps",
+      "props": [
+        {
+          "name": "size",
+          "type": "CheckboxChipSize",
+          "optional": true,
+          "doc": "체크박스 크기"
+        },
+        {
+          "name": "defaultValue",
+          "type": "boolean",
+          "optional": true,
+          "doc": "비제어 상태에서 사용할 초기 체크 상태"
+        }
+      ],
+      "extends": [
+        "Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'defaultValue'>"
+      ]
+    },
+    "CheckboxGroup": {
+      "typeName": "CheckboxGroupProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "optional": false,
+          "doc": "그룹 내 체크박스들"
+        },
+        {
+          "name": "column",
+          "type": "boolean",
+          "optional": true,
+          "doc": "세로 배치 여부"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "optional": true,
+          "doc": "추가 CSS 클래스"
+        }
+      ],
+      "extends": []
+    }
+  },
+  "auxiliaryTypes": {},
+  "otherTypes": {},
+  "rawDts": "import { InputHTMLAttributes } from 'react';\nexport type CheckboxSize = 'medium' | 'large';\nexport type CheckboxChipSize = 'small' | 'medium' | 'large';\nexport interface CheckboxProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'defaultValue'> {\n    /** 체크박스 크기 */\n    size?: CheckboxSize;\n    /** 추가 설명 텍스트 */\n    description?: string;\n    /** 비제어 상태에서 사용할 초기 체크 상태 */\n    defaultValue?: boolean;\n    /** 레이블 텍스트 (children이 없을 경우 사용) */\n    label?: string;\n}\nexport interface CheckboxChipProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'defaultValue'> {\n    /** 체크박스 크기 */\n    size?: CheckboxChipSize;\n    /** 비제어 상태에서 사용할 초기 체크 상태 */\n    defaultValue?: boolean;\n}\nexport interface CheckboxGroupProps {\n    /** 그룹 내 체크박스들 */\n    children: React.ReactNode;\n    /** 세로 배치 여부 */\n    column?: boolean;\n    /** 추가 CSS 클래스 */\n    className?: string;\n}\n//# sourceMappingURL=Checkbox.types.d.ts.map"
+}

@@ -1,0 +1,404 @@
+{
+  "component": "Footer",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/Footer/Footer.d.ts",
+    "dist/components/Footer/Footer.types.d.ts"
+  ],
+  "primaryTypeName": "FooterProps",
+  "props": [
+    {
+      "name": "quickLinks",
+      "type": "FooterQuickLink[]",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "address",
+      "type": "string",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "contacts",
+      "type": "FooterContact[]",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "links",
+      "type": "FooterLink[]",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "socialLinks",
+      "type": "FooterSocialLink[]",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "bottomLinks",
+      "type": "FooterBottomLink[]",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "logo",
+      "type": "FooterLogo",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "copyright",
+      "type": "string",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "identifierText",
+      "type": "string",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "identifier",
+      "type": "FooterIdentifier",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "defaultLinkTarget",
+      "type": "'_blank' | '_self'",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "hideQuickLinks",
+      "type": "boolean",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "hideIdentifier",
+      "type": "boolean",
+      "optional": true,
+      "doc": null
+    }
+  ],
+  "extends": [
+    "Omit<ComponentPropsWithRef<'footer'>, 'children'>"
+  ],
+  "polymorphic": false,
+  "exportedTypes": {},
+  "subComponents": {
+    "FooterMainContent": {
+      "typeName": "FooterMainContentProps",
+      "props": [
+        {
+          "name": "logo",
+          "type": "FooterLogo",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "address",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "contacts",
+          "type": "FooterContact[]",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "links",
+          "type": "FooterLink[]",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "socialLinks",
+          "type": "FooterSocialLink[]",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "defaultLinkTarget",
+          "type": "'_blank' | '_self'",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "FooterBottom": {
+      "typeName": "FooterBottomProps",
+      "props": [
+        {
+          "name": "bottomLinks",
+          "type": "FooterBottomLink[]",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "copyright",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "identifierText",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "identifier",
+          "type": "FooterIdentifier",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "defaultLinkTarget",
+          "type": "'_blank' | '_self'",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "hideIdentifier",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": []
+    }
+  },
+  "auxiliaryTypes": {
+    "FooterQuickLink": {
+      "props": [
+        {
+          "name": "title",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "onClick",
+          "type": "() => void",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "FooterContact": {
+      "props": [
+        {
+          "name": "title",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "FooterLinkBase": {
+      "props": [
+        {
+          "name": "href",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "target",
+          "type": "'_blank' | '_self' | '_parent' | '_top'",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "rel",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "FooterLink": {
+      "props": [
+        {
+          "name": "href",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "target",
+          "type": "'_blank' | '_self' | '_parent' | '_top'",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "rel",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "FooterSocialLink": {
+      "props": [
+        {
+          "name": "href",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "target",
+          "type": "'_blank' | '_self' | '_parent' | '_top'",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "rel",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "platform",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "icon",
+          "type": "ReactNode",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "FooterBottomLink": {
+      "props": [
+        {
+          "name": "href",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "target",
+          "type": "'_blank' | '_self' | '_parent' | '_top'",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "rel",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "isHighlighted",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "FooterLogo": {
+      "props": [
+        {
+          "name": "src",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "alt",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "width",
+          "type": "number | string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "height",
+          "type": "number | string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "target",
+          "type": "'_blank' | '_self' | '_parent' | '_top'",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "FooterIdentifier": {
+      "props": [
+        {
+          "name": "logo",
+          "type": "FooterLogo",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        }
+      ],
+      "extends": []
+    }
+  },
+  "otherTypes": {},
+  "rawDts": "import { ComponentPropsWithRef, ReactNode } from 'react';\nexport interface FooterQuickLink {\n    title: string;\n    onClick?: () => void;\n}\nexport interface FooterContact {\n    title: string;\n    description: string;\n}\nexport interface FooterLinkBase {\n    href: string;\n    target?: '_blank' | '_self' | '_parent' | '_top';\n    rel?: string;\n}\nexport interface FooterLink extends FooterLinkBase {\n    text: string;\n}\nexport interface FooterSocialLink extends FooterLinkBase {\n    platform: string;\n    icon?: ReactNode;\n    label?: string;\n}\nexport interface FooterBottomLink extends FooterLinkBase {\n    text: string;\n    isHighlighted?: boolean;\n}\nexport interface FooterLogo {\n    src?: string;\n    alt: string;\n    width?: number | string;\n    height?: number | string;\n    href?: string;\n    target?: '_blank' | '_self' | '_parent' | '_top';\n}\nexport interface FooterIdentifier {\n    logo?: FooterLogo;\n    text: string;\n}\nexport interface FooterProps extends Omit<ComponentPropsWithRef<'footer'>, 'children'> {\n    quickLinks?: FooterQuickLink[];\n    address?: string;\n    contacts?: FooterContact[];\n    links?: FooterLink[];\n    socialLinks?: FooterSocialLink[];\n    bottomLinks?: FooterBottomLink[];\n    logo?: FooterLogo;\n    copyright?: string;\n    identifierText?: string;\n    identifier?: FooterIdentifier;\n    defaultLinkTarget?: '_blank' | '_self';\n    hideQuickLinks?: boolean;\n    hideIdentifier?: boolean;\n}\nexport interface FooterMainContentProps {\n    logo?: FooterLogo;\n    address?: string;\n    contacts?: FooterContact[];\n    links?: FooterLink[];\n    socialLinks?: FooterSocialLink[];\n    defaultLinkTarget?: '_blank' | '_self';\n}\nexport interface FooterBottomProps {\n    bottomLinks?: FooterBottomLink[];\n    copyright?: string;\n    identifierText?: string;\n    identifier?: FooterIdentifier;\n    defaultLinkTarget?: '_blank' | '_self';\n    hideIdentifier?: boolean;\n}\n//# sourceMappingURL=Footer.types.d.ts.map"
+}

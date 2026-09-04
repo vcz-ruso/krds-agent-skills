@@ -1,0 +1,96 @@
+{
+  "component": "Footer",
+  "title": "Components/Footer",
+  "description": "푸터는 화면을 구성하는 가장 마지막 요소로 헤더와 본문에서 원하는 정보를 찾지 못하였거나 사이트 구조 탐색 중에 길을 잃은 사용자들이 대면하게 되는 정보이다. 따라서 푸터에는 사용자가 서비스를 탐색할 수 있는 추가적인 수단, 문제를 해결하는 데 참고할 수 있는 유용한 링크가 제공되어야 한다.",
+  "argTypes": {
+    "quickLinks": {
+      "control": "object",
+      "options": null,
+      "description": "퀵 링크 목록"
+    },
+    "address": {
+      "control": "text",
+      "options": null,
+      "description": "주소"
+    },
+    "contacts": {
+      "control": "object",
+      "options": null,
+      "description": "연락처 목록"
+    },
+    "logo": {
+      "control": "object",
+      "options": null,
+      "description": "메인 로고 설정"
+    },
+    "links": {
+      "control": "object",
+      "options": null,
+      "description": "링크 목록"
+    },
+    "socialLinks": {
+      "control": "object",
+      "options": null,
+      "description": "소셜 미디어 링크 목록"
+    },
+    "bottomLinks": {
+      "control": "object",
+      "options": null,
+      "description": "하단 링크 목록"
+    },
+    "copyright": {
+      "control": "text",
+      "options": null,
+      "description": "저작권 텍스트"
+    },
+    "identifierText": {
+      "control": "text",
+      "options": null,
+      "description": "식별자 텍스트"
+    },
+    "identifier": {
+      "control": "object",
+      "options": null,
+      "description": "식별자 설정"
+    },
+    "defaultLinkTarget": {
+      "control": "select",
+      "options": [
+        "_blank",
+        "_self"
+      ],
+      "description": "모든 링크의 기본 타겟 설정"
+    },
+    "hideQuickLinks": {
+      "control": "boolean",
+      "options": null,
+      "description": "퀵 링크 섹션 숨김 여부"
+    },
+    "hideIdentifier": {
+      "control": "boolean",
+      "options": null,
+      "description": "식별자 섹션 숨김 여부"
+    }
+  },
+  "stories": [
+    {
+      "id": "components-footer--default",
+      "name": "Default",
+      "originalSource": "{\n  args: {\n    quickLinks: [{\n      title: '관련사이트1',\n      onClick: () => console.log('관련사이트1 클릭')\n    }, {\n      title: '관련사이트2',\n      onClick: () => console.log('관련사이트2 클릭')\n    }, {\n      title: '관련사이트3',\n      onClick: () => console.log('관련사이트3 클릭')\n    }, {\n      title: '관련사이트4',\n      onClick: () => console.log('관련사이트4 클릭')\n    }],\n    address: '(26464) 강원특별자치도 원주시 건강로 32(반곡동) 국민건강보험공단',\n    contacts: [{\n      title: '대표전화 1577-1000',\n      description: '(유료, 평일 09시~18시)'\n    }, {\n      title: '해외이용 82-33-811-2001',\n      description: '(유료, 평일 09시~18시)'\n    }],\n    links: [{\n      text: '찾아오시는 길',\n      href: '#'\n    }, {\n      text: '이용안내',\n      href: '#'\n    }, {\n      text: '직원검색',\n      href: '#'\n    }],\n    socialLinks: [{\n      platform: 'instagram',\n      href: '#'\n    }, {\n      platform: 'youtube',\n      href: '#'\n    }, {\n      platform: 'x',\n      href: '#'\n    }, {\n      platform: 'facebook',\n      href: '#'\n    }, {\n      platform: 'blog',\n      href: '#'\n    }],\n    bottomLinks: [{\n      text: '개인정보처리방침',\n      href: '#',\n      isHighlighted: true\n    }, {\n      text: '저작권 정책',\n      href: '#'\n    }, {\n      text: '웹 접근성 품질인증 마크 획득',\n      href: '#'\n    }],\n    copyright: '© 2023 National Health Insurance Service. All rights reserved.',\n    identifierText: '이 누리집은 보건복지부 산하기관 누리집입니다.',\n    hideQuickLinks: false,\n    hideIdentifier: false,\n    defaultLinkTarget: '_self',\n    className: undefined\n  }\n}"
+    },
+    {
+      "id": "components-footer--simple",
+      "name": "Simple",
+      "originalSource": "{\n  args: {\n    address: '(26464) 강원특별자치도 원주시 건강로 32(반곡동) 국민건강보험공단',\n    contacts: [{\n      title: '대표전화 1577-1000',\n      description: '(유료, 평일 09시~18시)'\n    }],\n    bottomLinks: [{\n      text: '개인정보처리방침',\n      href: '#',\n      isHighlighted: true\n    }, {\n      text: '저작권 정책',\n      href: '#'\n    }]\n  }\n}"
+    },
+    {
+      "id": "components-footer--minimal",
+      "name": "Minimal",
+      "originalSource": "{\n  args: {\n    address: '(26464) 강원특별자치도 원주시 건강로 32(반곡동) 국민건강보험공단',\n    bottomLinks: [{\n      text: '개인정보처리방침',\n      href: '#',\n      isHighlighted: true\n    }]\n  }\n}"
+    }
+  ],
+  "extractedFrom": {
+    "chunk": "Footer.stories-C5EHOygR.js",
+    "storybookVersion": "9.1.17"
+  }
+}

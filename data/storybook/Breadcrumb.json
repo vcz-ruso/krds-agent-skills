@@ -1,0 +1,27 @@
+{
+  "component": "Breadcrumb",
+  "title": "Components/Breadcrumb",
+  "description": "브레드크럼은 탐색 계층 구조를 표시하여 사용자가 현재 위치를 파악하고 계층 구조의 수준을 이동할 수 있게 해준다. 브레드크럼을 통해 사용자는 탐색 중인 화면의 상위 수준 화면으로 이동할 수 있다.",
+  "argTypes": null,
+  "stories": [
+    {
+      "id": "components-breadcrumb--default",
+      "name": "Default",
+      "originalSource": "{\n  args: {\n    items: [{\n      text: '홈',\n      href: '#'\n    }, {\n      text: '서비스 신청',\n      href: '#'\n    }, {\n      text: '서비스 신청2',\n      href: '#'\n    }, {\n      text: '서비스 신청3',\n      href: '#'\n    }, {\n      text: '서비스 신청4',\n      href: '#'\n    }]\n  }\n}"
+    },
+    {
+      "id": "components-breadcrumb--with-disabled-item",
+      "name": "With Disabled Item",
+      "originalSource": "{\n  args: {\n    items: [{\n      text: '홈',\n      href: '#'\n    }, {\n      text: '서비스 신청',\n      href: '#'\n    }, {\n      text: '서비스 신청2',\n      href: '#',\n      disabled: true\n    }]\n  }\n}"
+    },
+    {
+      "id": "components-breadcrumb--single-item",
+      "name": "Single Item",
+      "originalSource": "{\n  args: {\n    items: [{\n      text: '홈',\n      href: '#'\n    }]\n  }\n}"
+    }
+  ],
+  "extractedFrom": {
+    "chunk": "Breadcrumb.stories-C8kWEcBa.js",
+    "storybookVersion": "9.1.17"
+  }
+}

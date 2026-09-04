@@ -1,0 +1,33 @@
+{
+  "component": "Identifier",
+  "title": "Components/Identifier",
+  "description": "운영기관 식별자는 디지털 정부서비스에 대한 신뢰성을 위해 서비스 운영 및 관리 주체를 안내하는 요소로 공식 배너, 푸터와 함께 서비스의 일관성, 브랜드를 확인할 수 있는 핵심 요소이다.",
+  "argTypes": {
+    "text": {
+      "control": "text",
+      "options": null,
+      "description": "식별자 텍스트"
+    },
+    "logoAlt": {
+      "control": "text",
+      "options": null,
+      "description": "로고 alt 텍스트"
+    },
+    "className": {
+      "control": "text",
+      "options": null,
+      "description": "추가 커스텀 클래스"
+    }
+  },
+  "stories": [
+    {
+      "id": "components-identifier--default",
+      "name": "Default",
+      "originalSource": "{\n  args: {}\n}"
+    }
+  ],
+  "extractedFrom": {
+    "chunk": "Identifier.stories-DJ_BKRld.js",
+    "storybookVersion": "9.1.17"
+  }
+}

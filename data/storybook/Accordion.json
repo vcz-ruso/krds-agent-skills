@@ -1,0 +1,32 @@
+{
+  "component": "Accordion",
+  "title": "Components/Accordion",
+  "description": "아코디언은 한 페이지에서 관련 있는 여러 콘텐츠 섹션을 확인할 수 있도록 하는 컴포넌트로 콘텐츠 섹션의 헤더 목록이 수직으로 쌓여 있는 형태로 표현된다. 일반적으로 헤더 목록은 컨트롤 요소로 활용되며 사용자는 필요에 따라 헤더를 선택하여 하위 콘텐츠 섹션을 표시하거나 숨길 수 있다.",
+  "argTypes": null,
+  "stories": [
+    {
+      "id": "components-accordion--default",
+      "name": "Default",
+      "originalSource": "{\n  args: {\n    variant: 'default',\n    allowMultiple: true,\n    defaultValue: ['item1']\n  },\n  render: args => <Accordion.Root variant={args.variant} allowMultiple={args.allowMultiple} defaultValue={args.defaultValue}>\n      <Accordion.Item value=\"item1\">\n        <Accordion.Header>아코디언 타이틀 영역</Accordion.Header>\n        <Accordion.Panel>\n          아코디언 내용 영역입니다. 여기에 다양한 콘텐츠를 넣을 수 있습니다.\n        </Accordion.Panel>\n      </Accordion.Item>\n      <Accordion.Item value=\"item2\">\n        <Accordion.Header>두 번째 아코디언 타이틀</Accordion.Header>\n        <Accordion.Panel>\n          두 번째 아코디언의 내용입니다. 이 영역에는 텍스트뿐만 아니라 다른 컴포넌트도 포함할 수\n          있습니다.\n        </Accordion.Panel>\n      </Accordion.Item>\n      <Accordion.Item value=\"item3\">\n        <Accordion.Header>세 번째 아코디언</Accordion.Header>\n        <Accordion.Panel>세 번째 아코디언 내용입니다.</Accordion.Panel>\n      </Accordion.Item>\n    </Accordion.Root>\n}"
+    },
+    {
+      "id": "components-accordion--single-selection",
+      "name": "Single Selection",
+      "originalSource": "{\n  args: {\n    variant: 'default',\n    allowMultiple: false,\n    defaultValue: ['item1']\n  },\n  render: args => <Accordion.Root variant={args.variant} allowMultiple={false} defaultValue={args.defaultValue}>\n      <Accordion.Item value=\"item1\">\n        <Accordion.Header>아코디언 타이틀 영역</Accordion.Header>\n        <Accordion.Panel>\n          아코디언 내용 영역입니다. 여기에 다양한 콘텐츠를 넣을 수 있습니다.\n        </Accordion.Panel>\n      </Accordion.Item>\n      <Accordion.Item value=\"item2\">\n        <Accordion.Header>두 번째 아코디언 타이틀</Accordion.Header>\n        <Accordion.Panel>\n          두 번째 아코디언의 내용입니다. 이 영역에는 텍스트뿐만 아니라 다른 컴포넌트도 포함할 수\n          있습니다.\n        </Accordion.Panel>\n      </Accordion.Item>\n      <Accordion.Item value=\"item3\">\n        <Accordion.Header>세 번째 아코디언</Accordion.Header>\n        <Accordion.Panel>세 번째 아코디언 내용입니다.</Accordion.Panel>\n      </Accordion.Item>\n    </Accordion.Root>,\n  parameters: {\n    docs: {\n      description: {\n        story: '기본 아코디언 단일 선택 모드입니다.'\n      },\n      source: {\n        code: `\n    <Accordion.Root variant=\"default\" allowMultiple={false}>\n      <Accordion.Item value=\"item1\">\n        <Accordion.Header>아코디언 타이틀 영역</Accordion.Header>\n        <Accordion.Panel>\n          아코디언 내용 영역입니다. 여기에 다양한 콘텐츠를 넣을 수 있습니다.\n        </Accordion.Panel>\n      </Accordion.Item>\n      <Accordion.Item value=\"item2\">\n        <Accordion.Header>두 번째 아코디언 타이틀</Accordion.Header>\n        <Accordion.Panel>\n          두 번째 아코디언의 내용입니다. 이 영역에는 텍스트뿐만 아니라 다른 컴포넌트도 포함할 수\n          있습니다.\n        </Accordion.Panel>\n      </Accordion.Item>\n      <Accordion.Item value=\"item3\">\n        <Accordion.Header>세 번째 아코디언</Accordion.Header>\n        <Accordion.Panel>세 번째 아코디언 내용입니다.</Accordion.Panel>\n      </Accordion.Item>\n    </Accordion.Root>`\n      }\n    }\n  }\n}"
+    },
+    {
+      "id": "components-accordion--with-complex-content",
+      "name": "With Complex Content",
+      "originalSource": "{\n  args: {\n    variant: 'default',\n    allowMultiple: true,\n    defaultValue: ['complex1']\n  },\n  render: args => <Accordion.Root variant={args.variant} allowMultiple={args.allowMultiple} defaultValue={args.defaultValue}>\n      <Accordion.Item value=\"complex1\">\n        <Accordion.Header>복잡한 내용이 포함된 아코디언</Accordion.Header>\n        <Accordion.Panel>\n          <div>\n            <p>이 아코디언에는 다양한 콘텐츠가 포함되어 있습니다:</p>\n            <ul>\n              <li>목록 항목 1</li>\n              <li>목록 항목 2</li>\n              <li>목록 항목 3</li>\n            </ul>\n            <p>\n              <strong>굵은 텍스트</strong>와 <em>기울임 텍스트</em>도 포함됩니다.\n            </p>\n          </div>\n        </Accordion.Panel>\n      </Accordion.Item>\n      <Accordion.Item value=\"complex2\">\n        <Accordion.Header>두 번째 복잡한 아코디언</Accordion.Header>\n        <Accordion.Panel>\n          <div>\n            <p>아코디언 내부에 다른 HTML 요소들을 넣을 수 있습니다.</p>\n            <blockquote>\"인용문도 포함할 수 있습니다.\"</blockquote>\n          </div>\n        </Accordion.Panel>\n      </Accordion.Item>\n    </Accordion.Root>\n}"
+    },
+    {
+      "id": "components-accordion--controlled",
+      "name": "Controlled",
+      "originalSource": "{\n  render: () => <ControlledAccordion />,\n  parameters: {\n    docs: {\n      description: {\n        story: '제어된 아코디언 예시입니다.'\n      },\n      source: {\n        code: `\n      const ControlledAccordion = () => {\n        const [value, setValue] = useState<string[]>(['item1']);\n\n        return (\n          <div>\n            <div style={{ display: 'flex', gap: '10px', marginBottom: '10px' }}>\n              <Button size=\"small\" onClick={() => setValue(['item1'])}>\n                item1 열기\n              </Button>\n              <Button size=\"small\" variant=\"secondary\" onClick={() => setValue(['item2'])}>\n                item2 열기\n              </Button>\n              <Button size=\"small\" variant=\"tertiary\" onClick={() => setValue([])}>\n                모두 닫기\n              </Button>\n            </div>\n\n            <p style={{ marginBottom: '10px', fontWeight: 'bold' }}>\n              현재 열린 아코디언 아이템: {value.join(', ')}\n            </p>\n\n            <Accordion.Root allowMultiple={false} value={value} onChange={setValue}>\n              <Accordion.Item value=\"item1\">\n                <Accordion.Header>아코디언 타이틀 영역</Accordion.Header>\n                <Accordion.Panel>\n                  아코디언 내용 영역입니다. 여기에 다양한 콘텐츠를 넣을 수 있습니다.\n                </Accordion.Panel>\n              </Accordion.Item>\n              <Accordion.Item value=\"item2\">\n                <Accordion.Header>두 번째 아코디언 타이틀</Accordion.Header>\n                <Accordion.Panel>\n                  두 번째 아코디언의 내용입니다. 이 영역에는 텍스트뿐만 아니라 다른 컴포넌트도 포함할 수\n                  있습니다.\n                </Accordion.Panel>\n              </Accordion.Item>\n            </Accordion.Root>\n          </div>\n        );\n      };\n      `\n      }\n    }\n  }\n}"
+    }
+  ],
+  "extractedFrom": {
+    "chunk": "Accordion.stories-50VbrZlO.js",
+    "storybookVersion": "9.1.17"
+  }
+}

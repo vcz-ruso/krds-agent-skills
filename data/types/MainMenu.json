@@ -1,0 +1,884 @@
+{
+  "component": "MainMenu",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/MainMenu/MainMenu.d.ts",
+    "dist/components/MainMenu/MainMenu.types.d.ts"
+  ],
+  "primaryTypeName": "MainMenuProps",
+  "props": [
+    {
+      "name": "desktop",
+      "type": "DesktopMenuConfig",
+      "optional": false,
+      "doc": null
+    },
+    {
+      "name": "mobile",
+      "type": "MobileMenuConfig",
+      "optional": false,
+      "doc": null
+    },
+    {
+      "name": "mobileTrigger",
+      "type": "ReactNode",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "onMobileMenuOpen",
+      "type": "() => void",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "onMobileMenuClose",
+      "type": "() => void",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "desktopPortalId",
+      "type": "string",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "mobilePortalId",
+      "type": "string",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "mobileTriggerPortalId",
+      "type": "string | never",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "mobileTriggerContainerElement",
+      "type": "never | HTMLElement",
+      "optional": true,
+      "doc": null
+    }
+  ],
+  "extends": [],
+  "polymorphic": false,
+  "exportedTypes": {},
+  "subComponents": {
+    "MobileTrigger": {
+      "typeName": "MobileTriggerProps",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "icon",
+          "type": "ReactNode",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": [
+        "ButtonHTMLAttributes<HTMLButtonElement>"
+      ]
+    }
+  },
+  "auxiliaryTypes": {
+    "DesktopMenuConfig": {
+      "props": [
+        {
+          "name": "items",
+          "type": "DesktopMainItem[]",
+          "optional": false,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "DesktopMainItem": {
+      "props": [
+        {
+          "name": "type",
+          "type": "'dropdown' | 'link'",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "id",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "isDropdownTrigger",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "mainListClassName",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "sections",
+          "type": "DesktopSubSection[]",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "isExternal",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "renderAsButton",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "onClick",
+          "type": "() => void",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "DesktopMainDropdown": {
+      "props": [
+        {
+          "name": "type",
+          "type": "'dropdown'",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "id",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "isDropdownTrigger",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "mainListClassName",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "sections",
+          "type": "DesktopSubSection[]",
+          "optional": false,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "DesktopMainLink": {
+      "props": [
+        {
+          "name": "type",
+          "type": "'link'",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "id",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "isExternal",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "renderAsButton",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "onClick",
+          "type": "() => void",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "DesktopSubSection": {
+      "props": [
+        {
+          "name": "type",
+          "type": "'menu' | 'link'",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "id",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "isExternal",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "quickLinkLabel",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "quickLinkHref",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "quickLinkExternal",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "layout",
+          "type": "'default' | 'between' | 'single-list'",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "items",
+          "type": "DesktopLeafItem[]",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "banner",
+          "type": "DesktopBanner",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "onClick",
+          "type": "() => void",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "DesktopSubLink": {
+      "props": [
+        {
+          "name": "type",
+          "type": "'link'",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "id",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "isExternal",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "onClick",
+          "type": "() => void",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "DesktopSubMenu": {
+      "props": [
+        {
+          "name": "type",
+          "type": "'menu'",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "id",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "isExternal",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "quickLinkLabel",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "quickLinkHref",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "quickLinkExternal",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "layout",
+          "type": "'default' | 'between' | 'single-list'",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "items",
+          "type": "DesktopLeafItem[]",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "banner",
+          "type": "DesktopBanner",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "DesktopLeafItem": {
+      "props": [
+        {
+          "name": "id",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "isExternal",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "asButton",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "onClick",
+          "type": "() => void",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "DesktopBanner": {
+      "props": [
+        {
+          "name": "badgeText",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "buttonText",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "onButtonClick",
+          "type": "() => void",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "MobileMenuConfig": {
+      "props": [
+        {
+          "name": "id",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "header",
+          "type": "{ utilities?: MobileUtilityItem[]; login?: { isLoggedIn: boolean; userName?: string; loginText?: string; logoutText?: string; onLogin?: () => void; onLogout?: () => void; }; services?: MobileLinkItem[]; search?: { placeholder?: string; onSearch?: (query: string) => void; }; }",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "body",
+          "type": "{ mainItems: MobileMainItem[]; }",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "bottomLinks",
+          "type": "MobileLinkItem[]",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "MobileUtilityItem": {
+      "props": [
+        {
+          "name": "id",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "onClick",
+          "type": "() => void",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "MobileLinkItem": {
+      "props": [
+        {
+          "name": "id",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "isExternal",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "onClick",
+          "type": "() => void",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "MobileMainItem": {
+      "props": [
+        {
+          "name": "id",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "panels",
+          "type": "MobilePanel[]",
+          "optional": false,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "MobilePanel": {
+      "props": [
+        {
+          "name": "id",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "items",
+          "type": "MobilePanelItem[]",
+          "optional": false,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "MobilePanelItem": {
+      "props": [
+        {
+          "name": "type",
+          "type": "'link' | 'depth3'",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "id",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "isExternal",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "items",
+          "type": "Array<MobileDepth3Item>",
+          "optional": false,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "MobilePanelLink": {
+      "props": [
+        {
+          "name": "type",
+          "type": "'link'",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "id",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "isExternal",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "MobilePanelDepth3": {
+      "props": [
+        {
+          "name": "type",
+          "type": "'depth3'",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "id",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "items",
+          "type": "Array<MobileDepth3Item>",
+          "optional": false,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "MobileDepth3Item": {
+      "props": [
+        {
+          "name": "type",
+          "type": "'link' | 'depth4'",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "id",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "isExternal",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "items",
+          "type": "Array<{ id?: string; label: string; href: string; isExternal?: boolean; }>",
+          "optional": false,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "MobileDepth3Link": {
+      "props": [
+        {
+          "name": "type",
+          "type": "'link'",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "id",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "isExternal",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "MobileDepth4": {
+      "props": [
+        {
+          "name": "type",
+          "type": "'depth4'",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "id",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "items",
+          "type": "Array<{ id?: string; label: string; href: string; isExternal?: boolean; }>",
+          "optional": false,
+          "doc": null
+        }
+      ],
+      "extends": []
+    }
+  },
+  "otherTypes": {},
+  "rawDts": "import { ReactNode, ButtonHTMLAttributes } from 'react';\ninterface MainMenuBaseProps {\n    desktop: DesktopMenuConfig;\n    mobile: MobileMenuConfig;\n    mobileTrigger?: ReactNode;\n    onMobileMenuOpen?: () => void;\n    onMobileMenuClose?: () => void;\n    desktopPortalId?: string;\n    mobilePortalId?: string;\n}\nexport type MainMenuProps = MainMenuBaseProps & ({\n    mobileTriggerPortalId: string;\n    mobileTriggerContainerElement?: never;\n} | {\n    mobileTriggerPortalId?: never;\n    mobileTriggerContainerElement: HTMLElement;\n});\nexport interface DesktopMenuConfig {\n    items: DesktopMainItem[];\n}\nexport type DesktopMainItem = DesktopMainDropdown | DesktopMainLink;\nexport interface DesktopMainDropdown {\n    type: 'dropdown';\n    id?: string;\n    label: string;\n    isDropdownTrigger?: boolean;\n    mainListClassName?: string;\n    sections: DesktopSubSection[];\n}\nexport interface DesktopMainLink {\n    type: 'link';\n    id?: string;\n    label: string;\n    href?: string;\n    isExternal?: boolean;\n    renderAsButton?: boolean;\n    onClick?: () => void;\n}\nexport type DesktopSubSection = DesktopSubMenu | DesktopSubLink;\nexport interface DesktopSubLink {\n    type: 'link';\n    id?: string;\n    label: string;\n    href: string;\n    isExternal?: boolean;\n    onClick?: () => void;\n}\nexport interface DesktopSubMenu {\n    type: 'menu';\n    id?: string;\n    label: string;\n    href?: string;\n    isExternal?: boolean;\n    quickLinkLabel?: string;\n    quickLinkHref?: string;\n    quickLinkExternal?: boolean;\n    layout?: 'default' | 'between' | 'single-list';\n    items: DesktopLeafItem[];\n    banner?: DesktopBanner;\n}\nexport interface DesktopLeafItem {\n    id?: string;\n    label: string;\n    href?: string;\n    isExternal?: boolean;\n    asButton?: boolean;\n    description?: string;\n    onClick?: () => void;\n}\nexport interface DesktopBanner {\n    badgeText?: string;\n    buttonText: string;\n    onButtonClick: () => void;\n    children?: ReactNode;\n}\nexport interface MobileMenuConfig {\n    id?: string;\n    header?: {\n        utilities?: MobileUtilityItem[];\n        login?: {\n            isLoggedIn: boolean;\n            userName?: string;\n            loginText?: string;\n            logoutText?: string;\n            onLogin?: () => void;\n            onLogout?: () => void;\n        };\n        services?: MobileLinkItem[];\n        search?: {\n            placeholder?: string;\n            onSearch?: (query: string) => void;\n        };\n    };\n    body: {\n        mainItems: MobileMainItem[];\n    };\n    bottomLinks?: MobileLinkItem[];\n}\nexport interface MobileUtilityItem {\n    id?: string;\n    label: string;\n    href?: string;\n    onClick?: () => void;\n}\nexport interface MobileLinkItem {\n    id?: string;\n    label: string;\n    href: string;\n    isExternal?: boolean;\n    onClick?: () => void;\n}\nexport interface MobileMainItem {\n    id?: string;\n    label: string;\n    panels: MobilePanel[];\n}\nexport interface MobilePanel {\n    id?: string;\n    label: string;\n    items: MobilePanelItem[];\n}\nexport type MobilePanelItem = MobilePanelLink | MobilePanelDepth3;\nexport interface MobilePanelLink {\n    type: 'link';\n    id?: string;\n    label: string;\n    href: string;\n    isExternal?: boolean;\n}\nexport interface MobilePanelDepth3 {\n    type: 'depth3';\n    id?: string;\n    label: string;\n    items: Array<MobileDepth3Item>;\n}\nexport type MobileDepth3Item = MobileDepth3Link | MobileDepth4;\nexport interface MobileDepth3Link {\n    type: 'link';\n    id?: string;\n    label: string;\n    href: string;\n    isExternal?: boolean;\n}\nexport interface MobileDepth4 {\n    type: 'depth4';\n    id?: string;\n    label: string;\n    title: string;\n    items: Array<{\n        id?: string;\n        label: string;\n        href: string;\n        isExternal?: boolean;\n    }>;\n}\nexport interface MobileTriggerProps extends ButtonHTMLAttributes<HTMLButtonElement> {\n    label?: string;\n    icon?: ReactNode;\n}\nexport {};\n//# sourceMappingURL=MainMenu.types.d.ts.map"
+}

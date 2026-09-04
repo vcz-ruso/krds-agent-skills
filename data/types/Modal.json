@@ -1,0 +1,168 @@
+{
+  "component": "Modal",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/Modal/Modal.d.ts",
+    "dist/components/Modal/Modal.types.d.ts"
+  ],
+  "primaryTypeName": "ModalRootProps",
+  "props": [
+    {
+      "name": "open",
+      "type": "boolean",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "defaultOpen",
+      "type": "boolean",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "onOpenChange",
+      "type": "(open: boolean) => void",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "size",
+      "type": "ModalSize",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "variant",
+      "type": "ModalVariant",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "closeOnEsc",
+      "type": "boolean",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "closeOnOverlayClick",
+      "type": "boolean",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "usePortal",
+      "type": "boolean",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "portalContainer",
+      "type": "string | HTMLElement",
+      "optional": true,
+      "doc": null
+    }
+  ],
+  "extends": [
+    "PropsWithChildren"
+  ],
+  "polymorphic": false,
+  "exportedTypes": {
+    "ModalSize": [
+      "sm",
+      "md",
+      "lg"
+    ],
+    "ModalVariant": [
+      "default",
+      "bottom-sheet"
+    ]
+  },
+  "subComponents": {
+    "ModalTrigger": {
+      "typeName": "ModalTriggerProps",
+      "props": [
+        {
+          "name": "asChild",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": [
+        "React.ComponentProps<'button'>"
+      ]
+    },
+    "ModalOverlay": {
+      "typeName": "ModalOverlayProps",
+      "props": [],
+      "extends": [
+        "React.ComponentProps<'div'>"
+      ]
+    },
+    "ModalContent": {
+      "typeName": "ModalContentProps",
+      "props": [],
+      "extends": [
+        "React.ComponentProps<'div'>"
+      ]
+    },
+    "ModalHeader": {
+      "typeName": "ModalHeaderProps",
+      "props": [
+        {
+          "name": "title",
+          "type": "React.ReactNode",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "titleId",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": [
+        "React.ComponentProps<'div'>"
+      ]
+    },
+    "ModalBody": {
+      "typeName": "ModalBodyProps",
+      "props": [
+        {
+          "name": "descriptionId",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": [
+        "React.ComponentProps<'div'>"
+      ]
+    },
+    "ModalFooter": {
+      "typeName": "ModalFooterProps",
+      "props": [],
+      "extends": [
+        "React.ComponentProps<'div'>"
+      ]
+    },
+    "ModalClose": {
+      "typeName": "ModalCloseProps",
+      "props": [
+        {
+          "name": "asChild",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": [
+        "React.ComponentProps<'button'>"
+      ]
+    }
+  },
+  "auxiliaryTypes": {},
+  "otherTypes": {},
+  "rawDts": "import { default as React, PropsWithChildren } from 'react';\nexport type ModalSize = 'sm' | 'md' | 'lg';\nexport type ModalVariant = 'default' | 'bottom-sheet';\nexport interface ModalRootProps extends PropsWithChildren {\n    open?: boolean;\n    defaultOpen?: boolean;\n    onOpenChange?: (open: boolean) => void;\n    size?: ModalSize;\n    variant?: ModalVariant;\n    closeOnEsc?: boolean;\n    closeOnOverlayClick?: boolean;\n    usePortal?: boolean;\n    portalContainer?: string | HTMLElement;\n}\nexport type ModalTriggerProps = React.ComponentProps<'button'> & {\n    asChild?: boolean;\n};\nexport type ModalOverlayProps = React.ComponentProps<'div'>;\nexport type ModalContentProps = React.ComponentProps<'div'>;\nexport type ModalHeaderProps = React.ComponentProps<'div'> & {\n    title?: React.ReactNode;\n    titleId?: string;\n};\nexport type ModalBodyProps = React.ComponentProps<'div'> & {\n    descriptionId?: string;\n};\nexport type ModalFooterProps = React.ComponentProps<'div'>;\nexport type ModalCloseProps = React.ComponentProps<'button'> & {\n    asChild?: boolean;\n};\n//# sourceMappingURL=Modal.types.d.ts.map"
+}

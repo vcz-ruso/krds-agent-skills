@@ -1,0 +1,33 @@
+{
+  "component": "CriticalAlert",
+  "title": "Components/CriticalAlert",
+  "description": "긴급 공지는 본문 상단에 강조되어 표시되는 배너로 사용자에게 긴급하거나 중요한 정보를 전달하는 데 사용된다. 모든 공공 디지털 서비스에서 동일한 긴급 공지 컴포넌트를 사용함으로써 사용자는 긴급한 정보를 일관되고 예측 가능한 방식으로 찾고 이해할 수 있다.",
+  "argTypes": {
+    "alerts": {
+      "control": "object",
+      "options": null,
+      "description": null
+    }
+  },
+  "stories": [
+    {
+      "id": "components-criticalalert--default",
+      "name": "Default",
+      "originalSource": "{\n  args: {\n    alerts: [{\n      variant: 'danger',\n      message: '긴급 공지 내용 표시',\n      href: '#'\n    }, {\n      variant: 'ok',\n      message: '긴급 공지 내용 표시',\n      href: '#'\n    }, {\n      variant: 'info',\n      message: '긴급 공지 내용 표시',\n      href: '#'\n    }]\n  }\n}"
+    },
+    {
+      "id": "components-criticalalert--without-link",
+      "name": "Without Link",
+      "originalSource": "{\n  args: {\n    alerts: [{\n      variant: 'info',\n      message: '긴급 공지 내용 표시'\n    }]\n  }\n}"
+    },
+    {
+      "id": "components-criticalalert--custom-link-text",
+      "name": "Custom Link Text",
+      "originalSource": "{\n  args: {\n    alerts: [{\n      variant: 'danger',\n      message: '긴급 공지 내용 표시',\n      href: '#',\n      linkText: '더 보기'\n    }]\n  }\n}"
+    }
+  ],
+  "extractedFrom": {
+    "chunk": "CriticalAlert.stories-BTRTcaZJ.js",
+    "storybookVersion": "9.1.17"
+  }
+}

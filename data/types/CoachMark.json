@@ -1,0 +1,74 @@
+{
+  "component": "CoachMark",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/CoachMark/CoachMark.d.ts",
+    "dist/components/CoachMark/CoachMark.types.d.ts"
+  ],
+  "primaryTypeName": "CoachMarkProps",
+  "props": [
+    {
+      "name": "title",
+      "type": "string",
+      "optional": true,
+      "doc": "코치 마크 제목"
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "optional": true,
+      "doc": "코치 마크 설명"
+    },
+    {
+      "name": "currentStep",
+      "type": "number",
+      "optional": true,
+      "doc": "현재 단계"
+    },
+    {
+      "name": "totalSteps",
+      "type": "number",
+      "optional": true,
+      "doc": "총 단계 수"
+    },
+    {
+      "name": "onSkip",
+      "type": "() => void",
+      "optional": true,
+      "doc": "그만보기 버튼 클릭 핸들러"
+    },
+    {
+      "name": "onPrevious",
+      "type": "() => void",
+      "optional": true,
+      "doc": "이전으로 버튼 클릭 핸들러"
+    },
+    {
+      "name": "onNext",
+      "type": "() => void",
+      "optional": true,
+      "doc": "다음으로 버튼 클릭 핸들러"
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "optional": true,
+      "doc": "코치 마크 내용"
+    },
+    {
+      "name": "isVisible",
+      "type": "boolean",
+      "optional": true,
+      "doc": "코치 마크 표시 여부"
+    }
+  ],
+  "extends": [
+    "Omit<ComponentPropsWithRef<'div'>, 'children'>"
+  ],
+  "polymorphic": false,
+  "exportedTypes": {},
+  "subComponents": {},
+  "auxiliaryTypes": {},
+  "otherTypes": {},
+  "rawDts": "import { ComponentPropsWithRef, ReactNode } from 'react';\nexport interface CoachMarkProps extends Omit<ComponentPropsWithRef<'div'>, 'children'> {\n    /** 코치 마크 제목 */\n    title?: string;\n    /** 코치 마크 설명 */\n    description?: string;\n    /** 현재 단계 */\n    currentStep?: number;\n    /** 총 단계 수 */\n    totalSteps?: number;\n    /** 그만보기 버튼 클릭 핸들러 */\n    onSkip?: () => void;\n    /** 이전으로 버튼 클릭 핸들러 */\n    onPrevious?: () => void;\n    /** 다음으로 버튼 클릭 핸들러 */\n    onNext?: () => void;\n    /** 코치 마크 내용 */\n    children?: ReactNode;\n    /** 코치 마크 표시 여부 */\n    isVisible?: boolean;\n}\n//# sourceMappingURL=CoachMark.types.d.ts.map"
+}

@@ -1,0 +1,221 @@
+{
+  "component": "HelpPanel",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/HelpPanel/HelpPanel.d.ts",
+    "dist/components/HelpPanel/HelpPanel.types.d.ts"
+  ],
+  "primaryTypeName": "HelpPanelProps",
+  "props": [
+    {
+      "name": "isOpen",
+      "type": "boolean",
+      "optional": true,
+      "doc": "도움말 패널 열림 상태"
+    },
+    {
+      "name": "defaultOpen",
+      "type": "boolean",
+      "optional": true,
+      "doc": "비제어 상태에서 사용할 초기 열림 상태"
+    },
+    {
+      "name": "onOpenChange",
+      "type": "(isOpen: boolean) => void",
+      "optional": true,
+      "doc": "도움말 패널 열림/닫힘 상태 변경 핸들러"
+    },
+    {
+      "name": "children",
+      "type": "React.ReactNode",
+      "optional": true,
+      "doc": "도움말 패널 내용"
+    }
+  ],
+  "extends": [
+    "HTMLAttributes<HTMLDivElement>"
+  ],
+  "polymorphic": false,
+  "exportedTypes": {},
+  "subComponents": {
+    "HelpPanelTrigger": {
+      "typeName": "HelpPanelTriggerProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "optional": true,
+          "doc": "트리거 버튼 텍스트"
+        }
+      ],
+      "extends": [
+        "HTMLAttributes<HTMLButtonElement>"
+      ]
+    },
+    "HelpPanelContent": {
+      "typeName": "HelpPanelContentProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "optional": true,
+          "doc": "도움말 패널 내용"
+        },
+        {
+          "name": "srOnlyTitle",
+          "type": "string",
+          "optional": true,
+          "doc": "스크린 리더 전용 제목"
+        }
+      ],
+      "extends": [
+        "HTMLAttributes<HTMLDivElement>"
+      ]
+    },
+    "HelpSection": {
+      "typeName": "HelpSectionProps",
+      "props": [
+        {
+          "name": "title",
+          "type": "string",
+          "optional": false,
+          "doc": "섹션 제목"
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "optional": true,
+          "doc": "섹션 설명"
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "optional": true,
+          "doc": "섹션 내용"
+        }
+      ],
+      "extends": [
+        "HTMLAttributes<HTMLDivElement>"
+      ]
+    },
+    "HelpRelatedService": {
+      "typeName": "HelpRelatedServiceProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "optional": true,
+          "doc": "관련 서비스 그룹들"
+        }
+      ],
+      "extends": [
+        "HTMLAttributes<HTMLDivElement>"
+      ]
+    },
+    "HelpServiceGroup": {
+      "typeName": "HelpServiceGroupProps",
+      "props": [
+        {
+          "name": "title",
+          "type": "string",
+          "optional": false,
+          "doc": "서비스 그룹 제목"
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "optional": true,
+          "doc": "서비스 그룹 내용"
+        }
+      ],
+      "extends": [
+        "HTMLAttributes<HTMLDivElement>"
+      ]
+    },
+    "HelpLinkList": {
+      "typeName": "HelpLinkListProps",
+      "props": [
+        {
+          "name": "links",
+          "type": "Array<{ text: string; href: string; target?: string; icon?: string; }>",
+          "optional": false,
+          "doc": "링크 목록"
+        },
+        {
+          "name": "iconPosition",
+          "type": "'left' | 'right'",
+          "optional": true,
+          "doc": "아이콘 위치 ('left' | 'right')"
+        }
+      ],
+      "extends": [
+        "HTMLAttributes<HTMLUListElement>"
+      ]
+    },
+    "HelpPanelClose": {
+      "typeName": "HelpPanelCloseProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "optional": true,
+          "doc": "닫기 버튼 텍스트"
+        }
+      ],
+      "extends": [
+        "HTMLAttributes<HTMLButtonElement>"
+      ]
+    }
+  },
+  "auxiliaryTypes": {
+    "HelpPanelContextValue": {
+      "props": [
+        {
+          "name": "isOpen",
+          "type": "boolean",
+          "optional": false,
+          "doc": "도움말 패널 열림 상태"
+        },
+        {
+          "name": "open",
+          "type": "() => void",
+          "optional": false,
+          "doc": "패널 열기"
+        },
+        {
+          "name": "close",
+          "type": "() => void",
+          "optional": false,
+          "doc": "패널 닫기"
+        },
+        {
+          "name": "toggle",
+          "type": "() => void",
+          "optional": false,
+          "doc": "패널 열림 상태 토글"
+        },
+        {
+          "name": "setOpen",
+          "type": "(isOpen: boolean) => void",
+          "optional": false,
+          "doc": "패널 열림 상태 설정"
+        },
+        {
+          "name": "panelId",
+          "type": "string",
+          "optional": false,
+          "doc": "패널 DOM id"
+        },
+        {
+          "name": "lastFocusedElementRef",
+          "type": "MutableRefObject<HTMLElement | null>",
+          "optional": false,
+          "doc": "포커스를 복원할 대상"
+        }
+      ],
+      "extends": []
+    }
+  },
+  "otherTypes": {},
+  "rawDts": "import { HTMLAttributes, MutableRefObject } from 'react';\nexport interface HelpPanelProps extends HTMLAttributes<HTMLDivElement> {\n    /** 도움말 패널 열림 상태 */\n    isOpen?: boolean;\n    /** 비제어 상태에서 사용할 초기 열림 상태 */\n    defaultOpen?: boolean;\n    /** 도움말 패널 열림/닫힘 상태 변경 핸들러 */\n    onOpenChange?: (isOpen: boolean) => void;\n    /** 도움말 패널 내용 */\n    children?: React.ReactNode;\n}\nexport interface HelpPanelContextValue {\n    /** 도움말 패널 열림 상태 */\n    isOpen: boolean;\n    /** 패널 열기 */\n    open: () => void;\n    /** 패널 닫기 */\n    close: () => void;\n    /** 패널 열림 상태 토글 */\n    toggle: () => void;\n    /** 패널 열림 상태 설정 */\n    setOpen: (isOpen: boolean) => void;\n    /** 패널 DOM id */\n    panelId: string;\n    /** 포커스를 복원할 대상 */\n    lastFocusedElementRef: MutableRefObject<HTMLElement | null>;\n}\nexport interface HelpPanelTriggerProps extends HTMLAttributes<HTMLButtonElement> {\n    /** 트리거 버튼 텍스트 */\n    children?: React.ReactNode;\n}\nexport interface HelpPanelContentProps extends HTMLAttributes<HTMLDivElement> {\n    /** 도움말 패널 내용 */\n    children?: React.ReactNode;\n    /** 스크린 리더 전용 제목 */\n    srOnlyTitle?: string;\n}\nexport interface HelpSectionProps extends HTMLAttributes<HTMLDivElement> {\n    /** 섹션 제목 */\n    title: string;\n    /** 섹션 설명 */\n    description?: string;\n    /** 섹션 내용 */\n    children?: React.ReactNode;\n}\nexport interface HelpRelatedServiceProps extends HTMLAttributes<HTMLDivElement> {\n    /** 관련 서비스 그룹들 */\n    children?: React.ReactNode;\n}\nexport interface HelpServiceGroupProps extends HTMLAttributes<HTMLDivElement> {\n    /** 서비스 그룹 제목 */\n    title: string;\n    /** 서비스 그룹 내용 */\n    children?: React.ReactNode;\n}\nexport interface HelpLinkListProps extends HTMLAttributes<HTMLUListElement> {\n    /** 링크 목록 */\n    links: Array<{\n        text: string;\n        href: string;\n        target?: string;\n        icon?: string;\n    }>;\n    /** 아이콘 위치 ('left' | 'right') */\n    iconPosition?: 'left' | 'right';\n}\nexport interface HelpPanelCloseProps extends HTMLAttributes<HTMLButtonElement> {\n    /** 닫기 버튼 텍스트 */\n    children?: React.ReactNode;\n}\n//# sourceMappingURL=HelpPanel.types.d.ts.map"
+}

@@ -1,0 +1,68 @@
+{
+  "component": "Pagination",
+  "title": "Components/Pagination",
+  "description": "페이지네이션은 많은 양의 콘텐츠를 탐색하기 쉽도록 여러 화면에 나누고, 분할된 화면을 탐색하는 데 사용되는 요소이다.",
+  "argTypes": {
+    "totalPages": {
+      "control": "number",
+      "options": null,
+      "description": "전체 페이지 수"
+    },
+    "currentPage": {
+      "control": "number",
+      "options": null,
+      "description": "현재 페이지 (제어)"
+    },
+    "defaultPage": {
+      "control": "number",
+      "options": null,
+      "description": "초기 페이지 (비제어)"
+    },
+    "boundaryCount": {
+      "control": "select",
+      "options": null,
+      "description": "경계 페이지 노출 수"
+    },
+    "siblingCount": {
+      "control": "select",
+      "options": null,
+      "description": "현재 주변 노출 수"
+    },
+    "prevLabel": {
+      "control": "text",
+      "options": null,
+      "description": "이전 버튼 레이블"
+    },
+    "nextLabel": {
+      "control": "text",
+      "options": null,
+      "description": "다음 버튼 레이블"
+    },
+    "disabled": {
+      "control": "boolean",
+      "options": null,
+      "description": "비활성화"
+    }
+  },
+  "stories": [
+    {
+      "id": "components-pagination--default",
+      "name": "Default",
+      "originalSource": "{\n  args: {\n    totalPages: 10,\n    defaultPage: 4\n  },\n  parameters: {\n    docs: {\n      source: {\n        code: `\nimport { Pagination } from '@/components';\n\nfunction DefaultPagination() {\n  return (\n    <Pagination \n      totalPages={10}\n      defaultPage={4} \n    />\n  );\n}\n        `\n      }\n    }\n  }\n}"
+    },
+    {
+      "id": "components-pagination--with-many-pages",
+      "name": "With Many Pages",
+      "originalSource": "{\n  args: {\n    totalPages: 99,\n    defaultPage: 4\n  },\n  parameters: {\n    docs: {\n      source: {\n        code: `\nimport { Pagination } from '@/components';\n\nfunction ManyPagesPagination() {\n  return (\n    <Pagination \n      totalPages={99}\n      defaultPage={4} \n    />\n  );\n}\n        `\n      }\n    }\n  }\n}"
+    },
+    {
+      "id": "components-pagination--controlled",
+      "name": "Controlled",
+      "originalSource": "{\n  render: args => <ControlledTemplate {...args} />,\n  parameters: {\n    docs: {\n      source: {\n        code: `\nimport React, { useState } from 'react';\nimport { Pagination } from '@/components';\n\nfunction ControlledPagination() {\n  const [page, setPage] = useState(4);\n  \n  return (\n    <Pagination \n      totalPages={20}\n      currentPage={page} \n      onChange={(p) => setPage(p)} \n    />\n  );\n}\n        `\n      }\n    }\n  }\n}"
+    }
+  ],
+  "extractedFrom": {
+    "chunk": "Pagination.stories-ZDJ4Vsgu.js",
+    "storybookVersion": "9.1.17"
+  }
+}

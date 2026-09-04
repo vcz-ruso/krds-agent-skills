@@ -1,0 +1,96 @@
+{
+  "component": "Table",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/Table/Table.d.ts",
+    "dist/components/Table/Table.types.d.ts"
+  ],
+  "primaryTypeName": "TableProps",
+  "props": [
+    {
+      "name": "scroll",
+      "type": "boolean",
+      "optional": true,
+      "doc": "enables horizontal scroll"
+    },
+    {
+      "name": "mobScroll",
+      "type": "boolean",
+      "optional": true,
+      "doc": "enables mobile scroll"
+    }
+  ],
+  "extends": [
+    "React.TableHTMLAttributes<HTMLTableElement>"
+  ],
+  "polymorphic": false,
+  "exportedTypes": {},
+  "subComponents": {
+    "TableCaption": {
+      "typeName": "TableCaptionProps",
+      "props": [],
+      "extends": [
+        "React.HTMLAttributes<HTMLElement>"
+      ]
+    },
+    "TableThead": {
+      "typeName": "TableTheadProps",
+      "props": [],
+      "extends": [
+        "React.HTMLAttributes<HTMLTableSectionElement>"
+      ]
+    },
+    "TableTbody": {
+      "typeName": "TableTbodyProps",
+      "props": [],
+      "extends": [
+        "React.HTMLAttributes<HTMLTableSectionElement>"
+      ]
+    },
+    "TableTr": {
+      "typeName": "TableTrProps",
+      "props": [],
+      "extends": [
+        "React.HTMLAttributes<HTMLTableRowElement>"
+      ]
+    },
+    "TableTh": {
+      "typeName": "TableThProps",
+      "props": [],
+      "extends": [
+        "React.ThHTMLAttributes<HTMLTableCellElement>"
+      ]
+    },
+    "TableTd": {
+      "typeName": "TableTdProps",
+      "props": [],
+      "extends": [
+        "React.TdHTMLAttributes<HTMLTableCellElement>"
+      ]
+    },
+    "TableColgroup": {
+      "typeName": "TableColgroupProps",
+      "props": [],
+      "extends": [
+        "React.ColgroupHTMLAttributes<HTMLTableColElement>"
+      ]
+    },
+    "TableCol": {
+      "typeName": "TableColProps",
+      "props": [],
+      "extends": [
+        "React.ColHTMLAttributes<HTMLTableColElement>"
+      ]
+    },
+    "TableTFoot": {
+      "typeName": "TableTFootProps",
+      "props": [],
+      "extends": [
+        "React.HTMLAttributes<HTMLTableSectionElement>"
+      ]
+    }
+  },
+  "auxiliaryTypes": {},
+  "otherTypes": {},
+  "rawDts": "import { default as React } from 'react';\nexport interface TableProps extends React.TableHTMLAttributes<HTMLTableElement> {\n    /** enables horizontal scroll */\n    scroll?: boolean;\n    /** enables mobile scroll */\n    mobScroll?: boolean;\n}\nexport type TableCaptionProps = React.HTMLAttributes<HTMLElement>;\nexport type TableTheadProps = React.HTMLAttributes<HTMLTableSectionElement>;\nexport type TableTbodyProps = React.HTMLAttributes<HTMLTableSectionElement>;\nexport type TableTrProps = React.HTMLAttributes<HTMLTableRowElement>;\nexport type TableThProps = React.ThHTMLAttributes<HTMLTableCellElement>;\nexport type TableTdProps = React.TdHTMLAttributes<HTMLTableCellElement>;\nexport type TableColgroupProps = React.ColgroupHTMLAttributes<HTMLTableColElement>;\nexport type TableColProps = React.ColHTMLAttributes<HTMLTableColElement>;\nexport type TableTFootProps = React.HTMLAttributes<HTMLTableSectionElement>;\n//# sourceMappingURL=Table.types.d.ts.map"
+}

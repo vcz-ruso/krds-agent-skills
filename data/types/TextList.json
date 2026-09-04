@@ -1,0 +1,72 @@
+{
+  "component": "TextList",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/TextList/TextList.d.ts",
+    "dist/components/TextList/TextList.types.d.ts"
+  ],
+  "primaryTypeName": "TextListProps",
+  "props": [
+    {
+      "name": "type",
+      "type": "TextListType",
+      "optional": true,
+      "doc": "텍스트 목록 타입"
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "optional": true,
+      "doc": "자식 요소"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "optional": true,
+      "doc": "커스텀 클래스명"
+    }
+  ],
+  "extends": [
+    "Omit<HTMLAttributes<HTMLUListElement | HTMLOListElement>, 'type'>"
+  ],
+  "polymorphic": false,
+  "exportedTypes": {
+    "TextListType": [
+      "decimal",
+      "dash",
+      "hollow",
+      "ordered"
+    ]
+  },
+  "subComponents": {
+    "TextListItem": {
+      "typeName": "TextListItemProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "optional": true,
+          "doc": "자식 요소"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "optional": true,
+          "doc": "커스텀 클래스명"
+        },
+        {
+          "name": "number",
+          "type": "string",
+          "optional": true,
+          "doc": "번호 (ordered 타입에서 사용)"
+        }
+      ],
+      "extends": [
+        "HTMLAttributes<HTMLLIElement>"
+      ]
+    }
+  },
+  "auxiliaryTypes": {},
+  "otherTypes": {},
+  "rawDts": "import { HTMLAttributes, ReactNode } from 'react';\nexport type TextListType = 'decimal' | 'dash' | 'hollow' | 'ordered';\nexport interface TextListProps extends Omit<HTMLAttributes<HTMLUListElement | HTMLOListElement>, 'type'> {\n    /** 텍스트 목록 타입 */\n    type?: TextListType;\n    /** 자식 요소 */\n    children?: ReactNode;\n    /** 커스텀 클래스명 */\n    className?: string;\n}\nexport interface TextListItemProps extends HTMLAttributes<HTMLLIElement> {\n    /** 자식 요소 */\n    children?: ReactNode;\n    /** 커스텀 클래스명 */\n    className?: string;\n    /** 번호 (ordered 타입에서 사용) */\n    number?: string;\n}\n//# sourceMappingURL=TextList.types.d.ts.map"
+}

@@ -1,0 +1,176 @@
+{
+  "component": "FileUpload",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/FileUpload/FileUpload.d.ts",
+    "dist/components/FileUpload/FileUpload.types.d.ts"
+  ],
+  "primaryTypeName": "FileUploadProps",
+  "props": [
+    {
+      "name": "title",
+      "type": "string",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "uploadText",
+      "type": "string",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "maxFiles",
+      "type": "number",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "maxFileSize",
+      "type": "number",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "acceptedFileTypes",
+      "type": "string[]",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "files",
+      "type": "FileItem[]",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "onFilesChange",
+      "type": "(files: FileItem[]) => void",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "onFileUpload",
+      "type": "(file: File) => Promise<void>",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "onFileDelete",
+      "type": "(fileId: string) => void",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "onAllFilesDelete",
+      "type": "() => void",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "allowDelete",
+      "type": "boolean",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "optional": true,
+      "doc": null
+    }
+  ],
+  "extends": [
+    "Omit<ComponentPropsWithRef<'div'>, 'onChange'>"
+  ],
+  "polymorphic": false,
+  "exportedTypes": {
+    "FileUploadSize": [
+      "small",
+      "medium",
+      "large"
+    ]
+  },
+  "subComponents": {},
+  "auxiliaryTypes": {
+    "FileItem": {
+      "props": [
+        {
+          "name": "id",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "size",
+          "type": "number",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "status",
+          "type": "'ready' | 'uploading' | 'completed' | 'error'",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "errorMessage",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "onDownload",
+          "type": "() => void",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "onPreview",
+          "type": "() => void",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "deletable",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": []
+    }
+  },
+  "otherTypes": {},
+  "rawDts": "import { ComponentPropsWithRef, ReactNode } from 'react';\nexport type FileUploadSize = 'small' | 'medium' | 'large';\nexport interface FileItem {\n    id: string;\n    name: string;\n    size: number;\n    type: string;\n    status: 'ready' | 'uploading' | 'completed' | 'error';\n    errorMessage?: string;\n    onDownload?: () => void;\n    onPreview?: () => void;\n    deletable?: boolean;\n}\nexport interface FileUploadProps extends Omit<ComponentPropsWithRef<'div'>, 'onChange'> {\n    title?: string;\n    description?: string;\n    uploadText?: string;\n    maxFiles?: number;\n    maxFileSize?: number;\n    acceptedFileTypes?: string[];\n    files?: FileItem[];\n    onFilesChange?: (files: FileItem[]) => void;\n    onFileUpload?: (file: File) => Promise<void>;\n    onFileDelete?: (fileId: string) => void;\n    onAllFilesDelete?: () => void;\n    disabled?: boolean;\n    allowDelete?: boolean;\n    className?: string;\n    children?: ReactNode;\n}\n//# sourceMappingURL=FileUpload.types.d.ts.map"
+}

@@ -1,0 +1,226 @@
+{
+  "component": "LanguageSwitcher",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/LanguageSwitcher/LanguageSwitcher.d.ts",
+    "dist/components/LanguageSwitcher/LanguageSwitcher.types.d.ts"
+  ],
+  "primaryTypeName": "LanguageSwitcherProps",
+  "props": [
+    {
+      "name": "value",
+      "type": "string",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "defaultValue",
+      "type": "string",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "onChange",
+      "type": "(value: string, option: LanguageOption) => void",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "options",
+      "type": "LanguageOption[]",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "defaultOpen",
+      "type": "boolean",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "onOpenChange",
+      "type": "(open: boolean) => void",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "closeOnClickOutside",
+      "type": "boolean",
+      "optional": true,
+      "doc": null
+    }
+  ],
+  "extends": [
+    "Omit<HTMLAttributes<HTMLDivElement>, 'onChange'>"
+  ],
+  "polymorphic": false,
+  "exportedTypes": {},
+  "subComponents": {
+    "LanguageSwitcherTrigger": {
+      "typeName": "LanguageSwitcherTriggerProps",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": [
+        "ButtonProps"
+      ]
+    },
+    "LanguageSwitcherMenu": {
+      "typeName": "LanguageSwitcherMenuProps",
+      "props": [],
+      "extends": [
+        "HTMLAttributes<HTMLDivElement>"
+      ]
+    },
+    "LanguageSwitcherCurrent": {
+      "typeName": "LanguageSwitcherCurrentProps",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": [
+        "HTMLAttributes<HTMLDivElement>"
+      ]
+    },
+    "LanguageSwitcherOptionList": {
+      "typeName": "LanguageSwitcherOptionListProps",
+      "props": [],
+      "extends": [
+        "HTMLAttributes<HTMLUListElement>"
+      ]
+    },
+    "LanguageSwitcherOptionItem": {
+      "typeName": "LanguageSwitcherOptionItemProps",
+      "props": [
+        {
+          "name": "value",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "external",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": [
+        "HTMLAttributes<HTMLLIElement>"
+      ]
+    }
+  },
+  "auxiliaryTypes": {
+    "LanguageOption": {
+      "props": [
+        {
+          "name": "value",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "external",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "LanguageSwitcherContextValue": {
+      "props": [
+        {
+          "name": "value",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "onChange",
+          "type": "(value: string, option: LanguageOption) => void",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "options",
+          "type": "LanguageOption[]",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "open",
+          "type": "boolean",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "setOpen",
+          "type": "(open: boolean) => void",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "buttonRef",
+          "type": "React.RefObject<HTMLButtonElement | null>",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "itemRefs",
+          "type": "React.RefObject<Map<string, HTMLAnchorElement | null>>",
+          "optional": false,
+          "doc": null
+        }
+      ],
+      "extends": []
+    }
+  },
+  "otherTypes": {},
+  "rawDts": "import { HTMLAttributes } from 'react';\nimport { ButtonProps } from '../Button';\nexport interface LanguageOption {\n    value: string;\n    label: string;\n    external?: boolean;\n    href?: string;\n}\nexport interface LanguageSwitcherProps extends Omit<HTMLAttributes<HTMLDivElement>, 'onChange'> {\n    value?: string;\n    defaultValue?: string;\n    onChange?: (value: string, option: LanguageOption) => void;\n    options?: LanguageOption[];\n    className?: string;\n    open?: boolean;\n    defaultOpen?: boolean;\n    onOpenChange?: (open: boolean) => void;\n    closeOnClickOutside?: boolean;\n}\nexport interface LanguageSwitcherContextValue {\n    value: string;\n    onChange: (value: string, option: LanguageOption) => void;\n    options: LanguageOption[];\n    open: boolean;\n    setOpen: (open: boolean) => void;\n    buttonRef: React.RefObject<HTMLButtonElement | null>;\n    itemRefs: React.RefObject<Map<string, HTMLAnchorElement | null>>;\n}\nexport interface LanguageSwitcherTriggerProps extends ButtonProps {\n    label?: string;\n}\nexport type LanguageSwitcherMenuProps = HTMLAttributes<HTMLDivElement>;\nexport type LanguageSwitcherCurrentProps = HTMLAttributes<HTMLDivElement> & {\n    label?: string;\n};\nexport type LanguageSwitcherOptionListProps = HTMLAttributes<HTMLUListElement>;\nexport type LanguageSwitcherOptionItemProps = HTMLAttributes<HTMLLIElement> & {\n    value: string;\n    label: string;\n    href?: string;\n    external?: boolean;\n};\n//# sourceMappingURL=LanguageSwitcher.types.d.ts.map"
+}

@@ -1,0 +1,78 @@
+{
+  "component": "Button",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/Button/Button.d.ts",
+    "dist/components/Button/Button.types.d.ts"
+  ],
+  "primaryTypeName": "ButtonProps",
+  "props": [
+    {
+      "name": "variant",
+      "type": "ButtonVariant",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "size",
+      "type": "ButtonSize",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "role",
+      "type": "string",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "as",
+      "type": "T",
+      "optional": true,
+      "doc": null
+    }
+  ],
+  "extends": [
+    "Omit<ComponentPropsWithRef<T>, keyof ButtonOwnProps>"
+  ],
+  "polymorphic": true,
+  "exportedTypes": {
+    "ButtonVariant": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "text",
+      "link",
+      "icon"
+    ],
+    "ButtonSize": [
+      "xsmall",
+      "small",
+      "medium",
+      "large",
+      "xlarge"
+    ]
+  },
+  "subComponents": {},
+  "auxiliaryTypes": {},
+  "otherTypes": {},
+  "rawDts": "import { ComponentPropsWithRef, ElementType, ReactNode } from 'react';\nexport type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'text' | 'link' | 'icon';\nexport type ButtonSize = 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';\ntype ButtonOwnProps = {\n    variant?: ButtonVariant;\n    size?: ButtonSize;\n    children?: ReactNode;\n    className?: string;\n    disabled?: boolean;\n    role?: string;\n};\nexport type ButtonProps<T extends ElementType = 'button'> = ButtonOwnProps & {\n    as?: T;\n} & Omit<ComponentPropsWithRef<T>, keyof ButtonOwnProps>;\nexport {};\n//# sourceMappingURL=Button.types.d.ts.map"
+}

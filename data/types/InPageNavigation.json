@@ -1,0 +1,92 @@
+{
+  "component": "InPageNavigation",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/InPageNavigation/InPageNavigation.d.ts",
+    "dist/components/InPageNavigation/InPageNavigation.types.d.ts"
+  ],
+  "primaryTypeName": "InPageNavigationProps",
+  "props": [
+    {
+      "name": "caption",
+      "type": "string",
+      "optional": true,
+      "doc": "페이지 구성 설명 텍스트"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "optional": true,
+      "doc": "페이지 제목"
+    },
+    {
+      "name": "items",
+      "type": "NavigationItem[]",
+      "optional": true,
+      "doc": "네비게이션 아이템 목록"
+    },
+    {
+      "name": "actionText",
+      "type": "string",
+      "optional": true,
+      "doc": "액션 버튼 텍스트"
+    },
+    {
+      "name": "onActionClick",
+      "type": "() => void",
+      "optional": true,
+      "doc": "액션 버튼 클릭 핸들러"
+    },
+    {
+      "name": "infoText",
+      "type": "ReactNode",
+      "optional": true,
+      "doc": "추가 정보 텍스트 (HTML 태그 지원)"
+    },
+    {
+      "name": "scrollDown",
+      "type": "boolean",
+      "optional": true,
+      "doc": "스크롤 시 상단 위치 조정 여부"
+    },
+    {
+      "name": "scrollContainerRef",
+      "type": "React.RefObject<HTMLElement | null>",
+      "optional": true,
+      "doc": "스크롤 컨테이너 참조"
+    }
+  ],
+  "extends": [
+    "ComponentPropsWithRef<'div'>"
+  ],
+  "polymorphic": false,
+  "exportedTypes": {},
+  "subComponents": {},
+  "auxiliaryTypes": {
+    "NavigationItem": {
+      "props": [
+        {
+          "name": "href",
+          "type": "string",
+          "optional": false,
+          "doc": "네비게이션 링크의 href"
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "optional": false,
+          "doc": "네비게이션 링크 텍스트"
+        },
+        {
+          "name": "active",
+          "type": "boolean",
+          "optional": true,
+          "doc": "현재 활성화된 링크 여부"
+        }
+      ],
+      "extends": []
+    }
+  },
+  "otherTypes": {},
+  "rawDts": "import { ComponentPropsWithRef, ReactNode } from 'react';\nexport interface NavigationItem {\n    /** 네비게이션 링크의 href */\n    href: string;\n    /** 네비게이션 링크 텍스트 */\n    label: string;\n    /** 현재 활성화된 링크 여부 */\n    active?: boolean;\n}\nexport interface InPageNavigationProps extends ComponentPropsWithRef<'div'> {\n    /** 페이지 구성 설명 텍스트 */\n    caption?: string;\n    /** 페이지 제목 */\n    title?: string;\n    /** 네비게이션 아이템 목록 */\n    items?: NavigationItem[];\n    /** 액션 버튼 텍스트 */\n    actionText?: string;\n    /** 액션 버튼 클릭 핸들러 */\n    onActionClick?: () => void;\n    /** 추가 정보 텍스트 (HTML 태그 지원) */\n    infoText?: ReactNode;\n    /** 스크롤 시 상단 위치 조정 여부 */\n    scrollDown?: boolean;\n    /** 스크롤 컨테이너 참조 */\n    scrollContainerRef?: React.RefObject<HTMLElement | null>;\n}\n//# sourceMappingURL=InPageNavigation.types.d.ts.map"
+}

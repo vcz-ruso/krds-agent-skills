@@ -1,0 +1,141 @@
+{
+  "component": "Radio",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/Radio/Radio.d.ts",
+    "dist/components/Radio/Radio.types.d.ts"
+  ],
+  "primaryTypeName": "RadioProps",
+  "props": [
+    {
+      "name": "size",
+      "type": "RadioSize",
+      "optional": true,
+      "doc": "라디오 버튼 크기"
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "optional": true,
+      "doc": "추가 설명 텍스트"
+    },
+    {
+      "name": "defaultChecked",
+      "type": "boolean",
+      "optional": true,
+      "doc": "비제어 상태에서 사용할 초기 체크 상태"
+    }
+  ],
+  "extends": [
+    "Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'defaultChecked'>"
+  ],
+  "polymorphic": false,
+  "exportedTypes": {
+    "RadioSize": [
+      "medium",
+      "large"
+    ],
+    "RadioChipSize": [
+      "small",
+      "medium",
+      "large"
+    ]
+  },
+  "subComponents": {
+    "RadioGroup": {
+      "typeName": "RadioGroupProps",
+      "props": [
+        {
+          "name": "value",
+          "type": "string",
+          "optional": true,
+          "doc": "라디오 그룹의 값 (controlled mode)"
+        },
+        {
+          "name": "defaultValue",
+          "type": "string",
+          "optional": true,
+          "doc": "초기 값 (uncontrolled mode)"
+        },
+        {
+          "name": "onChange",
+          "type": "(value: string) => void",
+          "optional": true,
+          "doc": "값이 변경될 때 호출되는 콜백"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "optional": false,
+          "doc": "라디오 그룹의 이름 (name 속성)"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "optional": false,
+          "doc": "자식 요소들"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "optional": true,
+          "doc": "추가 CSS 클래스"
+        },
+        {
+          "name": "column",
+          "type": "boolean",
+          "optional": true,
+          "doc": "세로 배치 여부"
+        }
+      ],
+      "extends": []
+    },
+    "RadioChip": {
+      "typeName": "RadioChipProps",
+      "props": [
+        {
+          "name": "size",
+          "type": "RadioChipSize",
+          "optional": true,
+          "doc": "라디오 칩 크기"
+        },
+        {
+          "name": "defaultChecked",
+          "type": "boolean",
+          "optional": true,
+          "doc": "비제어 상태에서 사용할 초기 체크 상태"
+        }
+      ],
+      "extends": [
+        "Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'defaultValue' | 'defaultChecked'>"
+      ]
+    }
+  },
+  "auxiliaryTypes": {
+    "RadioGroupContextType": {
+      "props": [
+        {
+          "name": "value",
+          "type": "string | undefined",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "onChange",
+          "type": "(value: string) => void",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        }
+      ],
+      "extends": []
+    }
+  },
+  "otherTypes": {},
+  "rawDts": "import { InputHTMLAttributes, ReactNode } from 'react';\nexport type RadioSize = 'medium' | 'large';\nexport type RadioChipSize = 'small' | 'medium' | 'large';\nexport interface RadioGroupContextType {\n    value: string | undefined;\n    onChange: (value: string) => void;\n    name: string;\n}\nexport interface RadioProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'defaultChecked'> {\n    /** 라디오 버튼 크기 */\n    size?: RadioSize;\n    /** 추가 설명 텍스트 */\n    description?: string;\n    /** 비제어 상태에서 사용할 초기 체크 상태 */\n    defaultChecked?: boolean;\n}\nexport interface RadioGroupProps {\n    /** 라디오 그룹의 값 (controlled mode) */\n    value?: string;\n    /** 초기 값 (uncontrolled mode) */\n    defaultValue?: string;\n    /** 값이 변경될 때 호출되는 콜백 */\n    onChange?: (value: string) => void;\n    /** 라디오 그룹의 이름 (name 속성) */\n    name: string;\n    /** 자식 요소들 */\n    children: ReactNode;\n    /** 추가 CSS 클래스 */\n    className?: string;\n    /** 세로 배치 여부 */\n    column?: boolean;\n}\nexport interface RadioChipProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'defaultValue' | 'defaultChecked'> {\n    /** 라디오 칩 크기 */\n    size?: RadioChipSize;\n    /** 비제어 상태에서 사용할 초기 체크 상태 */\n    defaultChecked?: boolean;\n}\n//# sourceMappingURL=Radio.types.d.ts.map"
+}

@@ -1,0 +1,36 @@
+{
+  "component": "Spinner",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/Spinner/Spinner.d.ts",
+    "dist/components/Spinner/Spinner.types.d.ts"
+  ],
+  "primaryTypeName": "SpinnerProps",
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "children",
+      "type": "React.ReactNode",
+      "optional": true,
+      "doc": null
+    }
+  ],
+  "extends": [],
+  "polymorphic": false,
+  "exportedTypes": {},
+  "subComponents": {},
+  "auxiliaryTypes": {},
+  "otherTypes": {},
+  "rawDts": "export interface SpinnerProps {\n    label?: string;\n    className?: string;\n    children?: React.ReactNode;\n}\n//# sourceMappingURL=Spinner.types.d.ts.map"
+}

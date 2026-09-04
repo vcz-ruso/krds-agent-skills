@@ -1,0 +1,102 @@
+{
+  "component": "Select",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/Select/Select.d.ts",
+    "dist/components/Select/Select.types.d.ts"
+  ],
+  "primaryTypeName": "SelectProps",
+  "props": [
+    {
+      "name": "value",
+      "type": "string",
+      "optional": true,
+      "doc": "제어 상태일 때 선택된 값"
+    },
+    {
+      "name": "defaultValue",
+      "type": "string",
+      "optional": true,
+      "doc": "비제어 상태일 때의 초기 선택 값"
+    },
+    {
+      "name": "onChange",
+      "type": "(value: string) => void",
+      "optional": true,
+      "doc": "선택 값이 변경될 때 호출되는 콜백"
+    },
+    {
+      "name": "options",
+      "type": "SelectOption[]",
+      "optional": false,
+      "doc": "선택 옵션들"
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "optional": true,
+      "doc": "레이블"
+    },
+    {
+      "name": "hint",
+      "type": "string",
+      "optional": true,
+      "doc": "도움말 텍스트"
+    },
+    {
+      "name": "error",
+      "type": "string",
+      "optional": true,
+      "doc": "에러 메시지"
+    },
+    {
+      "name": "size",
+      "type": "SelectSize",
+      "optional": true,
+      "doc": "Select 크기"
+    },
+    {
+      "name": "variant",
+      "type": "SelectVariant",
+      "optional": true,
+      "doc": "Select 변형"
+    }
+  ],
+  "extends": [
+    "Omit<SelectHTMLAttributes<HTMLSelectElement>, 'size' | 'onChange'>"
+  ],
+  "polymorphic": false,
+  "exportedTypes": {
+    "SelectSize": [
+      "small",
+      "medium",
+      "large"
+    ],
+    "SelectVariant": [
+      "default",
+      "sorting"
+    ]
+  },
+  "subComponents": {},
+  "auxiliaryTypes": {
+    "SelectOption": {
+      "props": [
+        {
+          "name": "value",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        }
+      ],
+      "extends": []
+    }
+  },
+  "otherTypes": {},
+  "rawDts": "import { SelectHTMLAttributes } from 'react';\nexport type SelectSize = 'small' | 'medium' | 'large';\nexport type SelectVariant = 'default' | 'sorting';\nexport interface SelectOption {\n    value: string;\n    label: string;\n}\nexport interface SelectProps extends Omit<SelectHTMLAttributes<HTMLSelectElement>, 'size' | 'onChange'> {\n    /** 제어 상태일 때 선택된 값 */\n    value?: string;\n    /** 비제어 상태일 때의 초기 선택 값 */\n    defaultValue?: string;\n    /** 선택 값이 변경될 때 호출되는 콜백 */\n    onChange?: (value: string) => void;\n    /** 선택 옵션들 */\n    options: SelectOption[];\n    /** 레이블 */\n    label?: string;\n    /** 도움말 텍스트 */\n    hint?: string;\n    /** 에러 메시지 */\n    error?: string;\n    /** Select 크기 */\n    size?: SelectSize;\n    /** Select 변형 */\n    variant?: SelectVariant;\n}\n//# sourceMappingURL=Select.types.d.ts.map"
+}

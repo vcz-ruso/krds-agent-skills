@@ -1,0 +1,84 @@
+{
+  "component": "Link",
+  "title": "Components/Link",
+  "description": "링크는 다른 서비스/애플리케이션, 한 서비스 내의 다른 화면, 한 화면 내의 다른 섹션 등으로 이동하는 데 사용되는 탐색 요소이다.",
+  "argTypes": {
+    "variant": {
+      "control": "select",
+      "options": [
+        "default",
+        "basic"
+      ],
+      "description": "링크 스타일 타입"
+    },
+    "underline": {
+      "control": "select",
+      "options": [
+        "always",
+        "hover",
+        "none"
+      ],
+      "description": "밑줄 표시 여부"
+    },
+    "preserveColorOnHover": {
+      "control": "boolean",
+      "options": null,
+      "description": "hover 시 컬러 유지 여부 (pure 클래스)"
+    },
+    "icon": {
+      "control": "boolean",
+      "options": null,
+      "description": "아이콘 표시 여부"
+    },
+    "external": {
+      "control": "boolean",
+      "options": null,
+      "description": "외부 링크 여부"
+    },
+    "size": {
+      "control": "select",
+      "options": [
+        "small",
+        "medium",
+        "large"
+      ],
+      "description": "링크 크기"
+    },
+    "disabled": {
+      "control": "boolean",
+      "options": null,
+      "description": "비활성화 여부"
+    }
+  },
+  "stories": [
+    {
+      "id": "components-link--default",
+      "name": "Default",
+      "originalSource": "{\n  args: {\n    children: '기본 링크',\n    href: '#',\n    variant: undefined,\n    size: undefined\n  }\n}"
+    },
+    {
+      "id": "components-link--variants",
+      "name": "Variants",
+      "originalSource": "{\n  args: {},\n  render: _args => <div style={{\n    display: 'flex',\n    flexDirection: 'column',\n    alignItems: 'flex-start',\n    gap: '16px'\n  }}>\n      <Link size=\"small\" href=\"#!\" icon={<i className=\"svg-icon ico-go\" />}>\n        기본 링크\n      </Link>\n\n      <Link size=\"medium\" href=\"#!\" preserveColorOnHover={true}>\n        가상클래스 상태 시 컬러 유지\n      </Link>\n\n      <Link size=\"large\" variant=\"basic\" href=\"#!\" icon={<i className=\"svg-icon ico-go\" />}>\n        본문 텍스트 컬러 링크\n      </Link>\n\n      <Link size=\"large\" variant=\"basic\" href=\"#!\" underline=\"hover\">\n        가상클래스 상태 시 밑줄\n      </Link>\n\n      <Link size=\"large\" variant=\"basic\" href=\"#!\" underline=\"none\">\n        밑줄 없음\n      </Link>\n    </div>\n}"
+    },
+    {
+      "id": "components-link--sizes",
+      "name": "Sizes",
+      "originalSource": "{\n  args: {},\n  render: _args => <div style={{\n    display: 'flex',\n    flexDirection: 'column',\n    alignItems: 'flex-start',\n    gap: '16px'\n  }}>\n      <Link size=\"small\" href=\"#!\">\n        Small 크기 (14px)\n      </Link>\n      <Link size=\"medium\" href=\"#!\">\n        Medium 크기 (16px)\n      </Link>\n      <Link size=\"large\" href=\"#!\">\n        Large 크기 (18px)\n      </Link>\n    </div>\n}"
+    },
+    {
+      "id": "components-link--underlines",
+      "name": "Underlines",
+      "originalSource": "{\n  args: {},\n  render: _args => <div style={{\n    display: 'flex',\n    flexDirection: 'column',\n    alignItems: 'flex-start',\n    gap: '16px'\n  }}>\n      <Link underline=\"always\" href=\"#!\">\n        항상 밑줄 표시\n      </Link>\n      <Link underline=\"hover\" href=\"#!\">\n        호버 시에만 밑줄 표시\n      </Link>\n      <Link underline=\"none\" href=\"#!\">\n        밑줄 없음\n      </Link>\n    </div>\n}"
+    },
+    {
+      "id": "components-link--with-icons",
+      "name": "With Icons",
+      "originalSource": "{\n  args: {},\n  render: _args => <div style={{\n    display: 'flex',\n    flexDirection: 'column',\n    alignItems: 'flex-start',\n    gap: '16px'\n  }}>\n      <Link icon={<i className=\"svg-icon ico-go\" />} href=\"#!\" external>\n        기본 외부 링크 아이콘\n      </Link>\n      <Link icon={<i className=\"svg-icon ico-angle right\" />} href=\"#!\">\n        내부 링크\n      </Link>\n    </div>\n}"
+    }
+  ],
+  "extractedFrom": {
+    "chunk": "Link.stories-CCdC9fkj.js",
+    "storybookVersion": "9.1.17"
+  }
+}

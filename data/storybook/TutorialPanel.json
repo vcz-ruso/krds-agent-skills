@@ -1,0 +1,46 @@
+{
+  "component": "TutorialPanel",
+  "title": "Components/TutorialPanel",
+  "description": "따라하기 패널은 본문 콘텐츠와 관련된 이용 방법을 실제 이용 절차에 따라 단계적으로 수행할 수 있도록 도와주며 코치마크를 실행하는 데 사용되는 사이드 패널이다.",
+  "argTypes": {
+    "isOpen": {
+      "control": "boolean",
+      "options": null,
+      "description": "패널 열림/닫힘 상태"
+    },
+    "onOpenChange": {
+      "control": null,
+      "options": null,
+      "description": "패널 열림/닫힘 상태 변경 핸들러"
+    },
+    "activeTab": {
+      "control": "radio",
+      "options": [
+        "help",
+        "tutorial"
+      ],
+      "description": "활성 탭 (controlled에서만 사용)"
+    },
+    "onTabChange": {
+      "control": null,
+      "options": null,
+      "description": "탭 변경 핸들러 (controlled에서만 사용)"
+    }
+  },
+  "stories": [
+    {
+      "id": "components-tutorialpanel--default",
+      "name": "Default",
+      "originalSource": "{\n  args: {},\n  render: _args => <div style={{\n    minHeight: '100vh',\n    padding: '2rem'\n  }}>\n      <TutorialPanel.Root defaultActiveTab=\"tutorial\">\n        <TutorialPanel.Trigger>도움말</TutorialPanel.Trigger>\n\n        <TutorialPanel.Container>\n          <TutorialPanel.Tabs>\n            <TutorialPanel.TabPanel value=\"help\">\n              <TutorialPanel.HelpContent helpContent={sampleHelpContent} relatedServices={sampleRelatedServices} />\n            </TutorialPanel.TabPanel>\n\n            <TutorialPanel.TabPanel value=\"tutorial\">\n              <TutorialPanel.TutorialContent title=\"이사 전 살던 곳 정보 입력하기\" steps={sampleTutorialSteps} onTutorialStop={() => console.log('튜토리얼 종료')} stopButtonText=\"그만 따라하기\" />\n            </TutorialPanel.TabPanel>\n          </TutorialPanel.Tabs>\n\n          <TutorialPanel.Close />\n        </TutorialPanel.Container>\n      </TutorialPanel.Root>\n    </div>\n}"
+    },
+    {
+      "id": "components-tutorialpanel--controlled",
+      "name": "Controlled",
+      "originalSource": "{\n  args: {},\n  render: _args => {\n    const [isOpen, setIsOpen] = useState(false);\n    const [activeTab, setActiveTab] = useState<'help' | 'tutorial'>('tutorial');\n    return <div style={{\n      minHeight: '100vh',\n      padding: '2rem'\n    }}>\n        <TutorialPanel.Root isOpen={isOpen} onOpenChange={setIsOpen} activeTab={activeTab} onTabChange={setActiveTab}>\n          <TutorialPanel.Trigger>도움말</TutorialPanel.Trigger>\n\n          <TutorialPanel.Container>\n            <TutorialPanel.Tabs>\n              <TutorialPanel.TabPanel value=\"help\">\n                <TutorialPanel.HelpContent helpContent={sampleHelpContent} relatedServices={sampleRelatedServices} />\n              </TutorialPanel.TabPanel>\n\n              <TutorialPanel.TabPanel value=\"tutorial\">\n                <TutorialPanel.TutorialContent title=\"이사 전 살던 곳 정보 입력하기\" steps={sampleTutorialSteps} onTutorialStop={() => {\n                console.log('튜토리얼 종료');\n                setIsOpen(false);\n              }} stopButtonText=\"그만 따라하기\" />\n              </TutorialPanel.TabPanel>\n            </TutorialPanel.Tabs>\n\n            <TutorialPanel.Close />\n          </TutorialPanel.Container>\n        </TutorialPanel.Root>\n      </div>;\n  }\n}"
+    }
+  ],
+  "extractedFrom": {
+    "chunk": "TutorialPanel.stories-B4oniOwZ.js",
+    "storybookVersion": "9.1.17"
+  }
+}

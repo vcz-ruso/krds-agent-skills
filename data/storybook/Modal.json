@@ -1,0 +1,52 @@
+{
+  "component": "Modal",
+  "title": "Components/Modal",
+  "description": "모달은 대화창의 한 종류로 기본 창에 종속된 요소이다. 기본 창과 겹쳐져 가장 상단에 표시되며, 이때 기본 창은 비활성 상태로 전환되어 상호작용이 불가능하므로 사용자는 모달에서의 단일한 과업 또는 메시지에 집중할 수 있다.",
+  "argTypes": null,
+  "stories": [
+    {
+      "id": "components-modal--default",
+      "name": "Default",
+      "originalSource": "{\n  args: {\n    size: 'md',\n    variant: 'default',\n    closeOnEsc: true,\n    closeOnOverlayClick: true,\n    usePortal: false,\n    portalContainer: undefined,\n    defaultOpen: false,\n    onOpenChange: undefined\n  },\n  render: args => {\n    return <Modal.Root size={args.size} variant={args.variant} closeOnEsc={args.closeOnEsc} closeOnOverlayClick={args.closeOnOverlayClick} usePortal={args.usePortal} portalContainer={args.portalContainer} open={args.open} defaultOpen={args.defaultOpen} onOpenChange={args.onOpenChange}>\n        <Modal.Trigger>모달 열기</Modal.Trigger>\n        <Modal.Content>\n          <Modal.Header title=\"모달 제목\" titleId=\"modal-title\" />\n          <Modal.Body descriptionId=\"modal-desc\">\n            대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를 포함합니다.\n          </Modal.Body>\n          <Modal.Footer>\n            <Modal.Close asChild>\n              <Button variant=\"tertiary\" size=\"medium\">\n                아니요\n              </Button>\n            </Modal.Close>\n            <Modal.Close asChild>\n              <Button variant=\"primary\" size=\"medium\">\n                예\n              </Button>\n            </Modal.Close>\n          </Modal.Footer>\n        </Modal.Content>\n      </Modal.Root>;\n  }\n}"
+    },
+    {
+      "id": "components-modal--size-sm",
+      "name": "Size Sm",
+      "originalSource": "{\n  args: {},\n  render: _args => {\n    return <Modal.Root size=\"sm\">\n        <Modal.Trigger>모달 열기</Modal.Trigger>\n        <Modal.Content>\n          <Modal.Header title=\"모달 제목\" titleId=\"modal-title\" />\n          <Modal.Body descriptionId=\"modal-desc\">\n            대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를 포함합니다.\n          </Modal.Body>\n          <Modal.Footer>\n            <Modal.Close asChild>\n              <Button variant=\"tertiary\" size=\"medium\">\n                아니요\n              </Button>\n            </Modal.Close>\n            <Modal.Close asChild>\n              <Button variant=\"primary\" size=\"medium\">\n                예\n              </Button>\n            </Modal.Close>\n          </Modal.Footer>\n        </Modal.Content>\n      </Modal.Root>;\n  }\n}"
+    },
+    {
+      "id": "components-modal--size-md",
+      "name": "Size Md",
+      "originalSource": "{\n  args: {},\n  render: _args => {\n    return <Modal.Root size=\"md\">\n        <Modal.Trigger>모달 열기</Modal.Trigger>\n        <Modal.Content>\n          <Modal.Header title=\"모달 제목\" titleId=\"modal-title\" />\n          <Modal.Body descriptionId=\"modal-desc\">\n            대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를 포함합니다.\n          </Modal.Body>\n          <Modal.Footer>\n            <Button variant=\"tertiary\" size=\"medium\">\n              아니요\n            </Button>\n            <Button variant=\"primary\" size=\"medium\">\n              예\n            </Button>\n          </Modal.Footer>\n        </Modal.Content>\n      </Modal.Root>;\n  }\n}"
+    },
+    {
+      "id": "components-modal--size-lg",
+      "name": "Size Lg",
+      "originalSource": "{\n  args: {},\n  render: _args => {\n    return <Modal.Root size=\"lg\">\n        <Modal.Trigger>모달 열기</Modal.Trigger>\n        <Modal.Content>\n          <Modal.Header title=\"모달 제목\" titleId=\"modal-title\" />\n          <Modal.Body descriptionId=\"modal-desc\">\n            대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를 포함합니다.\n          </Modal.Body>\n          <Modal.Footer>\n            <Modal.Close asChild>\n              <Button variant=\"tertiary\" size=\"medium\">\n                아니요\n              </Button>\n            </Modal.Close>\n            <Modal.Close asChild>\n              <Button variant=\"primary\" size=\"medium\">\n                예\n              </Button>\n            </Modal.Close>\n          </Modal.Footer>\n        </Modal.Content>\n      </Modal.Root>;\n  }\n}"
+    },
+    {
+      "id": "components-modal--bottom-sheet",
+      "name": "Bottom Sheet",
+      "originalSource": "{\n  args: {},\n  render: _args => {\n    return <Modal.Root size=\"md\" variant=\"bottom-sheet\">\n        <Modal.Trigger>모달 열기</Modal.Trigger>\n        <Modal.Content>\n          <Modal.Header title=\"모달 제목\" titleId=\"modal-title\" />\n          <Modal.Body descriptionId=\"modal-desc\">\n            대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를 포함합니다.\n          </Modal.Body>\n          <Modal.Footer>\n            <Modal.Close asChild>\n              <Button variant=\"tertiary\" size=\"medium\">\n                아니요\n              </Button>\n            </Modal.Close>\n            <Modal.Close asChild>\n              <Button variant=\"primary\" size=\"medium\">\n                예\n              </Button>\n            </Modal.Close>\n          </Modal.Footer>\n        </Modal.Content>\n      </Modal.Root>;\n  }\n}"
+    },
+    {
+      "id": "components-modal--as-child-trigger",
+      "name": "As Child Trigger",
+      "originalSource": "{\n  args: {},\n  render: _args => {\n    return <Modal.Root>\n        <Modal.Trigger asChild>\n          <Button variant=\"primary\" size=\"medium\">\n            모달 열기\n          </Button>\n        </Modal.Trigger>\n        <Modal.Content>\n          <Modal.Header title=\"모달 제목\" titleId=\"modal-title\" />\n          <Modal.Body descriptionId=\"modal-desc\">\n            대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를 포함합니다.\n          </Modal.Body>\n          <Modal.Footer>\n            <Modal.Close asChild>\n              <Button variant=\"tertiary\" size=\"medium\">\n                아니요\n              </Button>\n            </Modal.Close>\n            <Modal.Close asChild>\n              <Button variant=\"primary\" size=\"medium\">\n                예\n              </Button>\n            </Modal.Close>\n          </Modal.Footer>\n        </Modal.Content>\n      </Modal.Root>;\n  }\n}"
+    },
+    {
+      "id": "components-modal--long-content-initial-body-focus",
+      "name": "Long Content Initial Body Focus",
+      "originalSource": "{\n  args: {},\n  render: _args => {\n    return <Modal.Root size=\"md\">\n        <Modal.Trigger>모달 열기</Modal.Trigger>\n        <Modal.Content>\n          <Modal.Header title=\"모달 제목\" titleId=\"modal-title\" />\n          <Modal.Body descriptionId=\"modal-desc\">\n            긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문\n            긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문\n            긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문\n            긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문\n            긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문\n            긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문\n            긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문\n            긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문\n            긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문\n            긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문\n            긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문\n            긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문\n            긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문 긴 본문\n          </Modal.Body>\n          <Modal.Footer>\n            <Modal.Close asChild>\n              <Button variant=\"tertiary\" size=\"medium\">\n                아니요\n              </Button>\n            </Modal.Close>\n            <Modal.Close asChild>\n              <Button variant=\"primary\" size=\"medium\">\n                예\n              </Button>\n            </Modal.Close>\n          </Modal.Footer>\n        </Modal.Content>\n      </Modal.Root>;\n  }\n}"
+    },
+    {
+      "id": "components-modal--use-portal",
+      "name": "Use Portal",
+      "originalSource": "{\n  args: {},\n  render: _args => {\n    return <Modal.Root size=\"md\" usePortal>\n        <Modal.Trigger>Document.body 아래 모달 열기</Modal.Trigger>\n        <Modal.Content>\n          <Modal.Header title=\"모달 제목\" titleId=\"modal-title\" />\n          <Modal.Body descriptionId=\"modal-desc\">\n            대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를 포함합니다.\n          </Modal.Body>\n          <Modal.Footer>\n            <Modal.Close asChild>\n              <Button variant=\"tertiary\" size=\"medium\">\n                닫기\n              </Button>\n            </Modal.Close>\n          </Modal.Footer>\n        </Modal.Content>\n      </Modal.Root>;\n  },\n  parameters: {\n    docs: {\n      description: {\n        story: 'usePortal 속성을 사용시 portalContainer 속성을 사용하여 모달 컴포넌트의 위치를 지정할 수 있습니다. portalContainer 속성을 지정하지 않으면 자동으로 document.body 아래에 렌더링 됩니다. '\n      }\n    }\n  }\n}"
+    }
+  ],
+  "extractedFrom": {
+    "chunk": "Modal.stories-CvFjW-x6.js",
+    "storybookVersion": "9.1.17"
+  }
+}

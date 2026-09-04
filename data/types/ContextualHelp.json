@@ -1,0 +1,84 @@
+{
+  "component": "ContextualHelp",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/ContextualHelp/ContextualHelp.d.ts",
+    "dist/components/ContextualHelp/ContextualHelp.types.d.ts"
+  ],
+  "primaryTypeName": "ContextualHelpProps",
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "optional": true,
+      "doc": "도움말 라벨 텍스트"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "optional": false,
+      "doc": "팝오버 제목"
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "optional": false,
+      "doc": "팝오버 내용"
+    },
+    {
+      "name": "position",
+      "type": "ContextualHelpPosition",
+      "optional": true,
+      "doc": "팝오버 위치 ('top' | 'bottom')"
+    },
+    {
+      "name": "alignment",
+      "type": "ContextualHelpAlignment",
+      "optional": true,
+      "doc": "팝오버 정렬 ('left' | 'center' | 'right')"
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "optional": true,
+      "doc": "팝오버 열림/닫힘 상태 (제어모드)"
+    },
+    {
+      "name": "defaultOpen",
+      "type": "boolean",
+      "optional": true,
+      "doc": "기본 팝오버 열림/닫힘 상태 (비제어모드)"
+    },
+    {
+      "name": "onOpenChange",
+      "type": "(open: boolean) => void",
+      "optional": true,
+      "doc": "팝오버 상태 변경 핸들러"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "optional": true,
+      "doc": "사용자 정의 클래스명"
+    }
+  ],
+  "extends": [
+    "Omit<HTMLAttributes<HTMLDivElement>, 'onChange'>"
+  ],
+  "polymorphic": false,
+  "exportedTypes": {
+    "ContextualHelpPosition": [
+      "top",
+      "bottom"
+    ],
+    "ContextualHelpAlignment": [
+      "left",
+      "center",
+      "right"
+    ]
+  },
+  "subComponents": {},
+  "auxiliaryTypes": {},
+  "otherTypes": {},
+  "rawDts": "import { HTMLAttributes, ReactNode } from 'react';\nexport type ContextualHelpPosition = 'top' | 'bottom';\nexport type ContextualHelpAlignment = 'left' | 'center' | 'right';\nexport interface ContextualHelpProps extends Omit<HTMLAttributes<HTMLDivElement>, 'onChange'> {\n    /** 도움말 라벨 텍스트 */\n    label?: string;\n    /** 팝오버 제목 */\n    title: string;\n    /** 팝오버 내용 */\n    children: ReactNode;\n    /** 팝오버 위치 ('top' | 'bottom') */\n    position?: ContextualHelpPosition;\n    /** 팝오버 정렬 ('left' | 'center' | 'right') */\n    alignment?: ContextualHelpAlignment;\n    /** 팝오버 열림/닫힘 상태 (제어모드) */\n    open?: boolean;\n    /** 기본 팝오버 열림/닫힘 상태 (비제어모드) */\n    defaultOpen?: boolean;\n    /** 팝오버 상태 변경 핸들러 */\n    onOpenChange?: (open: boolean) => void;\n    /** 사용자 정의 클래스명 */\n    className?: string;\n}\n//# sourceMappingURL=ContextualHelp.types.d.ts.map"
+}

@@ -1,0 +1,32 @@
+{
+  "component": "Identifier",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/Identifier/Identifier.d.ts",
+    "dist/components/Identifier/Identifier.types.d.ts"
+  ],
+  "primaryTypeName": "IdentifierProps",
+  "props": [
+    {
+      "name": "logoAlt",
+      "type": "string",
+      "optional": true,
+      "doc": "로고 alt 텍스트"
+    },
+    {
+      "name": "text",
+      "type": "string",
+      "optional": true,
+      "doc": "식별자 텍스트"
+    }
+  ],
+  "extends": [
+    "HTMLAttributes<HTMLDivElement>"
+  ],
+  "polymorphic": false,
+  "exportedTypes": {},
+  "subComponents": {},
+  "auxiliaryTypes": {},
+  "otherTypes": {},
+  "rawDts": "import { HTMLAttributes } from 'react';\nexport interface IdentifierProps extends HTMLAttributes<HTMLDivElement> {\n    /** 로고 alt 텍스트 */\n    logoAlt?: string;\n    /** 식별자 텍스트 */\n    text?: string;\n}\n//# sourceMappingURL=Identifier.types.d.ts.map"
+}

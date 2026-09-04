@@ -1,0 +1,288 @@
+{
+  "component": "TutorialPanel",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/TutorialPanel/TutorialPanel.d.ts",
+    "dist/components/TutorialPanel/TutorialPanel.types.d.ts"
+  ],
+  "primaryTypeName": "TutorialPanelRootProps",
+  "props": [
+    {
+      "name": "isOpen",
+      "type": "boolean",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "onOpenChange",
+      "type": "(isOpen: boolean) => void",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "activeTab",
+      "type": "'help' | 'tutorial'",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "defaultActiveTab",
+      "type": "'help' | 'tutorial'",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "onTabChange",
+      "type": "(tab: 'help' | 'tutorial') => void",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "optional": false,
+      "doc": null
+    }
+  ],
+  "extends": [
+    "Omit<HTMLAttributes<HTMLDivElement>, 'onToggle'>"
+  ],
+  "polymorphic": false,
+  "exportedTypes": {},
+  "subComponents": {
+    "TutorialPanelTrigger": {
+      "typeName": "TutorialPanelTriggerProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": [
+        "ButtonHTMLAttributes<HTMLButtonElement>"
+      ]
+    },
+    "TutorialPanelContainer": {
+      "typeName": "TutorialPanelContainerProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "optional": false,
+          "doc": null
+        }
+      ],
+      "extends": [
+        "HTMLAttributes<HTMLDivElement>"
+      ]
+    },
+    "TutorialPanelTabContent": {
+      "typeName": "TutorialPanelTabContentProps",
+      "props": [
+        {
+          "name": "value",
+          "type": "'help' | 'tutorial'",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "optional": false,
+          "doc": null
+        }
+      ],
+      "extends": [
+        "HTMLAttributes<HTMLElement>"
+      ]
+    },
+    "TutorialPanelHelpContent": {
+      "typeName": "TutorialPanelHelpContentProps",
+      "props": [
+        {
+          "name": "helpContent",
+          "type": "HelpContent",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "relatedServices",
+          "type": "HelpContent[]",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": [
+        "HTMLAttributes<HTMLDivElement>"
+      ]
+    },
+    "TutorialPanelTutorialContent": {
+      "typeName": "TutorialPanelTutorialContentProps",
+      "props": [
+        {
+          "name": "title",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "steps",
+          "type": "TutorialStep[]",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "onTutorialStop",
+          "type": "() => void",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "stopButtonText",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": [
+        "HTMLAttributes<HTMLDivElement>"
+      ]
+    },
+    "TutorialPanelClose": {
+      "typeName": "TutorialPanelCloseProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": [
+        "ButtonHTMLAttributes<HTMLButtonElement>"
+      ]
+    }
+  },
+  "auxiliaryTypes": {
+    "HelpLink": {
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "icon",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "iconPosition",
+          "type": "'left' | 'right'",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "external",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "HelpContent": {
+      "props": [
+        {
+          "name": "title",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "description",
+          "type": "ReactNode",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "links",
+          "type": "HelpLink[]",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "TutorialStep": {
+      "props": [
+        {
+          "name": "title",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "current",
+          "type": "boolean",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "steps",
+          "type": "string[]",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "content",
+          "type": "ReactNode",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "TutorialPanelContextValue": {
+      "props": [
+        {
+          "name": "isOpen",
+          "type": "boolean",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "onOpenChange",
+          "type": "(isOpen: boolean) => void",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "activeTab",
+          "type": "'help' | 'tutorial'",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "onTabChange",
+          "type": "(tab: 'help' | 'tutorial') => void",
+          "optional": false,
+          "doc": null
+        }
+      ],
+      "extends": []
+    }
+  },
+  "otherTypes": {},
+  "rawDts": "import { ButtonHTMLAttributes, HTMLAttributes, ReactNode } from 'react';\nexport interface HelpLink {\n    label: string;\n    href: string;\n    icon?: string;\n    iconPosition?: 'left' | 'right';\n    external?: boolean;\n}\nexport interface HelpContent {\n    title: string;\n    description?: ReactNode;\n    links?: HelpLink[];\n}\nexport interface TutorialStep {\n    title: string;\n    current?: boolean;\n    steps?: string[];\n    content?: ReactNode;\n}\nexport interface TutorialPanelContextValue {\n    isOpen: boolean;\n    onOpenChange: (isOpen: boolean) => void;\n    activeTab: 'help' | 'tutorial';\n    onTabChange: (tab: 'help' | 'tutorial') => void;\n}\nexport interface TutorialPanelRootProps extends Omit<HTMLAttributes<HTMLDivElement>, 'onToggle'> {\n    isOpen?: boolean;\n    onOpenChange?: (isOpen: boolean) => void;\n    activeTab?: 'help' | 'tutorial';\n    defaultActiveTab?: 'help' | 'tutorial';\n    onTabChange?: (tab: 'help' | 'tutorial') => void;\n    children: ReactNode;\n}\nexport interface TutorialPanelTriggerProps extends ButtonHTMLAttributes<HTMLButtonElement> {\n    children?: ReactNode;\n}\nexport interface TutorialPanelContainerProps extends HTMLAttributes<HTMLDivElement> {\n    children: ReactNode;\n}\nexport interface TutorialPanelTabContentProps extends HTMLAttributes<HTMLElement> {\n    value: 'help' | 'tutorial';\n    children: ReactNode;\n}\nexport interface TutorialPanelHelpContentProps extends HTMLAttributes<HTMLDivElement> {\n    helpContent?: HelpContent;\n    relatedServices?: HelpContent[];\n}\nexport interface TutorialPanelTutorialContentProps extends HTMLAttributes<HTMLDivElement> {\n    title?: string;\n    steps?: TutorialStep[];\n    onTutorialStop?: () => void;\n    stopButtonText?: string;\n}\nexport interface TutorialPanelCloseProps extends ButtonHTMLAttributes<HTMLButtonElement> {\n    children?: ReactNode;\n}\n//# sourceMappingURL=TutorialPanel.types.d.ts.map"
+}

@@ -1,0 +1,272 @@
+{
+  "component": "StructuredList",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/StructuredList/StructuredList.d.ts",
+    "dist/components/StructuredList/StructuredList.types.d.ts"
+  ],
+  "primaryTypeName": "StructuredListProps",
+  "props": [
+    {
+      "name": "children",
+      "type": "React.ReactNode",
+      "optional": false,
+      "doc": null
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "optional": true,
+      "doc": null
+    }
+  ],
+  "extends": [],
+  "polymorphic": false,
+  "exportedTypes": {},
+  "subComponents": {
+    "StructuredListItem": {
+      "typeName": "StructuredListItemProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "StructuredListHeader": {
+      "typeName": "StructuredListHeaderProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "StructuredListBadge": {
+      "typeName": "StructuredListBadgeProps",
+      "props": [],
+      "extends": [
+        "BadgeProps"
+      ]
+    },
+    "StructuredListBody": {
+      "typeName": "StructuredListBodyProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "StructuredListContent": {
+      "typeName": "StructuredListContentProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "StructuredListTitle": {
+      "typeName": "StructuredListTitleProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "StructuredListDescription": {
+      "typeName": "StructuredListDescriptionProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "StructuredListMeta": {
+      "typeName": "StructuredListMetaProps",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "StructuredListAction": {
+      "typeName": "StructuredListActionProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "onClick",
+          "type": "() => void",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "variant",
+          "type": "'primary' | 'secondary' | 'text'",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "StructuredListFooter": {
+      "typeName": "StructuredListFooterProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "StructuredListTag": {
+      "typeName": "StructuredListTagProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": []
+    },
+    "StructuredListButtons": {
+      "typeName": "StructuredListButtonsProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "optional": true,
+          "doc": null
+        }
+      ],
+      "extends": []
+    }
+  },
+  "auxiliaryTypes": {},
+  "otherTypes": {},
+  "rawDts": "import { default as React } from 'react';\nimport { BadgeProps } from '../Badge';\nexport interface StructuredListProps {\n    children: React.ReactNode;\n    className?: string;\n}\nexport interface StructuredListItemProps {\n    children: React.ReactNode;\n    className?: string;\n}\nexport interface StructuredListHeaderProps {\n    children: React.ReactNode;\n    className?: string;\n}\nexport type StructuredListBadgeProps = BadgeProps;\nexport interface StructuredListBodyProps {\n    children: React.ReactNode;\n    className?: string;\n}\nexport interface StructuredListContentProps {\n    children: React.ReactNode;\n    href?: string;\n    className?: string;\n}\nexport interface StructuredListTitleProps {\n    children: React.ReactNode;\n    className?: string;\n}\nexport interface StructuredListDescriptionProps {\n    children: React.ReactNode;\n    className?: string;\n}\nexport interface StructuredListMetaProps {\n    label?: string;\n    children: React.ReactNode;\n    className?: string;\n}\nexport interface StructuredListActionProps {\n    children: React.ReactNode;\n    onClick?: () => void;\n    href?: string;\n    variant?: 'primary' | 'secondary' | 'text';\n    title?: string;\n    className?: string;\n}\nexport interface StructuredListFooterProps {\n    children: React.ReactNode;\n    className?: string;\n}\nexport interface StructuredListTagProps {\n    children: React.ReactNode;\n    className?: string;\n}\nexport interface StructuredListButtonsProps {\n    children: React.ReactNode;\n    className?: string;\n}\n//# sourceMappingURL=StructuredList.types.d.ts.map"
+}

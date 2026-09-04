@@ -1,0 +1,58 @@
+{
+  "component": "Disclosure",
+  "title": "Components/Disclosure",
+  "description": "디스클로저는 특정한 정보/컨트롤/섹션에 관련된 부가적인 정보를 표시하거나 숨기는 데 사용되는 요소이다. 디스클로저 하위 콘텐츠 섹션은 기본으로 축소된 상태로 제공되며 사용자가 요청하는 경우에 확장되어 자세한 정보가 표시된다. 이는 사용자의 인지적 부담을 감소시키고 정보를 빠르게 훑어보는 데 도움이 된다.",
+  "argTypes": {
+    "buttonText": {
+      "control": "text",
+      "options": null,
+      "description": "토글 버튼에 표시될 텍스트"
+    },
+    "defaultExpanded": {
+      "control": "boolean",
+      "options": null,
+      "description": "초기 확장 상태 (비제어 모드)"
+    },
+    "expanded": {
+      "control": "boolean",
+      "options": null,
+      "description": "확장 상태 (제어 모드)"
+    },
+    "onToggle": {
+      "control": null,
+      "options": null,
+      "description": "확장 상태가 변경될 때 호출되는 콜백"
+    }
+  },
+  "stories": [
+    {
+      "id": "components-disclosure--default",
+      "name": "Default",
+      "originalSource": "{\n  args: {\n    buttonText: '신청 서비스안내',\n    children: <TextList type=\"dash\">\n        <TextListItem>\n          하나의 아이디로 안전하고 편리하게 여러 전자정부 서비스를 이용할 수 있는 서비스입니다.\n        </TextListItem>\n        <TextListItem>디지털원패스 이용문의 : 1533-3713 (평일9~18시, 공휴일제외)</TextListItem>\n      </TextList>\n  }\n}"
+    },
+    {
+      "id": "components-disclosure--default-expanded",
+      "name": "Default Expanded",
+      "originalSource": "{\n  args: {\n    buttonText: '서비스 상세 정보',\n    defaultExpanded: true,\n    children: <div>\n        <h4>서비스 이용 안내</h4>\n        <p>본 서비스는 정부24를 통해 제공되는 전자정부 서비스입니다.</p>\n        <ul>\n          <li>이용 시간: 24시간 연중무휴</li>\n          <li>문의 전화: 1588-2188</li>\n          <li>홈페이지: www.gov.kr</li>\n        </ul>\n      </div>\n  }\n}"
+    },
+    {
+      "id": "components-disclosure--controlled-example",
+      "name": "Controlled Example",
+      "originalSource": "{\n  args: {},\n  render: _args => <ControlledDisclosureExample />\n}"
+    },
+    {
+      "id": "components-disclosure--multiple-disclosures",
+      "name": "Multiple Disclosures",
+      "originalSource": "{\n  args: {},\n  render: _args => <div>\n      <Disclosure buttonText=\"첫 번째 디스클로저\">\n        <div>\n          <h4>첫 번째 콘텐츠</h4>\n          <p>여러 개의 디스클로저를 함께 사용할 수 있습니다.</p>\n        </div>\n      </Disclosure>\n\n      <Disclosure buttonText=\"두 번째 디스클로저\" defaultExpanded>\n        <div>\n          <h4>두 번째 콘텐츠</h4>\n          <p>이 디스클로저는 기본적으로 확장된 상태입니다.</p>\n        </div>\n      </Disclosure>\n\n      <Disclosure buttonText=\"세 번째 디스클로저\">\n        <div>\n          <h4>세 번째 콘텐츠</h4>\n          <p>각각 독립적으로 동작합니다.</p>\n        </div>\n      </Disclosure>\n    </div>\n}"
+    },
+    {
+      "id": "components-disclosure--with-rich-content",
+      "name": "With Rich Content",
+      "originalSource": "{\n  args: {\n    buttonText: '상세 정보 보기',\n    children: <div>\n        <h3>서비스 이용 절차</h3>\n        <ol>\n          <li>회원가입 및 로그인</li>\n          <li>서비스 선택</li>\n          <li>필요 정보 입력</li>\n          <li>신청 완료</li>\n        </ol>\n\n        <h3>필요 서류</h3>\n        <ul>\n          <li>신분증 사본</li>\n          <li>증명사진 1매</li>\n          <li>기타 관련 서류</li>\n        </ul>\n\n        <p>\n          <strong>주의사항:</strong> 모든 서류는 최근 3개월 이내 발급된 것이어야 합니다.\n        </p>\n      </div>\n  }\n}"
+    }
+  ],
+  "extractedFrom": {
+    "chunk": "Disclosure.stories-QIKV6Q7m.js",
+    "storybookVersion": "9.1.17"
+  }
+}

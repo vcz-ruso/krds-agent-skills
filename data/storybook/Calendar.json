@@ -1,0 +1,274 @@
+{
+  "component": "Calendar",
+  "title": "Components/Calendar",
+  "description": "달력은 날짜와 관련된 정보와 기능을 제공하는 데 사용한다.",
+  "argTypes": {
+    "mode": {
+      "control": "radio",
+      "options": [
+        "single",
+        "range"
+      ],
+      "description": "달력 모드"
+    },
+    "position": {
+      "control": "radio",
+      "options": [
+        "top",
+        "bottom"
+      ],
+      "description": "달력 위치"
+    },
+    "label": {
+      "control": "text",
+      "options": null,
+      "description": "입력 필드 레이블"
+    },
+    "placeholder": {
+      "control": "text",
+      "options": null,
+      "description": "입력 필드 placeholder (단일 선택)"
+    },
+    "startPlaceholder": {
+      "control": "text",
+      "options": null,
+      "description": "시작 날짜 placeholder"
+    },
+    "endPlaceholder": {
+      "control": "text",
+      "options": null,
+      "description": "종료 날짜 placeholder"
+    },
+    "disabled": {
+      "control": "boolean",
+      "options": null,
+      "description": "비활성화 여부"
+    },
+    "readOnly": {
+      "control": "boolean",
+      "options": null,
+      "description": "읽기 전용 여부"
+    },
+    "isOpen": {
+      "control": "boolean",
+      "options": null,
+      "description": "달력 열림 상태"
+    },
+    "defaultIsOpen": {
+      "control": "boolean",
+      "options": null,
+      "description": "기본 달력 열림 상태"
+    },
+    "value": {
+      "control": "text",
+      "options": null,
+      "description": "현재 선택된 날짜 (단일 선택)"
+    },
+    "defaultValue": {
+      "control": "text",
+      "options": null,
+      "description": "기본 선택된 날짜 (단일 선택)"
+    },
+    "startDate": {
+      "control": "text",
+      "options": null,
+      "description": "범위 선택 시작 날짜"
+    },
+    "endDate": {
+      "control": "text",
+      "options": null,
+      "description": "범위 선택 종료 날짜"
+    },
+    "defaultStartDate": {
+      "control": "text",
+      "options": null,
+      "description": "기본 범위 선택 시작 날짜"
+    },
+    "defaultEndDate": {
+      "control": "text",
+      "options": null,
+      "description": "기본 범위 선택 종료 날짜"
+    },
+    "disabledDates": {
+      "control": "text",
+      "options": null,
+      "description": "비활성화할 날짜 배열"
+    },
+    "eventDates": {
+      "control": "text",
+      "options": null,
+      "description": "이벤트가 있는 날짜 배열"
+    },
+    "openButtonLabel": {
+      "control": "text",
+      "options": null,
+      "description": "달력 열기 버튼 aria-label"
+    },
+    "prevButtonLabel": {
+      "control": "text",
+      "options": null,
+      "description": "이전 달 버튼 aria-label"
+    },
+    "nextButtonLabel": {
+      "control": "text",
+      "options": null,
+      "description": "다음 달 버튼 aria-label"
+    },
+    "todayButtonText": {
+      "control": "text",
+      "options": null,
+      "description": "오늘 버튼 텍스트"
+    },
+    "cancelButtonText": {
+      "control": "text",
+      "options": null,
+      "description": "취소 버튼 텍스트"
+    },
+    "confirmButtonText": {
+      "control": "text",
+      "options": null,
+      "description": "확인 버튼 텍스트"
+    },
+    "onOpenChange": {
+      "control": null,
+      "options": null,
+      "description": "달력 열림/닫힘 상태 변경 콜백"
+    },
+    "onChange": {
+      "control": null,
+      "options": null,
+      "description": "날짜 선택 변경 콜백"
+    },
+    "onRangeChange": {
+      "control": null,
+      "options": null,
+      "description": "범위 선택 변경 콜백"
+    },
+    "onYearChange": {
+      "control": null,
+      "options": null,
+      "description": "년도 변경 콜백"
+    },
+    "onMonthChange": {
+      "control": null,
+      "options": null,
+      "description": "월 변경 콜백"
+    },
+    "onTodayClick": {
+      "control": null,
+      "options": null,
+      "description": "오늘 버튼 클릭 콜백"
+    },
+    "onConfirm": {
+      "control": null,
+      "options": null,
+      "description": "확인 버튼 클릭 콜백"
+    },
+    "monthSelectLabel": {
+      "control": "text",
+      "options": null,
+      "description": "월 선택 버튼 aria-label"
+    },
+    "yearSelectLabel": {
+      "control": "text",
+      "options": null,
+      "description": "년도 선택 버튼 aria-label"
+    },
+    "startTitle": {
+      "control": "text",
+      "options": null,
+      "description": "시작 날짜 입력 필드 title"
+    },
+    "endTitle": {
+      "control": "text",
+      "options": null,
+      "description": "종료 날짜 입력 필드 title"
+    },
+    "inputId": {
+      "control": "text",
+      "options": null,
+      "description": "입력 필드 ID"
+    }
+  },
+  "stories": [
+    {
+      "id": "components-calendar--default",
+      "name": "Default",
+      "originalSource": "{\n  args: {\n    mode: 'single'\n  },\n  parameters: {\n    docs: {\n      description: {\n        story: '기본 달력 컴포넌트입니다.'\n      }\n    }\n  }\n}"
+    },
+    {
+      "id": "components-calendar--single",
+      "name": "Single",
+      "originalSource": "{\n  args: {\n    mode: 'single',\n    label: '기간선택',\n    placeholder: 'YYYY.MM.DD'\n  },\n  parameters: {\n    docs: {\n      description: {\n        story: '단일 날짜 선택 모드입니다.'\n      }\n    }\n  }\n}"
+    },
+    {
+      "id": "components-calendar--range",
+      "name": "Range",
+      "originalSource": "{\n  args: {\n    mode: 'range',\n    label: '날짜선택',\n    startPlaceholder: '시작날짜',\n    endPlaceholder: '종료날짜'\n  },\n  parameters: {\n    docs: {\n      description: {\n        story: '범위 선택 모드입니다.'\n      }\n    }\n  }\n}"
+    },
+    {
+      "id": "components-calendar--top-position",
+      "name": "Top Position",
+      "originalSource": "{\n  args: {\n    mode: 'single',\n    position: 'top',\n    label: '기간선택'\n  },\n  parameters: {\n    docs: {\n      description: {\n        story: '달력이 위쪽에 표시되는 경우입니다.'\n      }\n    }\n  }\n}"
+    },
+    {
+      "id": "components-calendar--bottom-position",
+      "name": "Bottom Position",
+      "originalSource": "{\n  args: {\n    mode: 'single',\n    position: 'bottom',\n    label: '기간선택'\n  },\n  parameters: {\n    docs: {\n      description: {\n        story: '달력이 아래쪽에 표시되는 경우입니다.'\n      }\n    }\n  }\n}"
+    },
+    {
+      "id": "components-calendar--with-default-value",
+      "name": "With Default Value",
+      "originalSource": "{\n  args: {\n    mode: 'single',\n    defaultValue: '2024.12.07',\n    label: '기간선택'\n  },\n  parameters: {\n    docs: {\n      description: {\n        story: '기본값이 설정된 달력입니다.'\n      }\n    }\n  }\n}"
+    },
+    {
+      "id": "components-calendar--with-default-range",
+      "name": "With Default Range",
+      "originalSource": "{\n  args: {\n    mode: 'range',\n    defaultStartDate: '2024.12.07',\n    defaultEndDate: '2024.12.16',\n    label: '날짜선택'\n  },\n  parameters: {\n    docs: {\n      description: {\n        story: '기본값이 설정된 범위 선택 달력입니다.'\n      }\n    }\n  }\n}"
+    },
+    {
+      "id": "components-calendar--with-disabled-dates",
+      "name": "With Disabled Dates",
+      "originalSource": "{\n  args: {\n    mode: 'single',\n    label: '기간선택',\n    defaultValue: '2024.12.07',\n    disabledDates: ['2024.12.13', '2024.12.25', '2024.12.31']\n  },\n  parameters: {\n    docs: {\n      description: {\n        story: '특정 날짜들이 비활성화된 달력입니다.'\n      }\n    }\n  }\n}"
+    },
+    {
+      "id": "components-calendar--with-event-dates",
+      "name": "With Event Dates",
+      "originalSource": "{\n  args: {\n    mode: 'single',\n    label: '기간선택',\n    defaultValue: '2024.12.07',\n    eventDates: ['2024.12.08', '2024.12.15', '2024.12.22']\n  },\n  parameters: {\n    docs: {\n      description: {\n        story: '이벤트 날짜가 표시된 달력입니다.'\n      }\n    }\n  }\n}"
+    },
+    {
+      "id": "components-calendar--open-state",
+      "name": "Open State",
+      "originalSource": "{\n  args: {\n    mode: 'single',\n    defaultIsOpen: true,\n    label: '기간선택'\n  },\n  parameters: {\n    docs: {\n      description: {\n        story: '달력이 열린 상태로 표시됩니다.'\n      }\n    }\n  }\n}"
+    },
+    {
+      "id": "components-calendar--disabled",
+      "name": "Disabled",
+      "originalSource": "{\n  args: {\n    mode: 'single',\n    disabled: true,\n    label: '기간선택',\n    defaultValue: '2024.12.07'\n  },\n  parameters: {\n    docs: {\n      description: {\n        story: '비활성화된 달력입니다.'\n      }\n    }\n  }\n}"
+    },
+    {
+      "id": "components-calendar--read-only",
+      "name": "Read Only",
+      "originalSource": "{\n  args: {\n    mode: 'single',\n    readOnly: true,\n    label: '기간선택',\n    defaultValue: '2024.12.07'\n  },\n  parameters: {\n    docs: {\n      description: {\n        story: '읽기 전용 달력입니다.'\n      }\n    }\n  }\n}"
+    },
+    {
+      "id": "components-calendar--custom-button-text",
+      "name": "Custom Button Text",
+      "originalSource": "{\n  args: {\n    mode: 'single',\n    todayButtonText: 'Today',\n    cancelButtonText: 'Cancel',\n    confirmButtonText: 'OK',\n    label: 'Select Date'\n  },\n  parameters: {\n    docs: {\n      description: {\n        story: '커스텀 텍스트를 사용하는 달력입니다.'\n      }\n    }\n  }\n}"
+    },
+    {
+      "id": "components-calendar--controlled",
+      "name": "Controlled",
+      "originalSource": "{\n  args: {\n    mode: 'single',\n    value: '2024.12.07',\n    isOpen: false,\n    label: '기간선택'\n  },\n  render: function ControlledCalendar(args) {\n    const [value, setValue] = React.useState(args.value || '');\n    const [isOpen, setIsOpen] = React.useState(args.isOpen || false);\n    return <div>\n        <Calendar {...args} value={value} isOpen={isOpen} onChange={setValue} onOpenChange={setIsOpen} />\n        <div style={{\n        marginTop: '1rem',\n        padding: '1rem',\n        backgroundColor: '#f5f5f5',\n        borderRadius: '4px'\n      }}>\n          <strong>선택된 날짜:</strong> {value || '없음'}\n        </div>\n      </div>;\n  }\n}"
+    },
+    {
+      "id": "components-calendar--controlled-range",
+      "name": "Controlled Range",
+      "originalSource": "{\n  args: {\n    mode: 'range',\n    startDate: '2024.12.07',\n    endDate: '2024.12.16',\n    isOpen: false,\n    label: '날짜선택'\n  },\n  render: function ControlledRangeCalendar(args) {\n    const [startDate, setStartDate] = React.useState(args.startDate || '');\n    const [endDate, setEndDate] = React.useState(args.endDate || '');\n    const [isOpen, setIsOpen] = React.useState(args.isOpen || false);\n    const handleRangeChange = (start: string, end: string) => {\n      setStartDate(start);\n      setEndDate(end);\n    };\n    return <div>\n        <Calendar {...args} startDate={startDate} endDate={endDate} isOpen={isOpen} onRangeChange={handleRangeChange} onOpenChange={setIsOpen} />\n        <div style={{\n        marginTop: '1rem',\n        padding: '1rem',\n        backgroundColor: '#f5f5f5',\n        borderRadius: '4px'\n      }}>\n          <strong>선택된 기간:</strong>{' '}\n          {startDate && endDate ? `${startDate} ~ ${endDate}` : '없음'}\n        </div>\n      </div>;\n  }\n}"
+    }
+  ],
+  "extractedFrom": {
+    "chunk": "Calendar.stories-DsrO_VnK.js",
+    "storybookVersion": "9.1.17"
+  }
+}

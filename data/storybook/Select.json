@@ -1,0 +1,80 @@
+{
+  "component": "Select",
+  "title": "Components/Select",
+  "description": "셀렉트는 사용자에게 여러 개의 옵션 목록을 팝업으로 제공하여 그 중 한 개의 값을 선택할 수 있도록 하는 경우에 사용한다.",
+  "argTypes": {
+    "size": {
+      "control": "select",
+      "options": [
+        "small",
+        "medium",
+        "large"
+      ],
+      "description": "Select의 크기를 결정합니다."
+    },
+    "variant": {
+      "control": "select",
+      "options": [
+        "default",
+        "sorting"
+      ],
+      "description": "Select의 변형을 결정합니다."
+    },
+    "disabled": {
+      "control": "boolean",
+      "options": null,
+      "description": "Select를 비활성화합니다."
+    },
+    "hint": {
+      "control": "text",
+      "options": null,
+      "description": "도움말 텍스트"
+    },
+    "error": {
+      "control": "text",
+      "options": null,
+      "description": "에러 메시지"
+    },
+    "value": {
+      "control": "!1",
+      "options": null,
+      "description": "선택된 값"
+    },
+    "label": {
+      "control": "text",
+      "options": null,
+      "description": "레이블"
+    },
+    "defaultValue": {
+      "control": "!1",
+      "options": null,
+      "description": "초기 선택된 값"
+    },
+    "onChange": {
+      "control": "!1",
+      "options": null,
+      "description": "선택 값이 변경될 때 호출되는 콜백"
+    }
+  },
+  "stories": [
+    {
+      "id": "components-select--default",
+      "name": "Default",
+      "originalSource": "{\n  args: {\n    options: sampleOptions,\n    label: '레이블',\n    hint: '도움말',\n    defaultValue: 'option1',\n    error: '',\n    disabled: false,\n    size: undefined,\n    variant: undefined\n  }\n}"
+    },
+    {
+      "id": "components-select--list",
+      "name": "List",
+      "originalSource": "{\n  args: {},\n  render: _args => <>\n      <h3>기본</h3>\n      <Select options={sampleOptions} label=\"레이블\" hint=\"도움말\" />\n      <Select options={[{\n      value: 'selected',\n      label: '선택완료 상태'\n    }, ...sampleOptions]} label=\"레이블\" hint=\"도움말\" defaultValue=\"selected\" />\n      <Select options={sampleOptions} label=\"레이블\" hint=\"도움말\" error=\"에러 메시지\" />\n      <Select options={sampleOptions} label=\"레이블\" hint=\"도움말\" disabled />\n\n      <h3>사이즈</h3>\n      <Select options={sizeOptions} label=\"Small 크기\" size=\"small\" defaultValue=\"small\" />\n      <Select options={sizeOptions} label=\"Medium 크기\" size=\"medium\" defaultValue=\"medium\" />\n      <Select options={sizeOptions} label=\"Large 크기\" size=\"large\" defaultValue=\"large\" />\n\n      <h3>상태</h3>\n      <Select options={sampleOptions} label=\"에러 상태\" error=\"에러 메시지\" />\n\n      <h3>sorting</h3>\n      <div style={{\n      display: 'flex',\n      gap: '1rem',\n      alignItems: 'center'\n    }}>\n        <Select options={[{\n        value: 'option1',\n        label: '항목1'\n      }, {\n        value: 'option2',\n        label: '항목2'\n      }, {\n        value: 'option3',\n        label: '항목3'\n      }]} variant=\"sorting\" size=\"small\" defaultValue=\"option3\" />\n        <Select options={[{\n        value: 'option1',\n        label: '항목1'\n      }, {\n        value: 'option2',\n        label: '항목2'\n      }, {\n        value: 'option3',\n        label: '항목3'\n      }]} variant=\"sorting\" size=\"medium\" defaultValue=\"option2\" />\n        <Select options={[{\n        value: 'option1',\n        label: '항목1'\n      }, {\n        value: 'option2',\n        label: '항목2'\n      }, {\n        value: 'option3',\n        label: '항목3'\n      }]} variant=\"sorting\" size=\"large\" defaultValue=\"option1\" />\n      </div>\n    </>\n}"
+    },
+    {
+      "id": "components-select--controlled",
+      "name": "Controlled",
+      "originalSource": "{\n  render: () => <ControlledSelectExample />,\n  parameters: {\n    docs: {\n      source: {\n        code: `\nconst ControlledSelectExample = () => {\n  const [selectedValue, setSelectedValue] = useState<string>('option2');\n  const [sortingValue, setSortingValue] = useState<string>('option1');\n\n  return (\n    <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', width: '400px' }}>\n      <h3>기본 제어 컴포넌트 </h3>\n\n      <div>\n        <Select\n          options={sampleOptions}\n          label=\"제어 Select\"\n          hint={\\`현재 선택된 값: \\${selectedValue}\\`}\n          value={selectedValue}\n          onChange={setSelectedValue}\n        />\n      </div>\n\n      <h3>정렬 제어 컴포넌트 </h3>\n      <div>\n        <Select\n          options={[\n            { value: 'option1', label: '최신순' },\n            { value: 'option2', label: '인기순' },\n            { value: 'option3', label: '이름순' },\n          ]}\n          variant=\"sorting\"\n          size=\"medium\"\n          value={sortingValue}\n          onChange={setSortingValue}\n        />\n        <div style={{ marginTop: '1rem', fontSize: '14px', color: '#666' }}>\n          정렬 기준:{' '}\n          {sortingValue === 'option1' ? '최신순' : sortingValue === 'option2' ? '인기순' : '이름순'}\n        </div>\n      </div>\n    </div>\n  );\n};\n        `\n      }\n    }\n  }\n}"
+    }
+  ],
+  "extractedFrom": {
+    "chunk": "Select.stories-Bl4lle4F.js",
+    "storybookVersion": "9.1.17"
+  }
+}

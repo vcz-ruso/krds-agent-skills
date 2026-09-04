@@ -1,0 +1,87 @@
+{
+  "component": "Badge",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/Badge/Badge.d.ts",
+    "dist/components/Badge/Badge.types.d.ts"
+  ],
+  "primaryTypeName": "BadgeProps",
+  "props": [
+    {
+      "name": "variant",
+      "type": "BadgeVariant",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "color",
+      "type": "BadgeColor",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "size",
+      "type": "BadgeSize",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "rounded",
+      "type": "boolean",
+      "optional": true,
+      "doc": null
+    },
+    {
+      "name": "children",
+      "type": "React.ReactNode",
+      "optional": false,
+      "doc": null
+    }
+  ],
+  "extends": [
+    "Omit<HTMLAttributes<HTMLSpanElement>, 'size'>"
+  ],
+  "polymorphic": false,
+  "exportedTypes": {
+    "BadgeVariant": [
+      "outline",
+      "filled",
+      "light"
+    ],
+    "BadgeColor": [
+      "primary",
+      "secondary",
+      "gray",
+      "point",
+      "danger",
+      "warning",
+      "success",
+      "information",
+      "disabled"
+    ],
+    "BadgeSize": [
+      "small",
+      "medium",
+      "large"
+    ]
+  },
+  "subComponents": {
+    "BadgeWrapper": {
+      "typeName": "BadgeWrapperProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "optional": false,
+          "doc": null
+        }
+      ],
+      "extends": [
+        "HTMLAttributes<HTMLDivElement>"
+      ]
+    }
+  },
+  "auxiliaryTypes": {},
+  "otherTypes": {},
+  "rawDts": "import { HTMLAttributes } from 'react';\nexport type BadgeVariant = 'outline' | 'filled' | 'light';\nexport type BadgeColor = 'primary' | 'secondary' | 'gray' | 'point' | 'danger' | 'warning' | 'success' | 'information' | 'disabled';\nexport type BadgeSize = 'small' | 'medium' | 'large';\nexport interface BadgeProps extends Omit<HTMLAttributes<HTMLSpanElement>, 'size'> {\n    variant?: BadgeVariant;\n    color?: BadgeColor;\n    size?: BadgeSize;\n    rounded?: boolean;\n    children: React.ReactNode;\n}\nexport interface BadgeWrapperProps extends HTMLAttributes<HTMLDivElement> {\n    children: React.ReactNode;\n}\n//# sourceMappingURL=Badge.types.d.ts.map"
+}

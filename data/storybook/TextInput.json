@@ -1,0 +1,140 @@
+{
+  "component": "TextInput",
+  "title": "Components/TextInput",
+  "description": "텍스트 입력 필드는 사용자가 키보드로 글자, 숫자, 기호 등이 조합된 한 줄의 짧은 텍스트를 입력하는 경우에 사용하는 요소이다.",
+  "argTypes": {
+    "size": {
+      "control": "select",
+      "options": [
+        "small",
+        "medium",
+        "large"
+      ],
+      "description": "입력 필드의 크기"
+    },
+    "disabled": {
+      "control": "boolean",
+      "options": null,
+      "description": "비활성화 상태"
+    },
+    "readOnly": {
+      "control": "boolean",
+      "options": null,
+      "description": "읽기 전용 상태"
+    },
+    "showPasswordToggle": {
+      "control": "boolean",
+      "options": null,
+      "description": "비밀번호 보기/숨기기 버튼 표시 여부"
+    },
+    "showClearButton": {
+      "control": "boolean",
+      "options": null,
+      "description": "삭제 버튼 표시 여부"
+    },
+    "onChange": {
+      "control": "!1",
+      "options": null,
+      "description": "입력 값이 변경될 때 호출되는 콜백"
+    },
+    "value": {
+      "control": "text",
+      "options": null,
+      "description": "입력 값"
+    },
+    "defaultValue": {
+      "control": "text",
+      "options": null,
+      "description": "초기 입력 값"
+    },
+    "label": {
+      "control": "text",
+      "options": null,
+      "description": "레이블"
+    },
+    "hint": {
+      "control": "text",
+      "options": null,
+      "description": "도움말"
+    },
+    "error": {
+      "control": "text",
+      "options": null,
+      "description": "에러 메시지"
+    },
+    "success": {
+      "control": "text",
+      "options": null,
+      "description": "성공 메시지"
+    },
+    "information": {
+      "control": "text",
+      "options": null,
+      "description": "정보 메시지"
+    },
+    "type": {
+      "control": "select",
+      "options": [
+        "text",
+        "password"
+      ],
+      "description": "입력 필드 타입"
+    }
+  },
+  "stories": [
+    {
+      "id": "components-textinput--default",
+      "name": "Default",
+      "originalSource": "{\n  args: {\n    label: '레이블',\n    placeholder: '플레이스홀더',\n    hint: '도움말',\n    size: undefined\n  }\n}"
+    },
+    {
+      "id": "components-textinput--sizes",
+      "name": "Sizes",
+      "originalSource": "{\n  args: {},\n  render: _args => <div style={{\n    display: 'flex',\n    flexDirection: 'column',\n    gap: '2rem',\n    width: '400px'\n  }}>\n      <TextInput size=\"small\" label=\"Small\" placeholder=\"플레이스홀더\" hint=\"도움말\" />\n      <TextInput size=\"medium\" label=\"Medium\" placeholder=\"플레이스홀더\" hint=\"도움말\" />\n      <TextInput size=\"large\" label=\"Large\" placeholder=\"플레이스홀더\" hint=\"도움말\" />\n    </div>\n}"
+    },
+    {
+      "id": "components-textinput--states",
+      "name": "States",
+      "originalSource": "{\n  args: {},\n  render: _args => <div style={{\n    display: 'flex',\n    flexDirection: 'column',\n    gap: '2rem',\n    width: '400px'\n  }}>\n      <TextInput label=\"기본 상태\" placeholder=\"플레이스홀더\" hint=\"도움말\" />\n      <TextInput label=\"에러 상태\" placeholder=\"플레이스홀더\" value=\"에러\" error=\"에러 메시지\" />\n      <TextInput label=\"성공 상태\" placeholder=\"플레이스홀더\" value=\"성공\" success=\"성공 메시지\" />\n      <TextInput label=\"정보 상태\" placeholder=\"플레이스홀더\" value=\"정보\" information=\"정보 메시지\" />\n      <TextInput label=\"읽기 전용\" placeholder=\"플레이스홀더\" value=\"readonly\" readOnly hint=\"도움말\" />\n      <TextInput label=\"비활성화\" placeholder=\"플레이스홀더\" value=\"disabled\" disabled hint=\"도움말\" />\n    </div>\n}"
+    },
+    {
+      "id": "components-textinput--with-password-toggle",
+      "name": "With Password Toggle",
+      "originalSource": "{\n  args: {},\n  render: _args => <div style={{\n    width: '400px'\n  }}>\n      <TextInput type=\"password\" label=\"비밀번호\" placeholder=\"8-12자의 영문자, 숫자, 특수문자 조합\" defaultValue=\"password\" showPasswordToggle />\n    </div>\n}"
+    },
+    {
+      "id": "components-textinput--with-clear-button",
+      "name": "With Clear Button",
+      "originalSource": "{\n  args: {},\n  render: _args => <div style={{\n    width: '400px'\n  }}>\n      <TextInput label=\"삭제 버튼이 있는 입력 필드\" placeholder=\"내용을 입력하세요\" showClearButton defaultValue=\"삭제 가능한 텍스트\" />\n    </div>\n}"
+    },
+    {
+      "id": "components-textinput--with-multiple-buttons",
+      "name": "With Multiple Buttons",
+      "originalSource": "{\n  args: {},\n  render: _args => <div style={{\n    width: '400px'\n  }}>\n      <TextInput type=\"password\" label=\"다중 버튼\" placeholder=\"8-12자의 영문자, 숫자, 특수문자 조합\" defaultValue=\"삭제 가능한 텍스트\" showPasswordToggle showClearButton />\n    </div>\n}"
+    },
+    {
+      "id": "components-textinput--controlled",
+      "name": "Controlled",
+      "originalSource": "{\n  args: {},\n  render: _args => <ControlledExample />,\n  parameters: {\n    docs: {\n      description: {\n        component: '제어된 컴포넌트 예시입니다.'\n      },\n      source: {\n        code: `\nconst ControlledExample = () => {\n  const [value, setValue] = useState('제어된 입력');\n\n  return (\n    <div style={{ width: '400px' }}>\n      <TextInput\n        label=\"제어된 컴포넌트\"\n        placeholder=\"플레이스홀더\"\n        value={value}\n        onChange={setValue}\n        hint={\\`현재 값: $\\{value}\\`}\n      />\n    </div>\n  );\n};\n        `\n      }\n    }\n  }\n}"
+    },
+    {
+      "id": "components-textinput--uncontrolled",
+      "name": "Uncontrolled",
+      "originalSource": "{\n  args: {\n    label: '비제어 컴포넌트',\n    defaultValue: '기본값',\n    placeholder: '플레이스홀더',\n    hint: '비제어 상태로 동작합니다'\n  }\n}"
+    },
+    {
+      "id": "components-textinput--without-label",
+      "name": "Without Label",
+      "originalSource": "{\n  args: {\n    placeholder: '레이블이 없는 입력 필드',\n    hint: '레이블 없이도 사용할 수 있습니다'\n  }\n}"
+    },
+    {
+      "id": "components-textinput--without-hint",
+      "name": "Without Hint",
+      "originalSource": "{\n  args: {\n    label: '도움말이 없는 입력 필드',\n    placeholder: '플레이스홀더'\n  }\n}"
+    }
+  ],
+  "extractedFrom": {
+    "chunk": "TextInput.stories-BzSxcV4y.js",
+    "storybookVersion": "9.1.17"
+  }
+}

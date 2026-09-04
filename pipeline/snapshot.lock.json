@@ -3,5 +3,6 @@
   "krds-uiux-html-kit": { "version": "1.1.0", "source": "https://github.com/KRDS-uiux/krds-uiux" },
   "storybook-react": { "url": "https://www.krds.go.kr/storybook/react", "storybookVersion": "9.1.17" },
   "site": { "base": "https://www.krds.go.kr/html/site/" },
-  "extractedAt": null
+  "extractedAt": "2026-09-04",
+  "componentCounts": { "storybook": 40, "types": 42 }
 }

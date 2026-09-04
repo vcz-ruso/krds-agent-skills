@@ -1,0 +1,212 @@
+{
+  "component": "Tab",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/Tab/Tab.d.ts",
+    "dist/components/Tab/Tab.types.d.ts"
+  ],
+  "primaryTypeName": "TabProps",
+  "props": [
+    {
+      "name": "value",
+      "type": "string",
+      "optional": true,
+      "doc": "활성 탭 값 (제어 모드)"
+    },
+    {
+      "name": "defaultValue",
+      "type": "string",
+      "optional": true,
+      "doc": "기본 활성 탭 값 (비제어 모드)"
+    },
+    {
+      "name": "onValueChange",
+      "type": "(value: string) => void",
+      "optional": true,
+      "doc": "탭 변경 콜백"
+    },
+    {
+      "name": "variant",
+      "type": "TabVariant",
+      "optional": true,
+      "doc": "탭 변형 ('line' | 'fill')"
+    },
+    {
+      "name": "size",
+      "type": "TabSize",
+      "optional": true,
+      "doc": "탭 크기 ('normal' | 'full')"
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "optional": false,
+      "doc": "자식 컴포넌트"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "optional": true,
+      "doc": "커스텀 클래스명"
+    }
+  ],
+  "extends": [
+    "Omit<HTMLAttributes<HTMLDivElement>, 'onChange'>"
+  ],
+  "polymorphic": false,
+  "exportedTypes": {
+    "TabVariant": [
+      "line",
+      "fill"
+    ],
+    "TabSize": [
+      "normal",
+      "full"
+    ]
+  },
+  "subComponents": {
+    "TabList": {
+      "typeName": "TabListProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "optional": true,
+          "doc": "자식 컴포넌트 (TabTrigger들)"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "optional": true,
+          "doc": "커스텀 클래스명"
+        }
+      ],
+      "extends": [
+        "HTMLAttributes<HTMLUListElement>"
+      ]
+    },
+    "TabTrigger": {
+      "typeName": "TabTriggerProps",
+      "props": [
+        {
+          "name": "value",
+          "type": "string",
+          "optional": false,
+          "doc": "탭 식별자"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "optional": false,
+          "doc": "자식 컴포넌트"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "optional": true,
+          "doc": "커스텀 클래스명"
+        }
+      ],
+      "extends": [
+        "Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'value'>"
+      ]
+    },
+    "TabContent": {
+      "typeName": "TabContentProps",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "optional": false,
+          "doc": "자식 컴포넌트"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "optional": true,
+          "doc": "커스텀 클래스명"
+        }
+      ],
+      "extends": [
+        "HTMLAttributes<HTMLDivElement>"
+      ]
+    },
+    "TabPanel": {
+      "typeName": "TabPanelProps",
+      "props": [
+        {
+          "name": "value",
+          "type": "string",
+          "optional": false,
+          "doc": "탭 식별자"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "optional": false,
+          "doc": "자식 컴포넌트"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "optional": true,
+          "doc": "커스텀 클래스명"
+        }
+      ],
+      "extends": [
+        "HTMLAttributes<HTMLElement>"
+      ]
+    }
+  },
+  "auxiliaryTypes": {
+    "TabContextValue": {
+      "props": [
+        {
+          "name": "activeValue",
+          "type": "string",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "onValueChange",
+          "type": "(value: string) => void",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "variant",
+          "type": "TabVariant",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "size",
+          "type": "TabSize",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "registerTrigger",
+          "type": "(element: HTMLButtonElement | null, value: string) => number",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "triggerOrder",
+          "type": "RefObject<string[]>",
+          "optional": false,
+          "doc": null
+        },
+        {
+          "name": "triggerRefs",
+          "type": "RefObject<Map<string, HTMLButtonElement | null>>",
+          "optional": false,
+          "doc": null
+        }
+      ],
+      "extends": []
+    }
+  },
+  "otherTypes": {},
+  "rawDts": "import { ReactNode, HTMLAttributes, ButtonHTMLAttributes, RefObject } from 'react';\nexport type TabVariant = 'line' | 'fill';\nexport type TabSize = 'normal' | 'full';\nexport interface TabProps extends Omit<HTMLAttributes<HTMLDivElement>, 'onChange'> {\n    /** 활성 탭 값 (제어 모드) */\n    value?: string;\n    /** 기본 활성 탭 값 (비제어 모드) */\n    defaultValue?: string;\n    /** 탭 변경 콜백 */\n    onValueChange?: (value: string) => void;\n    /** 탭 변형 ('line' | 'fill') */\n    variant?: TabVariant;\n    /** 탭 크기 ('normal' | 'full') */\n    size?: TabSize;\n    /** 자식 컴포넌트 */\n    children: ReactNode;\n    /** 커스텀 클래스명 */\n    className?: string;\n}\nexport interface TabListProps extends HTMLAttributes<HTMLUListElement> {\n    /** 자식 컴포넌트 (TabTrigger들) */\n    children?: ReactNode;\n    /** 커스텀 클래스명 */\n    className?: string;\n}\nexport interface TabTriggerProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'value'> {\n    /** 탭 식별자 */\n    value: string;\n    /** 자식 컴포넌트 */\n    children: ReactNode;\n    /** 커스텀 클래스명 */\n    className?: string;\n}\nexport interface TabContentProps extends HTMLAttributes<HTMLDivElement> {\n    /** 자식 컴포넌트 */\n    children: ReactNode;\n    /** 커스텀 클래스명 */\n    className?: string;\n}\nexport interface TabPanelProps extends HTMLAttributes<HTMLElement> {\n    /** 탭 식별자 */\n    value: string;\n    /** 자식 컴포넌트 */\n    children: ReactNode;\n    /** 커스텀 클래스명 */\n    className?: string;\n}\nexport interface TabContextValue {\n    activeValue: string;\n    onValueChange: (value: string) => void;\n    variant: TabVariant;\n    size: TabSize;\n    registerTrigger: (element: HTMLButtonElement | null, value: string) => number;\n    triggerOrder: RefObject<string[]>;\n    triggerRefs: RefObject<Map<string, HTMLButtonElement | null>>;\n}\n//# sourceMappingURL=Tab.types.d.ts.map"
+}

@@ -1,0 +1,37 @@
+{
+  "component": "Tag",
+  "title": "Components/Tag",
+  "description": "태그는 키워드 또는 레이블을 사용하여 콘텐츠를 분류하는 수단이다. 콘텐츠 항목에 직접 관련 분류 체계, 데이터 속성을 표시하거나, 목록에서 특정 분류 체계, 데이터 속성을 가진 항목이 선택되었음을 보여주기 위한 태그 그룹으로 사용된다.",
+  "argTypes": null,
+  "stories": [
+    {
+      "id": "components-tag--default",
+      "name": "Default",
+      "originalSource": "{\n  args: {\n    children: '태그',\n    variant: 'deletable',\n    onDelete: () => console.log('Tag deleted'),\n    deleteDisabled: false,\n    href: '#',\n    target: '_self',\n    className: '',\n    'wrap.size': 'medium'\n  },\n  // @ts-expect-error - Storybook 타입 오류\n  render: ({\n    children,\n    'wrap.size': wrapSize,\n    ...rest\n  }) => <TagWrap size={wrapSize}>\n      <Tag {...rest}>{children}</Tag>\n    </TagWrap>\n}"
+    },
+    {
+      "id": "components-tag--deletable",
+      "name": "Deletable",
+      "originalSource": "{\n  args: {},\n  render: _args => <div style={{\n    display: 'flex',\n    flexDirection: 'column',\n    gap: '20px'\n  }}>\n      <TagWrap size=\"large\">\n        <Tag onDelete={() => console.log('Large tag deleted')}>태그</Tag>\n        <Tag onDelete={() => console.log('Large tag deleted')}>태그</Tag>\n        <Tag onDelete={() => console.log('Large tag deleted')}>태그</Tag>\n      </TagWrap>\n\n      <TagWrap size=\"medium\">\n        <Tag onDelete={() => console.log('Medium tag deleted')}>태그</Tag>\n        <Tag onDelete={() => console.log('Medium tag deleted')}>태그</Tag>\n        <Tag onDelete={() => console.log('Medium tag deleted')}>태그</Tag>\n      </TagWrap>\n\n      <TagWrap size=\"small\">\n        <Tag onDelete={() => console.log('Small tag deleted')}>태그</Tag>\n        <Tag onDelete={() => console.log('Small tag deleted')}>태그</Tag>\n        <Tag onDelete={() => console.log('Small tag deleted')}>태그</Tag>\n      </TagWrap>\n    </div>\n}"
+    },
+    {
+      "id": "components-tag--link",
+      "name": "Link",
+      "originalSource": "{\n  args: {},\n  render: _args => <div style={{\n    display: 'flex',\n    flexDirection: 'column',\n    gap: '20px'\n  }}>\n      <TagWrap size=\"large\">\n        <Tag variant=\"link\" href=\"#\">\n          태그\n        </Tag>\n        <Tag variant=\"link\" href=\"#\">\n          태그\n        </Tag>\n        <Tag variant=\"link\" href=\"#\">\n          태그\n        </Tag>\n      </TagWrap>\n\n      <TagWrap size=\"medium\">\n        <Tag variant=\"link\" href=\"#\">\n          태그\n        </Tag>\n        <Tag variant=\"link\" href=\"#\">\n          태그\n        </Tag>\n        <Tag variant=\"link\" href=\"#\">\n          태그\n        </Tag>\n      </TagWrap>\n\n      <TagWrap size=\"small\">\n        <Tag variant=\"link\" href=\"#\">\n          태그\n        </Tag>\n        <Tag variant=\"link\" href=\"#\">\n          태그\n        </Tag>\n        <Tag variant=\"link\" href=\"#\">\n          태그\n        </Tag>\n      </TagWrap>\n    </div>\n}"
+    },
+    {
+      "id": "components-tag--link-tag",
+      "name": "Link Tag",
+      "originalSource": "{\n  render: args => <TagWrap>\n      <Tag {...args}>태그</Tag>\n    </TagWrap>,\n  args: {\n    children: '태그',\n    variant: 'link' as const,\n    href: '#'\n  }\n}"
+    },
+    {
+      "id": "components-tag--delete-disabled",
+      "name": "Delete Disabled",
+      "originalSource": "{\n  render: args => <TagWrap>\n      <Tag {...args}>삭제 불가 태그</Tag>\n    </TagWrap>,\n  args: {\n    children: '삭제 불가 태그',\n    onDelete: () => console.log('This should not be called'),\n    deleteDisabled: true\n  }\n}"
+    }
+  ],
+  "extractedFrom": {
+    "chunk": "Tag.stories-Ccv0JpYk.js",
+    "storybookVersion": "9.1.17"
+  }
+}

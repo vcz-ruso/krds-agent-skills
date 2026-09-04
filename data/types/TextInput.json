@@ -1,0 +1,86 @@
+{
+  "component": "TextInput",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/TextInput/TextInput.d.ts",
+    "dist/components/TextInput/TextInput.types.d.ts"
+  ],
+  "primaryTypeName": "TextInputProps",
+  "props": [
+    {
+      "name": "onChange",
+      "type": "(value: string) => void",
+      "optional": true,
+      "doc": "입력 값이 변경될 때 호출되는 콜백"
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "optional": true,
+      "doc": "레이블"
+    },
+    {
+      "name": "hint",
+      "type": "string",
+      "optional": true,
+      "doc": "도움말 텍스트"
+    },
+    {
+      "name": "error",
+      "type": "string",
+      "optional": true,
+      "doc": "에러 메시지"
+    },
+    {
+      "name": "success",
+      "type": "string",
+      "optional": true,
+      "doc": "성공 메시지"
+    },
+    {
+      "name": "information",
+      "type": "string",
+      "optional": true,
+      "doc": "정보 메시지"
+    },
+    {
+      "name": "size",
+      "type": "'small' | 'medium' | 'large'",
+      "optional": true,
+      "doc": "입력 필드 크기 ('small' | 'medium' | 'large')"
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "optional": true,
+      "doc": "제어 상태일 때 입력된 값"
+    },
+    {
+      "name": "defaultValue",
+      "type": "string",
+      "optional": true,
+      "doc": "비제어 상태일 때의 초기 값"
+    },
+    {
+      "name": "showPasswordToggle",
+      "type": "boolean",
+      "optional": true,
+      "doc": "비밀번호 보기/숨기기 버튼 표시 여부"
+    },
+    {
+      "name": "showClearButton",
+      "type": "boolean",
+      "optional": true,
+      "doc": "삭제 버튼 표시 여부"
+    }
+  ],
+  "extends": [
+    "Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'value' | 'defaultValue' | 'size'>"
+  ],
+  "polymorphic": false,
+  "exportedTypes": {},
+  "subComponents": {},
+  "auxiliaryTypes": {},
+  "otherTypes": {},
+  "rawDts": "import { InputHTMLAttributes } from 'react';\nexport interface TextInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'value' | 'defaultValue' | 'size'> {\n    /** 입력 값이 변경될 때 호출되는 콜백 */\n    onChange?: (value: string) => void;\n    /** 레이블 */\n    label?: string;\n    /** 도움말 텍스트 */\n    hint?: string;\n    /** 에러 메시지 */\n    error?: string;\n    /** 성공 메시지 */\n    success?: string;\n    /** 정보 메시지 */\n    information?: string;\n    /** 입력 필드 크기 ('small' | 'medium' | 'large') */\n    size?: 'small' | 'medium' | 'large';\n    /** 제어 상태일 때 입력된 값 */\n    value?: string;\n    /** 비제어 상태일 때의 초기 값 */\n    defaultValue?: string;\n    /** 비밀번호 보기/숨기기 버튼 표시 여부 */\n    showPasswordToggle?: boolean;\n    /** 삭제 버튼 표시 여부 */\n    showClearButton?: boolean;\n}\n//# sourceMappingURL=TextInput.types.d.ts.map"
+}

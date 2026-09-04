@@ -1,0 +1,63 @@
+{
+  "component": "CriticalAlert",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/CriticalAlert/CriticalAlert.d.ts",
+    "dist/components/CriticalAlert/CriticalAlert.types.d.ts"
+  ],
+  "primaryTypeName": "CriticalAlertsProps",
+  "props": [
+    {
+      "name": "alerts",
+      "type": "CriticalAlertItemProps[]",
+      "optional": false,
+      "doc": "alert 목록"
+    }
+  ],
+  "extends": [
+    "HTMLAttributes<HTMLDivElement>"
+  ],
+  "polymorphic": false,
+  "exportedTypes": {
+    "CriticalAlertVariant": [
+      "danger",
+      "ok",
+      "info"
+    ]
+  },
+  "subComponents": {
+    "CriticalAlertItem": {
+      "typeName": "CriticalAlertItemProps",
+      "props": [
+        {
+          "name": "variant",
+          "type": "CriticalAlertVariant",
+          "optional": false,
+          "doc": "alert의 종류"
+        },
+        {
+          "name": "message",
+          "type": "string",
+          "optional": false,
+          "doc": "alert의 내용"
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "optional": true,
+          "doc": "상세보기 링크 URL"
+        },
+        {
+          "name": "linkText",
+          "type": "string",
+          "optional": true,
+          "doc": "상세보기 링크 텍스트"
+        }
+      ],
+      "extends": []
+    }
+  },
+  "auxiliaryTypes": {},
+  "otherTypes": {},
+  "rawDts": "import { HTMLAttributes } from 'react';\nexport type CriticalAlertVariant = 'danger' | 'ok' | 'info';\nexport interface CriticalAlertItemProps {\n    /**\n     * alert의 종류\n     */\n    variant: CriticalAlertVariant;\n    /**\n     * alert의 내용\n     */\n    message: string;\n    /**\n     * 상세보기 링크 URL\n     */\n    href?: string;\n    /**\n     * 상세보기 링크 텍스트\n     */\n    linkText?: string;\n}\nexport interface CriticalAlertsProps extends HTMLAttributes<HTMLDivElement> {\n    /**\n     * alert 목록\n     */\n    alerts: CriticalAlertItemProps[];\n}\n//# sourceMappingURL=CriticalAlert.types.d.ts.map"
+}

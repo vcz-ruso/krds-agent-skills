@@ -1,0 +1,83 @@
+{
+  "component": "Dropdown",
+  "packageVersion": "1.1.1",
+  "files": [
+    "dist/components/Dropdown/Dropdown.d.ts",
+    "dist/components/Dropdown/Dropdown.types.d.ts"
+  ],
+  "primaryTypeName": "DropdownProps",
+  "props": [
+    {
+      "name": "isOpen",
+      "type": "boolean",
+      "optional": true,
+      "doc": "드롭다운 열림 상태 (controlled)"
+    },
+    {
+      "name": "defaultOpen",
+      "type": "boolean",
+      "optional": true,
+      "doc": "기본 드롭다운 열림 상태 (uncontrolled)"
+    },
+    {
+      "name": "onOpenChange",
+      "type": "(isOpen: boolean) => void",
+      "optional": true,
+      "doc": "드롭다운 상태 변경 시 호출되는 콜백 함수"
+    },
+    {
+      "name": "buttonText",
+      "type": "ReactNode",
+      "optional": false,
+      "doc": "드롭다운 버튼 텍스트 또는 콘텐츠"
+    },
+    {
+      "name": "buttonClassName",
+      "type": "string",
+      "optional": true,
+      "doc": "드롭다운 버튼 클래스명"
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "optional": true,
+      "doc": "드롭다운 메뉴 콘텐츠 (리스트 아이템)"
+    },
+    {
+      "name": "content",
+      "type": "ReactNode",
+      "optional": true,
+      "doc": "커스텀 드롭다운 콘텐츠"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "optional": true,
+      "doc": "사용자 정의 클래스명"
+    }
+  ],
+  "extends": [
+    "Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onClick' | 'onChange' | 'content'>"
+  ],
+  "polymorphic": false,
+  "exportedTypes": {},
+  "subComponents": {
+    "DropdownItem": {
+      "typeName": "DropdownItemProps",
+      "props": [
+        {
+          "name": "isActive",
+          "type": "boolean",
+          "optional": true,
+          "doc": "아이템 활성 상태"
+        }
+      ],
+      "extends": [
+        "ButtonHTMLAttributes<HTMLButtonElement>"
+      ]
+    }
+  },
+  "auxiliaryTypes": {},
+  "otherTypes": {},
+  "rawDts": "import { ButtonHTMLAttributes, ReactNode } from 'react';\nexport interface DropdownProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onClick' | 'onChange' | 'content'> {\n    /**\n     * 드롭다운 열림 상태 (controlled)\n     */\n    isOpen?: boolean;\n    /**\n     * 기본 드롭다운 열림 상태 (uncontrolled)\n     */\n    defaultOpen?: boolean;\n    /**\n     * 드롭다운 상태 변경 시 호출되는 콜백 함수\n     */\n    onOpenChange?: (isOpen: boolean) => void;\n    /**\n     * 드롭다운 버튼 텍스트 또는 콘텐츠\n     */\n    buttonText: ReactNode;\n    /**\n     * 드롭다운 버튼 클래스명\n     */\n    buttonClassName?: string;\n    /**\n     * 드롭다운 메뉴 콘텐츠 (리스트 아이템)\n     */\n    children?: ReactNode;\n    /**\n     * 커스텀 드롭다운 콘텐츠\n     */\n    content?: ReactNode;\n    /**\n     * 사용자 정의 클래스명\n     */\n    className?: string;\n}\nexport interface DropdownItemProps extends ButtonHTMLAttributes<HTMLButtonElement> {\n    /**\n     * 아이템 활성 상태\n     */\n    isActive?: boolean;\n}\n//# sourceMappingURL=Dropdown.types.d.ts.map"
+}

@@ -1,0 +1,81 @@
+{
+  "component": "ToggleSwitch",
+  "title": "Components/ToggleSwitch",
+  "description": "토글은 상호 배타적인 두 가지 상태를 전환하는 데 사용되는 요소이다.",
+  "argTypes": {
+    "size": {
+      "control": "select",
+      "options": [
+        "medium",
+        "large"
+      ],
+      "description": "토글 스위치 크기"
+    },
+    "label": {
+      "control": "text",
+      "options": null,
+      "description": "토글 스위치 라벨 텍스트"
+    },
+    "checked": {
+      "control": "boolean",
+      "options": null,
+      "description": "체크 상태 (제어된 컴포넌트)"
+    },
+    "defaultChecked": {
+      "control": "boolean",
+      "options": null,
+      "description": "기본 체크 상태 (비제어 컴포넌트)"
+    },
+    "disabled": {
+      "control": "boolean",
+      "options": null,
+      "description": "비활성화 상태"
+    }
+  },
+  "stories": [
+    {
+      "id": "components-toggleswitch--default",
+      "name": "Default",
+      "originalSource": "{\n  args: {\n    label: 'switch : default',\n    size: undefined\n  }\n}"
+    },
+    {
+      "id": "components-toggleswitch--checked",
+      "name": "Checked",
+      "originalSource": "{\n  args: {\n    label: 'switch : checked',\n    defaultChecked: true\n  }\n}"
+    },
+    {
+      "id": "components-toggleswitch--disabled",
+      "name": "Disabled",
+      "originalSource": "{\n  args: {\n    label: 'switch : disabled',\n    disabled: true\n  }\n}"
+    },
+    {
+      "id": "components-toggleswitch--disabled-checked",
+      "name": "Disabled Checked",
+      "originalSource": "{\n  args: {\n    label: 'switch : disabled checked',\n    defaultChecked: true,\n    disabled: true\n  }\n}"
+    },
+    {
+      "id": "components-toggleswitch--medium",
+      "name": "Medium",
+      "originalSource": "{\n  args: {\n    size: 'medium',\n    label: 'switch size : medium'\n  }\n}"
+    },
+    {
+      "id": "components-toggleswitch--large",
+      "name": "Large",
+      "originalSource": "{\n  args: {\n    size: 'large',\n    label: 'switch size : large'\n  }\n}"
+    },
+    {
+      "id": "components-toggleswitch--controlled",
+      "name": "Controlled",
+      "originalSource": "{\n  render: ControlledToggleSwitch\n}"
+    },
+    {
+      "id": "components-toggleswitch--all-variants",
+      "name": "All Variants",
+      "originalSource": "{\n  args: {},\n  render: _args => <div style={{\n    display: 'flex',\n    flexDirection: 'column',\n    gap: '1.5rem'\n  }}>\n      <div>\n        <h3>Large Size</h3>\n        <div style={{\n        display: 'flex',\n        flexDirection: 'column',\n        gap: '1rem'\n      }}>\n          <ToggleSwitch size=\"large\" label=\"switch : default\" />\n          <ToggleSwitch size=\"large\" label=\"switch : checked\" defaultChecked />\n          <ToggleSwitch size=\"large\" label=\"switch : disabled\" disabled />\n          <ToggleSwitch size=\"large\" label=\"switch : disabled checked\" defaultChecked disabled />\n        </div>\n      </div>\n\n      <div>\n        <h3>Medium Size</h3>\n        <div style={{\n        display: 'flex',\n        flexDirection: 'column',\n        gap: '1rem'\n      }}>\n          <ToggleSwitch size=\"medium\" label=\"switch : default\" />\n          <ToggleSwitch size=\"medium\" label=\"switch : checked\" defaultChecked />\n          <ToggleSwitch size=\"medium\" label=\"switch : disabled\" disabled />\n          <ToggleSwitch size=\"medium\" label=\"switch : disabled checked\" defaultChecked disabled />\n        </div>\n      </div>\n    </div>\n}"
+    }
+  ],
+  "extractedFrom": {
+    "chunk": "ToggleSwitch.stories-_Z3P7vBf.js",
+    "storybookVersion": "9.1.17"
+  }
+}
