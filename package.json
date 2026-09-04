@@ -1,0 +1,17 @@
+{
+  "name": "krds-agent-skills",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "extract:storybook": "node pipeline/extract-storybook.mjs",
+    "extract:types": "node pipeline/extract-types.mjs",
+    "crawl:site": "node pipeline/crawl-site.mjs",
+    "transform:rn": "node pipeline/transform-rn-tokens.mjs",
+    "validate": "node pipeline/validate-skills.mjs"
+  }
+}
