@@ -1,0 +1,876 @@
+{
+  "base": "https://www.krds.go.kr/html/site/",
+  "fetchedAt": "2026-09-04T01:36:36.895Z",
+  "pages": [
+    {
+      "path": "component/component_summary.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_summary.html",
+      "status": 200,
+      "bytes": 113196,
+      "contentChars": 7969
+    },
+    {
+      "path": "component/component_02_01.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_02_01.html",
+      "status": 200,
+      "bytes": 62751,
+      "contentChars": 1468
+    },
+    {
+      "path": "component/component_02_02.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_02_02.html",
+      "status": 200,
+      "bytes": 63641,
+      "contentChars": 1727
+    },
+    {
+      "path": "component/component_02_03.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_02_03.html",
+      "status": 200,
+      "bytes": 128284,
+      "contentChars": 6836
+    },
+    {
+      "path": "component/component_02_04.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_02_04.html",
+      "status": 200,
+      "bytes": 74171,
+      "contentChars": 2611
+    },
+    {
+      "path": "component/component_03_01.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_03_01.html",
+      "status": 200,
+      "bytes": 71606,
+      "contentChars": 3767
+    },
+    {
+      "path": "component/component_03_02.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_03_02.html",
+      "status": 200,
+      "bytes": 132503,
+      "contentChars": 8224
+    },
+    {
+      "path": "component/component_03_03.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_03_03.html",
+      "status": 200,
+      "bytes": 76569,
+      "contentChars": 3929
+    },
+    {
+      "path": "component/component_03_04.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_03_04.html",
+      "status": 200,
+      "bytes": 98998,
+      "contentChars": 6522
+    },
+    {
+      "path": "component/component_03_05.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_03_05.html",
+      "status": 200,
+      "bytes": 80770,
+      "contentChars": 4177
+    },
+    {
+      "path": "component/component_03_06.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_03_06.html",
+      "status": 200,
+      "bytes": 93930,
+      "contentChars": 7092
+    },
+    {
+      "path": "component/component_04_01.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_04_01.html",
+      "status": 200,
+      "bytes": 97910,
+      "contentChars": 4468
+    },
+    {
+      "path": "component/component_04_02.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_04_02.html",
+      "status": 200,
+      "bytes": 72817,
+      "contentChars": 3533
+    },
+    {
+      "path": "component/component_04_03.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_04_03.html",
+      "status": 200,
+      "bytes": 117774,
+      "contentChars": 5446
+    },
+    {
+      "path": "component/component_04_04.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_04_04.html",
+      "status": 200,
+      "bytes": 75503,
+      "contentChars": 3176
+    },
+    {
+      "path": "component/component_04_05.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_04_05.html",
+      "status": 200,
+      "bytes": 97213,
+      "contentChars": 7988
+    },
+    {
+      "path": "component/component_04_06.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_04_06.html",
+      "status": 200,
+      "bytes": 77657,
+      "contentChars": 3295
+    },
+    {
+      "path": "component/component_04_07.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_04_07.html",
+      "status": 200,
+      "bytes": 84688,
+      "contentChars": 4382
+    },
+    {
+      "path": "component/component_04_08.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_04_08.html",
+      "status": 200,
+      "bytes": 61894,
+      "contentChars": 2710
+    },
+    {
+      "path": "component/component_04_09.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_04_09.html",
+      "status": 200,
+      "bytes": 108858,
+      "contentChars": 7294
+    },
+    {
+      "path": "component/component_04_10.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_04_10.html",
+      "status": 200,
+      "bytes": 84238,
+      "contentChars": 4905
+    },
+    {
+      "path": "component/component_04_11.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_04_11.html",
+      "status": 200,
+      "bytes": 74382,
+      "contentChars": 3830
+    },
+    {
+      "path": "component/component_04_13.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_04_13.html",
+      "status": 200,
+      "bytes": 77266,
+      "contentChars": 2895
+    },
+    {
+      "path": "component/component_04_14.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_04_14.html",
+      "status": 200,
+      "bytes": 59534,
+      "contentChars": 1164
+    },
+    {
+      "path": "component/component_05_01.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_05_01.html",
+      "status": 200,
+      "bytes": 79213,
+      "contentChars": 4269
+    },
+    {
+      "path": "component/component_05_02.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_05_02.html",
+      "status": 200,
+      "bytes": 92416,
+      "contentChars": 5422
+    },
+    {
+      "path": "component/component_05_03.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_05_03.html",
+      "status": 200,
+      "bytes": 57722,
+      "contentChars": 1641
+    },
+    {
+      "path": "component/component_06_01.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_06_01.html",
+      "status": 200,
+      "bytes": 89854,
+      "contentChars": 4911
+    },
+    {
+      "path": "component/component_06_02.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_06_02.html",
+      "status": 200,
+      "bytes": 85481,
+      "contentChars": 4601
+    },
+    {
+      "path": "component/component_06_03.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_06_03.html",
+      "status": 200,
+      "bytes": 88481,
+      "contentChars": 4192
+    },
+    {
+      "path": "component/component_06_04.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_06_04.html",
+      "status": 200,
+      "bytes": 84856,
+      "contentChars": 4769
+    },
+    {
+      "path": "component/component_06_07.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_06_07.html",
+      "status": 200,
+      "bytes": 81080,
+      "contentChars": 4363
+    },
+    {
+      "path": "component/component_07_01.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_07_01.html",
+      "status": 200,
+      "bytes": 73131,
+      "contentChars": 3427
+    },
+    {
+      "path": "component/component_07_02.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_07_02.html",
+      "status": 200,
+      "bytes": 69546,
+      "contentChars": 3311
+    },
+    {
+      "path": "component/component_08_01.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_08_01.html",
+      "status": 200,
+      "bytes": 84312,
+      "contentChars": 5511
+    },
+    {
+      "path": "component/component_08_02.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_08_02.html",
+      "status": 200,
+      "bytes": 75137,
+      "contentChars": 3818
+    },
+    {
+      "path": "component/component_08_03.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_08_03.html",
+      "status": 200,
+      "bytes": 96929,
+      "contentChars": 6489
+    },
+    {
+      "path": "component/component_08_04.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_08_04.html",
+      "status": 200,
+      "bytes": 80268,
+      "contentChars": 4444
+    },
+    {
+      "path": "component/component_08_05.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_08_05.html",
+      "status": 200,
+      "bytes": 89103,
+      "contentChars": 4827
+    },
+    {
+      "path": "component/component_08_06.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_08_06.html",
+      "status": 200,
+      "bytes": 74209,
+      "contentChars": 1989
+    },
+    {
+      "path": "component/component_09_01.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_09_01.html",
+      "status": 200,
+      "bytes": 103428,
+      "contentChars": 5090
+    },
+    {
+      "path": "component/component_09_02.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_09_02.html",
+      "status": 200,
+      "bytes": 71668,
+      "contentChars": 3192
+    },
+    {
+      "path": "component/component_09_03.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_09_03.html",
+      "status": 200,
+      "bytes": 89860,
+      "contentChars": 3941
+    },
+    {
+      "path": "component/component_09_04.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_09_04.html",
+      "status": 200,
+      "bytes": 88760,
+      "contentChars": 5905
+    },
+    {
+      "path": "component/component_10_01.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_10_01.html",
+      "status": 200,
+      "bytes": 78986,
+      "contentChars": 3801
+    },
+    {
+      "path": "component/component_10_02.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_10_02.html",
+      "status": 200,
+      "bytes": 75629,
+      "contentChars": 3530
+    },
+    {
+      "path": "component/component_11_01.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_11_01.html",
+      "status": 200,
+      "bytes": 61119,
+      "contentChars": 3117
+    },
+    {
+      "path": "component/component_11_02.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_11_02.html",
+      "status": 200,
+      "bytes": 59345,
+      "contentChars": 3098
+    },
+    {
+      "path": "component/component_12_01.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_12_01.html",
+      "status": 200,
+      "bytes": 58988,
+      "contentChars": 1639
+    },
+    {
+      "path": "component/component_12_02.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_12_02.html",
+      "status": 200,
+      "bytes": 55546,
+      "contentChars": 1062
+    },
+    {
+      "path": "component/component_12_03.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_12_03.html",
+      "status": 200,
+      "bytes": 58186,
+      "contentChars": 1817
+    },
+    {
+      "path": "component/component_12_04.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_12_04.html",
+      "status": 200,
+      "bytes": 58655,
+      "contentChars": 1643
+    },
+    {
+      "path": "component/component_12_05.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_12_05.html",
+      "status": 200,
+      "bytes": 57107,
+      "contentChars": 1457
+    },
+    {
+      "path": "component/component_12_06.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_12_06.html",
+      "status": 200,
+      "bytes": 57980,
+      "contentChars": 1752
+    },
+    {
+      "path": "component/component_12_07.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_12_07.html",
+      "status": 200,
+      "bytes": 69814,
+      "contentChars": 3426
+    },
+    {
+      "path": "component/component_12_08.md",
+      "url": "https://www.krds.go.kr/html/site/component/component_12_08.html",
+      "status": 200,
+      "bytes": 63662,
+      "contentChars": 2467
+    },
+    {
+      "path": "global/global_summary.md",
+      "url": "https://www.krds.go.kr/html/site/global/global_summary.html",
+      "status": 200,
+      "bytes": 59987,
+      "contentChars": 2480
+    },
+    {
+      "path": "global/global_01.md",
+      "url": "https://www.krds.go.kr/html/site/global/global_01.html",
+      "status": 200,
+      "bytes": 72307,
+      "contentChars": 4001
+    },
+    {
+      "path": "global/global_02.md",
+      "url": "https://www.krds.go.kr/html/site/global/global_02.html",
+      "status": 200,
+      "bytes": 73828,
+      "contentChars": 4717
+    },
+    {
+      "path": "global/global_03.md",
+      "url": "https://www.krds.go.kr/html/site/global/global_03.html",
+      "status": 200,
+      "bytes": 69170,
+      "contentChars": 3196
+    },
+    {
+      "path": "global/global_04.md",
+      "url": "https://www.krds.go.kr/html/site/global/global_04.html",
+      "status": 200,
+      "bytes": 67936,
+      "contentChars": 2655
+    },
+    {
+      "path": "global/global_05.md",
+      "url": "https://www.krds.go.kr/html/site/global/global_05.html",
+      "status": 200,
+      "bytes": 72793,
+      "contentChars": 4175
+    },
+    {
+      "path": "global/global_06.md",
+      "url": "https://www.krds.go.kr/html/site/global/global_06.html",
+      "status": 200,
+      "bytes": 68731,
+      "contentChars": 4100
+    },
+    {
+      "path": "global/global_07.md",
+      "url": "https://www.krds.go.kr/html/site/global/global_07.html",
+      "status": 200,
+      "bytes": 60767,
+      "contentChars": 1458
+    },
+    {
+      "path": "global/global_08.md",
+      "url": "https://www.krds.go.kr/html/site/global/global_08.html",
+      "status": 200,
+      "bytes": 86512,
+      "contentChars": 7087
+    },
+    {
+      "path": "global/global_09.md",
+      "url": "https://www.krds.go.kr/html/site/global/global_09.html",
+      "status": 200,
+      "bytes": 58338,
+      "contentChars": 1782
+    },
+    {
+      "path": "global/global_10.md",
+      "url": "https://www.krds.go.kr/html/site/global/global_10.html",
+      "status": 200,
+      "bytes": 88485,
+      "contentChars": 6224
+    },
+    {
+      "path": "global/global_11.md",
+      "url": "https://www.krds.go.kr/html/site/global/global_11.html",
+      "status": 200,
+      "bytes": 61016,
+      "contentChars": 1495
+    },
+    {
+      "path": "global/global_12.md",
+      "url": "https://www.krds.go.kr/html/site/global/global_12.html",
+      "status": 200,
+      "bytes": 55105,
+      "contentChars": 1607
+    },
+    {
+      "path": "global/global_13.md",
+      "url": "https://www.krds.go.kr/html/site/global/global_13.html",
+      "status": 200,
+      "bytes": 57110,
+      "contentChars": 2117
+    },
+    {
+      "path": "service/service_summary.md",
+      "url": "https://www.krds.go.kr/html/site/service/service_summary.html",
+      "status": 200,
+      "bytes": 50953,
+      "contentChars": 1070
+    },
+    {
+      "path": "service/service_01_01.md",
+      "url": "https://www.krds.go.kr/html/site/service/service_01_01.html",
+      "status": 200,
+      "bytes": 57095,
+      "contentChars": 1579
+    },
+    {
+      "path": "service/service_01_02.md",
+      "url": "https://www.krds.go.kr/html/site/service/service_01_02.html",
+      "status": 200,
+      "bytes": 63663,
+      "contentChars": 2580
+    },
+    {
+      "path": "service/service_02_01.md",
+      "url": "https://www.krds.go.kr/html/site/service/service_02_01.html",
+      "status": 200,
+      "bytes": 73595,
+      "contentChars": 3655
+    },
+    {
+      "path": "service/service_02_02.md",
+      "url": "https://www.krds.go.kr/html/site/service/service_02_02.html",
+      "status": 200,
+      "bytes": 62766,
+      "contentChars": 2383
+    },
+    {
+      "path": "service/service_02_03.md",
+      "url": "https://www.krds.go.kr/html/site/service/service_02_03.html",
+      "status": 200,
+      "bytes": 77368,
+      "contentChars": 5088
+    },
+    {
+      "path": "service/service_02_04.md",
+      "url": "https://www.krds.go.kr/html/site/service/service_02_04.html",
+      "status": 200,
+      "bytes": 63411,
+      "contentChars": 2543
+    },
+    {
+      "path": "service/service_02_05.md",
+      "url": "https://www.krds.go.kr/html/site/service/service_02_05.html",
+      "status": 200,
+      "bytes": 66494,
+      "contentChars": 2817
+    },
+    {
+      "path": "service/service_02_06.md",
+      "url": "https://www.krds.go.kr/html/site/service/service_02_06.html",
+      "status": 200,
+      "bytes": 61768,
+      "contentChars": 2247
+    },
+    {
+      "path": "service/service_02_07.md",
+      "url": "https://www.krds.go.kr/html/site/service/service_02_07.html",
+      "status": 200,
+      "bytes": 56581,
+      "contentChars": 1143
+    },
+    {
+      "path": "service/service_02_08.md",
+      "url": "https://www.krds.go.kr/html/site/service/service_02_08.html",
+      "status": 200,
+      "bytes": 53230,
+      "contentChars": 699
+    },
+    {
+      "path": "service/service_03_01.md",
+      "url": "https://www.krds.go.kr/html/site/service/service_03_01.html",
+      "status": 200,
+      "bytes": 66705,
+      "contentChars": 2481
+    },
+    {
+      "path": "service/service_03_02.md",
+      "url": "https://www.krds.go.kr/html/site/service/service_03_02.html",
+      "status": 200,
+      "bytes": 60197,
+      "contentChars": 1831
+    },
+    {
+      "path": "service/service_03_03.md",
+      "url": "https://www.krds.go.kr/html/site/service/service_03_03.html",
+      "status": 200,
+      "bytes": 60017,
+      "contentChars": 1880
+    },
+    {
+      "path": "service/service_03_04.md",
+      "url": "https://www.krds.go.kr/html/site/service/service_03_04.html",
+      "status": 200,
+      "bytes": 70267,
+      "contentChars": 3718
+    },
+    {
+      "path": "service/service_03_05.md",
+      "url": "https://www.krds.go.kr/html/site/service/service_03_05.html",
+      "status": 200,
+      "bytes": 63746,
+      "contentChars": 2868
+    },
+    {
+      "path": "service/service_03_06.md",
+      "url": "https://www.krds.go.kr/html/site/service/service_03_06.html",
+      "status": 200,
+      "bytes": 58109,
+      "contentChars": 1410
+    },
+    {
+      "path": "service/service_03_07.md",
+      "url": "https://www.krds.go.kr/html/site/service/service_03_07.html",
+      "status": 200,
+      "bytes": 63249,
+      "contentChars": 2133
+    },
+    {
+      "path": "service/service_03_08.md",
+      "url": "https://www.krds.go.kr/html/site/service/service_03_08.html",
+      "status": 200,
+      "bytes": 56711,
+      "contentChars": 1366
+    },
+    {
+      "path": "service/service_04_01.md",
+      "url": "https://www.krds.go.kr/html/site/service/service_04_01.html",
+      "status": 200,
+      "bytes": 76644,
+      "contentChars": 4052
+    },
+    {
+      "path": "service/service_04_02.md",
+      "url": "https://www.krds.go.kr/html/site/service/service_04_02.html",
+      "status": 200,
+      "bytes": 67449,
+      "contentChars": 3166
+    },
+    {
+      "path": "service/service_04_03.md",
+      "url": "https://www.krds.go.kr/html/site/service/service_04_03.html",
+      "status": 200,
+      "bytes": 67038,
+      "contentChars": 3709
+    },
+    {
+      "path": "service/service_04_04.md",
+      "url": "https://www.krds.go.kr/html/site/service/service_04_04.html",
+      "status": 200,
+      "bytes": 60962,
+      "contentChars": 2147
+    },
+    {
+      "path": "service/service_04_05.md",
+      "url": "https://www.krds.go.kr/html/site/service/service_04_05.html",
+      "status": 200,
+      "bytes": 68976,
+      "contentChars": 3731
+    },
+    {
+      "path": "service/service_04_06.md",
+      "url": "https://www.krds.go.kr/html/site/service/service_04_06.html",
+      "status": 200,
+      "bytes": 56817,
+      "contentChars": 1660
+    },
+    {
+      "path": "service/service_04_07.md",
+      "url": "https://www.krds.go.kr/html/site/service/service_04_07.html",
+      "status": 200,
+      "bytes": 56950,
+      "contentChars": 1482
+    },
+    {
+      "path": "service/service_04_08.md",
+      "url": "https://www.krds.go.kr/html/site/service/service_04_08.html",
+      "status": 200,
+      "bytes": 61741,
+      "contentChars": 2234
+    },
+    {
+      "path": "service/service_05_01.md",
+      "url": "https://www.krds.go.kr/html/site/service/service_05_01.html",
+      "status": 200,
+      "bytes": 57149,
+      "contentChars": 1418
+    },
+    {
+      "path": "service/service_05_02.md",
+      "url": "https://www.krds.go.kr/html/site/service/service_05_02.html",
+      "status": 200,
+      "bytes": 59765,
+      "contentChars": 1799
+    },
+    {
+      "path": "service/service_05_03.md",
+      "url": "https://www.krds.go.kr/html/site/service/service_05_03.html",
+      "status": 200,
+      "bytes": 64660,
+      "contentChars": 1877
+    },
+    {
+      "path": "service/service_05_04.md",
+      "url": "https://www.krds.go.kr/html/site/service/service_05_04.html",
+      "status": 200,
+      "bytes": 58583,
+      "contentChars": 1355
+    },
+    {
+      "path": "style/style_01.md",
+      "url": "https://www.krds.go.kr/html/site/style/style_01.html",
+      "status": 200,
+      "bytes": 67999,
+      "contentChars": 3269
+    },
+    {
+      "path": "style/style_02.md",
+      "url": "https://www.krds.go.kr/html/site/style/style_02.html",
+      "status": 200,
+      "bytes": 115877,
+      "contentChars": 7340
+    },
+    {
+      "path": "style/style_03.md",
+      "url": "https://www.krds.go.kr/html/site/style/style_03.html",
+      "status": 200,
+      "bytes": 114892,
+      "contentChars": 9579
+    },
+    {
+      "path": "style/style_04.md",
+      "url": "https://www.krds.go.kr/html/site/style/style_04.html",
+      "status": 200,
+      "bytes": 77127,
+      "contentChars": 3933
+    },
+    {
+      "path": "style/style_05.md",
+      "url": "https://www.krds.go.kr/html/site/style/style_05.html",
+      "status": 200,
+      "bytes": 99225,
+      "contentChars": 7160
+    },
+    {
+      "path": "style/style_06.md",
+      "url": "https://www.krds.go.kr/html/site/style/style_06.html",
+      "status": 200,
+      "bytes": 81154,
+      "contentChars": 3687
+    },
+    {
+      "path": "style/style_07.md",
+      "url": "https://www.krds.go.kr/html/site/style/style_07.html",
+      "status": 200,
+      "bytes": 71978,
+      "contentChars": 4240
+    },
+    {
+      "path": "style/style_08.md",
+      "url": "https://www.krds.go.kr/html/site/style/style_08.html",
+      "status": 200,
+      "bytes": 78180,
+      "contentChars": 4059
+    },
+    {
+      "path": "style/style_09.md",
+      "url": "https://www.krds.go.kr/html/site/style/style_09.html",
+      "status": 200,
+      "bytes": 64860,
+      "contentChars": 3403
+    },
+    {
+      "path": "style/style_07_popup.md",
+      "url": "https://www.krds.go.kr/html/site/style/style_07_popup.html",
+      "status": 200,
+      "bytes": 28497,
+      "contentChars": 562
+    },
+    {
+      "path": "utility/utility_01.md",
+      "url": "https://www.krds.go.kr/html/site/utility/utility_01.html",
+      "status": 200,
+      "bytes": 63666,
+      "contentChars": 3650
+    },
+    {
+      "path": "utility/utility_02.md",
+      "url": "https://www.krds.go.kr/html/site/utility/utility_02.html",
+      "status": 200,
+      "bytes": 76146,
+      "contentChars": 6626
+    },
+    {
+      "path": "utility/utility_03.md",
+      "url": "https://www.krds.go.kr/html/site/utility/utility_03.html",
+      "status": 200,
+      "bytes": 91978,
+      "contentChars": 6942
+    },
+    {
+      "path": "utility/utility_04.md",
+      "url": "https://www.krds.go.kr/html/site/utility/utility_04.html",
+      "status": 200,
+      "bytes": 199328,
+      "contentChars": 31242
+    },
+    {
+      "path": "utility/utility_05.md",
+      "url": "https://www.krds.go.kr/html/site/utility/utility_05.html",
+      "status": 200,
+      "bytes": 44719,
+      "contentChars": 108
+    },
+    {
+      "path": "utility/utility_06.md",
+      "url": "https://www.krds.go.kr/html/site/utility/utility_06.html",
+      "status": 200,
+      "bytes": 45218,
+      "contentChars": 106
+    },
+    {
+      "path": "utility/utility_07.md",
+      "url": "https://www.krds.go.kr/html/site/utility/utility_07.html",
+      "status": 200,
+      "bytes": 83773,
+      "contentChars": 6779
+    }
+  ],
+  "needsBrowser": [
+    {
+      "path": "utility/utility_05.md",
+      "url": "https://www.krds.go.kr/html/site/utility/utility_05.html",
+      "contentChars": 108
+    },
+    {
+      "path": "utility/utility_06.md",
+      "url": "https://www.krds.go.kr/html/site/utility/utility_06.html",
+      "contentChars": 106
+    }
+  ],
+  "notFound": [
+    {
+      "path": "global/global_14.md",
+      "url": "https://www.krds.go.kr/html/site/global/global_14.html",
+      "status": 404
+    },
+    {
+      "path": "service/service_01_03.md",
+      "url": "https://www.krds.go.kr/html/site/service/service_01_03.html",
+      "status": 404
+    },
+    {
+      "path": "service/service_02_09.md",
+      "url": "https://www.krds.go.kr/html/site/service/service_02_09.html",
+      "status": 404
+    },
+    {
+      "path": "service/service_03_09.md",
+      "url": "https://www.krds.go.kr/html/site/service/service_03_09.html",
+      "status": 404
+    },
+    {
+      "path": "service/service_04_09.md",
+      "url": "https://www.krds.go.kr/html/site/service/service_04_09.html",
+      "status": 404
+    },
+    {
+      "path": "service/service_05_05.md",
+      "url": "https://www.krds.go.kr/html/site/service/service_05_05.html",
+      "status": 404
+    }
+  ]
+}
