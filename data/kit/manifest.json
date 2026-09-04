@@ -1,0 +1,36 @@
+{
+  "source": {
+    "repo": "https://github.com/KRDS-uiux/krds-uiux",
+    "tag": "1.1.0",
+    "resolvedCommitSha": "d6bb184c823e4757f05807ea4646a23e3133b6e6"
+  },
+  "fetchedAt": "2026-09-04",
+  "files": [
+    {
+      "path": "tokens/figma_token.json",
+      "bytes": 85246
+    },
+    {
+      "path": "tokens/transformed_tokens.json",
+      "bytes": 89624
+    },
+    {
+      "path": "resources/css/token/krds_tokens.css",
+      "bytes": 49939
+    },
+    {
+      "path": "resources/css/common/common.css",
+      "bytes": 41826
+    }
+  ],
+  "excluded": [
+    "resources/css/component/ (component.css, output.css — 컴포넌트 구현 CSS, 토큰과 중복)",
+    "resources/cdn/ (krds.min.css, krds.min.js — 재압축 배포 번들)",
+    "resources/scss/ (Sass 원본 — 컴파일된 CSS로 대체 커버)",
+    "resources/fonts/ (폰트 자산)",
+    "resources/img/ (아이콘/이미지 자산)",
+    "resources/js/ (스크립트)",
+    "html/ (컴포넌트 마크업 예제 — 다른 작업자 담당 범위)",
+    "README.md, package.json (저장소 메타데이터)"
+  ]
+}
