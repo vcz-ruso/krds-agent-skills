@@ -13,6 +13,7 @@ App Router의 기본 원칙은 "가능한 한 서버에 남기고, 상호작용�
 ```tsx
 // app/notice/page.tsx — 서버 컴포넌트: 데이터 페칭 + 정적 레이아웃
 import { NoticeFilterPanel } from './notice-filter-panel';
+import { getNotices } from './data'; // 프로젝트의 서버 전용 데이터 페치 함수
 
 export default async function NoticePage() {
   const notices = await getNotices(); // 서버에서 직접 fetch
@@ -32,15 +33,19 @@ export default async function NoticePage() {
 'use client';
 
 import { useState } from 'react';
-import { Dropdown, TextInput, Button } from 'krds-react';
+// Dropdown은 barrel 미노출 컴포넌트다(references/components/README.md 참고) — 선택 UI는 Select를 쓴다
+import { Select, TextInput, Button } from 'krds-react';
+
+type Notice = { id: number; title: string }; // 실제 프로젝트에서는 서버 컴포넌트와 공유하는 타입을 import
 
 export function NoticeFilterPanel({ initialNotices }: { initialNotices: Notice[] }) {
   const [keyword, setKeyword] = useState('');
 
   return (
     <div>
-      <TextInput value={keyword} onChange={(e) => setKeyword(e.target.value)} placeholder="검색어 입력" />
-      <Dropdown /* ... */ />
+      {/* krds-react 입력류의 onChange는 DOM 이벤트가 아니라 값(string)을 직접 넘긴다 */}
+      <TextInput value={keyword} onChange={(value) => setKeyword(value)} placeholder="검색어 입력" />
+      <Select label="분류" options={[{ value: 'all', label: '전체' }]} />
       <Button onClick={() => {/* 필터링 */}}>검색</Button>
       {/* 목록 렌더링 */}
     </div>
@@ -52,11 +57,11 @@ export function NoticeFilterPanel({ initialNotices }: { initialNotices: Notice[]
 
 ## 2. CSS 로드
 
-krds-react는 컴포넌트 스타일을 별도 CSS 번들(`dist/index.css` 형태 — 실제 배포 경로는 설치한 krds-react 버전의 `package.json` `exports`/`files`를 확인, **확인 필요**)로 제공하는 CSS-in-JS가 아닌 라이브러리라는 전제다. App Router에서는 root layout에서 전역으로 한 번만 import한다.
+krds-react는 컴포넌트 스타일을 별도 CSS 번들로 제공하는 CSS-in-JS가 아닌 라이브러리다. 스냅샷 기준 버전(`krds-react@1.1.1`)의 `package.json` `exports`에는 `"./dist/index.css"`와 별칭 `"./styles"`가 모두 선언되어 있어(설치본에서 직접 확인) 아래 두 import 경로가 유효하다. App Router에서는 root layout에서 전역으로 한 번만 import한다.
 
 ```tsx
 // app/layout.tsx
-import 'krds-react/dist/index.css'; // 실제 서브패스는 설치본 기준 확인 필요
+import 'krds-react/dist/index.css'; // 'krds-react/styles'도 동일 파일을 가리킨다 (exports 별칭)
 import './globals.css'; // 프로젝트 전역 스타일(폰트 등)
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -176,16 +181,83 @@ export default function ApplyPage() {
 
 `<form action={serverAction}>` 방식은 JS가 로드되기 전에도 native form submit으로 동작하는 progressive enhancement를 얻는다. 다만 이 방식이 성립하려면 krds-react 입력 컴포넌트들이 내부적으로 `<input>`/`<textarea>` 등 네이티브 폼 요소를 렌더링하고 `name` prop을 그대로 DOM에 반영해야 한다 — 실제 마크업은 `references/components/TextInput.md`, `references/components/Textarea.md` 등 개별 컴포넌트 문서로 확인한다. 클라이언트 측 실시간 검증이 필요하면 `useState` + `onChange`를 함께 쓰되, 최종 제출 로직은 서버 액션에 맡긴다.
 
-## 5. 잔여 리스크 — SSR 동작 미검증
+## 5. SSR 스모크 테스트 결과
 
-이 문서는 krds-react가 "클라이언트 컴포넌트 라이브러리"라는 전제와 일반적인 Next.js App Router 관용구를 조합해 작성했다. 다음은 실제로 검증하지 않은 부분이다.
+이전 판에서 "SSR 동작 미검증"으로 남겨 두었던 항목을 실제로 측정했다. 아래는 그 결과다.
 
-- **SSR 스모크 테스트 미수행**: krds-react 컴포넌트를 서버 컴포넌트 트리에 배치했을 때, 혹은 클라이언트 컴포넌트 안에서 서버 렌더링(`next build && next start`) 시 hydration mismatch나 `window`/`document` 참조 에러가 발생하는지 실제로 빌드·구동해 확인하지 않았다.
-- CSS import 경로(`krds-react/dist/index.css`)는 일반적인 라이브러리 배포 관례를 따른 추정이며, 실제 설치된 krds-react 패키지의 `package.json`으로 검증 필요.
-- 폰트 파일 배포 경로·라이선스는 확인 필요 상태로 남겨둠(3항 참고).
+### 5.1 측정 환경과 방법
 
-krds-react를 실제 프로젝트에 붙일 때는 위 항목을 먼저 로컬에서 `next build`로 검증하고, hydration 경고나 SSR 실패가 발견되면 해당 컴포넌트를 `dynamic(() => import(...), { ssr: false })`로 클라이언트 전용 로드하는 우회책을 검토한다. 이 문서는 이후 실제 검증 결과가 나오면 갱신되어야 한다.
+- 대상: `krds-react@1.1.1` (스냅샷 기준 버전, `pipeline/snapshot.lock.json` 참조)
+- 렌더러: `react@19.2.8` / `react-dom@19.2.8`의 `react-dom/server` `renderToString()`
+- 실행 환경: **폴리필 없는 순정 Node** — jsdom을 설치하지 않았고 `window`/`document`/`navigator` 전역을 만들지 않았다. Next.js 서버 런타임과 마찬가지로 브라우저 전역이 없는 상태에서 렌더링한다.
+- 대상 범위: `krds-react` barrel이 내보내는 public export **60개 전부**. 각 export를 `data/types/*.json`에서 뽑은 필수 prop만 채워 개별 렌더한다.
+- 재현: `npm run test:ssr` (스크립트 본문은 `pipeline/ssr-smoke.mjs`)
+
+```bash
+npm run test:ssr   # FAIL이 1개 이상이면 exit code 1
+```
+
+### 5.2 집계
+
+| 결과 | 개수 | 의미 |
+| --- | --- | --- |
+| OK | 55 | 예외 없이 비어 있지 않은 HTML을 반환 |
+| OK-EMPTY | 1 | 예외 없이 렌더됐으나 출력이 빈 문자열 |
+| FAIL | 4 | 렌더 중 예외 발생 |
+| SKIP | 0 | 컴포넌트가 아닌 export(훅·유틸·상수)는 없었다 |
+
+**`window`/`document` 등 브라우저 전역 참조로 인한 SSR 크래시는 0건**이다. `import * as KRDS from 'krds-react'` 자체도 순정 Node에서 예외 없이 성공한다 — 즉 모듈 최상위(import 시점)에서 브라우저 전역을 만지는 코드는 없다.
+
+### 5.3 FAIL 4건 — 원인은 SSR이 아니라 compound 사용법
+
+FAIL로 잡힌 4개는 모두 **부모 Provider 밖에서 단독 렌더**했을 때 라이브러리가 의도적으로 던지는 가드 에러다.
+
+| 컴포넌트 | 예외 메시지(첫 줄) |
+| --- | --- |
+| `AccordionItem` | `Accordion 하위 컴포넌트는 Accordion 컴포넌트 내부에서 사용되어야 합니다.` |
+| `TabList` | `Tab compound components must be used within a Tab component` |
+| `TabTrigger` | `Tab compound components must be used within a Tab component` |
+| `TabPanel` | `Tab compound components must be used within a Tab component` |
+
+같은 스크립트가 이 컴포넌트들을 **정상 조합**(`Accordion > Accordion.Item > Header/Panel`, `Tab > TabList > TabTrigger` + `TabContent > TabPanel`)으로 다시 렌더하면 모두 예외 없이 HTML을 반환한다. 따라서 이 4건은 SSR 제약이 아니라 API 계약 위반이며, **Next.js에서 `dynamic(() => ..., { ssr: false })`로 우회할 대상이 아니다.** 올바른 대응은 부모 안에서 쓰는 것뿐이다.
+
+```tsx
+// app/guide/tab-section.tsx — 이 조합은 서버 렌더링에서 그대로 통과한다
+'use client';
+
+import { Tab, TabList, TabTrigger, TabContent, TabPanel } from 'krds-react';
+
+export function TabSection() {
+  return (
+    <Tab defaultValue="tab1">
+      <TabList>
+        <TabTrigger value="tab1">개요</TabTrigger>
+      </TabList>
+      <TabContent>
+        <TabPanel value="tab1">개요 내용</TabPanel>
+      </TabContent>
+    </Tab>
+  );
+}
+```
+
+### 5.4 OK-EMPTY 1건 — `Modal`
+
+`Modal`은 필수 prop이 없어 자식 없이(`<Modal />`) 렌더되었고 빈 문자열을 반환했다. 자식(`Modal.Content`)을 주면 `open` 여부와 무관하게 `<section role="dialog" class="krds-modal ...">` 마크업을 서버에서 반환한다. 즉 포탈 때문에 서버 출력이 사라지는 것이 아니라 **그릴 자식이 없어서 빈 출력**이었다. 서버 HTML에 모달 마크업이 포함되는 편이 바람직하지 않은 화면이라면 `open` 상태와 렌더 시점을 클라이언트에서 직접 제어한다.
+
+### 5.5 이 측정이 보증하지 않는 것
+
+`renderToString` 통과는 "서버에서 크래시하지 않는다"까지만 보증한다. 다음은 여전히 미검증이다.
+
+- **hydration mismatch**: 서버 HTML과 클라이언트 첫 렌더가 일치하는지는 측정하지 않았다. 브라우저에서 `next dev`로 hydration 경고를 확인해야 한다. 특히 `Modal`처럼 `open` 상태가 초기 마크업을 바꾸는 컴포넌트, `id` 자동 생성(위 출력의 `krds-modal-_R_0_`)에 의존하는 컴포넌트가 후보다.
+- **RSC 경계**: 이 테스트는 클래식 SSR(`renderToString`)이며 React Server Components 직렬화 경계는 다루지 않는다. 1항의 `'use client'` 원칙은 그대로 유효하다.
+- **스트리밍 SSR**: Next.js App Router가 실제로 쓰는 `renderToReadableStream`/Suspense 경계에서의 동작은 별도다.
+- CSS import 경로는 설치본 `exports`로 확정했으나(2항), 폰트 파일 배포 경로·라이선스는 여전히 **확인 필요**(3항 참고).
+
+측정 결과가 위와 같으므로, krds-react 컴포넌트를 클라이언트 컴포넌트 안에 두는 1항의 기본 패턴을 쓰는 한 `ssr: false` 우회는 **기본값으로 필요하지 않다.** `next build` 이후 특정 컴포넌트에서 hydration 경고가 실제로 관측될 때만 해당 컴포넌트에 한정해 `dynamic(() => import('./x'), { ssr: false })`를 적용한다.
+
+이 절의 수치는 `krds-react@1.1.1` + `react-dom@19.2.8` 조합의 스냅샷 결과다. 의존성 버전을 올리면 `npm run test:ssr`을 다시 돌려 갱신해야 한다.
 
 ---
 
-데이터 출처: `data/site/style/style_03.md`(서체·굵기), `data/kit/resources/css/token/krds_tokens.css`(font-weight 토큰), `skills/krds-react-dev/references/components/README.md`(컴포넌트 목록·인터랙션 prop 근거). Next.js App Router 관용구 자체는 레포 데이터가 아닌 일반 프레임워크 지식이며, SSR 관련 서술은 4항에 명시한 대로 미검증 상태다.
+데이터 출처: `data/site/style/style_03.md`(서체·굵기), `data/kit/resources/css/token/krds_tokens.css`(font-weight 토큰), `skills/krds-react-dev/references/components/README.md`(컴포넌트 목록·인터랙션 prop 근거), `pipeline/ssr-smoke.mjs` 실행 결과(5항 SSR 수치, `pipeline/snapshot.lock.json` 기준 버전). Next.js App Router 관용구 자체는 레포 데이터가 아닌 일반 프레임워크 지식이며, hydration·RSC·스트리밍 SSR은 5.5항에 명시한 대로 여전히 미검증 상태다.

@@ -15,9 +15,15 @@
     "build:kwcag": "node pipeline/build-kwcag-map.mjs",
     "crawl:site": "node pipeline/crawl-site.mjs",
     "transform:rn": "node pipeline/transform-rn-tokens.mjs",
-    "validate": "node pipeline/validate-skills.mjs"
+    "validate": "node pipeline/validate-skills.mjs",
+    "test:ssr": "node pipeline/ssr-smoke.mjs"
   },
   "devDependencies": {
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "krds-react": "^1.1.1",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
     "typescript": "^5.9.3"
   }
 }
